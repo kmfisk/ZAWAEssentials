@@ -1,0 +1,11 @@
+{
+  "max_health": 10.0,
+  "damage": 3.0,
+  "variants": 5,
+  "kibble": "zawa:bird_kibble",
+  "vial": "zawa:bird_vial",
+  "nature": "SKITTISH",
+  "activity": "CALM",
+  "mc_speed": 0.29,
+  "speed": 0.8
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "essentials",
+  "name": "Essentials",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Mnesikos", "Fisk"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

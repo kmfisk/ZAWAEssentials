@@ -1,0 +1,19 @@
+{
+  "max_health": 10.0,
+  "damage": 3.0,
+  "variants": 2,
+  "diet": "HERBIVORE",
+  "kibble": "zawa:unglate_kibble",
+  "vial": "zawa:unglate_vial",
+  "nature": "SKITTISH",
+  "activity": "CALM",
+  "mc_speed": 0.29,
+  "speed": 0.8,
+  "drops": [
+    {
+      "item": "minecraft:rabbit",
+      "cooked_item": "minecraft:cooked_rabbit",
+      "max": 1
+    }
+  ]
+}
