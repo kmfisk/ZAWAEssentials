@@ -1,0 +1,17 @@
+{
+  "__comment": "Entity Names",
+  "entity.zawaessentials.hawk_headed_parrot": "Hawk-headed Parrot",
+
+  "__comment": "Items",
+  "item.zawaessentials.hawk_headed_parrot_spawn_egg": "Hawk-headed Parrot Spawn Egg",
+
+  "__comment": "Entity Variant and Scientific Names, and Informational Blurbs",
+  "scientific.zawaessentials.hawk_headed_parrot": "Deroptyus accipitrinus",
+  "variant.zawaessentials.hawk_headed_parrot_0": "variant0",
+  "variant.zawaessentials.hawk_headed_parrot_1": "variant1",
+  "variant.zawaessentials.hawk_headed_parrot_2": "variant2",
+  "taxonomic_class.zawaessentials.hawk_headed_parrot": "Bird",
+  "range.zawaessentials.hawk_headed_parrot": "Brazil",
+  "conservation_status.zawaessentials.hawk_headed_parrot": "Least Concern",
+  "informational_blurb.zawaessentials.hawk_headed_parrot": "This peculiar parrot has striking red and electric blue feathers, and a bonnet-like crest of feathers it can raise when startled or playful. Its closest relative is the caique, as well as some members of the Amazon family. Hawk-headed parrots are notoriously difficult to keep in captivity, since they are aggressive towards each other and are picky with mates, keepers and habitat neighbors alike."
+}

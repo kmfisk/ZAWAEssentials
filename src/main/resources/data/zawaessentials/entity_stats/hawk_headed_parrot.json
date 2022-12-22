@@ -1,0 +1,25 @@
+{
+  "temperament": "defensive",
+  "kibble": "zawa:herbivore_kibble",
+  "size": "small",
+  "fertility": "low",
+  "breeding_item": "minecraft:sweet_berries",
+  "litter_size": 1,
+  "diet": "zawa:herbivore",
+  "speed": "fast",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:perching_stand",
+      "zawa:tire_swing",
+      "zawa:leaf_browse",
+      "zawa:hay_browse",
+      "zawa:sprinkler",
+      "zawa:puzzle_feeder"
+    ],
+    "zawa:entities": [
+      "zawa:scented_ball",
+      "zawa:apple_ice_treat"
+    ]
+  },
+  "variant_count": 3
+}
