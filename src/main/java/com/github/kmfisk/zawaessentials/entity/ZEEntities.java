@@ -23,7 +23,7 @@ public class ZEEntities {
             new Builder<>(HawkHeadedParrotEntity::new, EntityClassification.CREATURE)
                     .attributes(HawkHeadedParrotEntity::registerAttributes)
                     .renderer(() -> HawkHeadedParrotRenderer::new)
-                    .spawn(ZawaSpawnCategory.DEEP_RAINFOREST, 5, 1, 1)
+                    .spawn(ZawaSpawnCategory.DEEP_RAINFOREST, 5, 1, 2)
                     .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
                     .build(REGISTRAR, "hawk_headed_parrot"); //todo: baby, hitbox, scale
 
