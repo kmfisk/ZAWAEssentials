@@ -1,5 +1,16 @@
 {
   "replace": false,
   "values": [
+    "zawaessentials:amazon_parrot",
+    "zawaessentials:australian_ringneck_parrot",
+    "zawaessentials:caique",
+    "zawaessentials:conure",
+    "zawaessentials:eclectus",
+    "zawaessentials:green_cheek_conure",
+    "zawaessentials:kakariki",
+    "zawaessentials:moho",
+    "zawaessentials:poicephalus_parrot",
+    "zawaessentials:ringneck_parrot",
+    "zawaessentials:rosella"
   ]
 }

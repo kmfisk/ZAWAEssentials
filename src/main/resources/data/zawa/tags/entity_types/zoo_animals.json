@@ -1,6 +1,23 @@
 {
   "replace": false,
   "values": [
-    "zawaessentials:hawk_headed_parrot"
+    "zawaessentials:amazon_parrot",
+    "zawaessentials:australian_ringneck_parrot",
+    "zawaessentials:budgerigar",
+    "zawaessentials:caique",
+    "zawaessentials:cockatiel",
+    "zawaessentials:congo_gray_parrot",
+    "zawaessentials:conure",
+    "zawaessentials:eclectus",
+    "zawaessentials:greater_prairie_chicken",
+    "zawaessentials:green_cheek_conure",
+    "zawaessentials:hawk_headed_parrot",
+    "zawaessentials:kakariki",
+    "zawaessentials:kea",
+    "zawaessentials:moho",
+    "zawaessentials:poicephalus_parrot",
+    "zawaessentials:quaker_parakeet",
+    "zawaessentials:ringneck_parrot",
+    "zawaessentials:rosella"
   ]
 }
