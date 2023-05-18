@@ -1,6 +1,5 @@
 package com.github.kmfisk.zawaessentials.client.model;
 
-import com.github.kmfisk.zawaessentials.entity.HawkHeadedParrotEntity;
 import com.google.common.collect.ImmutableList;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.model.ModelRenderer;
@@ -8,7 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
 
-public abstract class HawkHeadedParrotModel extends ZawaBaseModel<HawkHeadedParrotEntity> {
+public abstract class HawkHeadedParrotModel<E extends Entity> extends ZawaBaseModel<E> {
     public ModelRenderer Body;
     public ModelRenderer Neck;
     public ModelRenderer Head;
@@ -56,7 +55,7 @@ public abstract class HawkHeadedParrotModel extends ZawaBaseModel<HawkHeadedParr
         return this.parts;
     }
 
-    public static class Flying extends HawkHeadedParrotModel {
+    public static class Flying<E extends Entity> extends HawkHeadedParrotModel<E> {
         public ModelRenderer Wing1Left;
         public ModelRenderer Wing1Right;
         public ModelRenderer Wing2Left;
@@ -357,7 +356,7 @@ public abstract class HawkHeadedParrotModel extends ZawaBaseModel<HawkHeadedParr
         }
 
         @Override
-        public void setupAnim(HawkHeadedParrotEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        public void setupAnim(E entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             this.Neck.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
@@ -386,7 +385,7 @@ public abstract class HawkHeadedParrotModel extends ZawaBaseModel<HawkHeadedParr
         }
     }
 
-    public static class Adult extends HawkHeadedParrotModel {
+    public static class Adult<E extends Entity> extends HawkHeadedParrotModel<E> {
         public ModelRenderer WingFoldedLeft;
         public ModelRenderer WingFoldedRight;
         public ModelRenderer WingFoldedLeft1;
@@ -598,7 +597,7 @@ public abstract class HawkHeadedParrotModel extends ZawaBaseModel<HawkHeadedParr
         }
 
         @Override
-        public void setupAnim(HawkHeadedParrotEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        public void setupAnim(E entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             this.Neck.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
@@ -629,14 +628,14 @@ public abstract class HawkHeadedParrotModel extends ZawaBaseModel<HawkHeadedParr
         }
     }
 
-    public static class Child extends HawkHeadedParrotModel {
+    public static class Child<E extends Entity> extends HawkHeadedParrotModel<E> {
         public Child() {
             // TODO: Insert child model
             this.saveBase();
         }
 
         @Override
-        public void setupAnim(HawkHeadedParrotEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        public void setupAnim(E entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             this.Neck.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;

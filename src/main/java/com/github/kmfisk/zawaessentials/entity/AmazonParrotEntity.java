@@ -12,8 +12,8 @@ import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 
 import javax.annotation.Nullable;
 
-public class HawkHeadedParrotEntity extends ZawaFlyingEntity {
-    public HawkHeadedParrotEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
+public class AmazonParrotEntity extends ZawaFlyingEntity {
+    public AmazonParrotEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
         super(type, world);
     }
 
@@ -44,6 +44,6 @@ public class HawkHeadedParrotEntity extends ZawaFlyingEntity {
     @Nullable
     @Override
     public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
-        return ZEEntities.HAWK_HEADED_PARROT.get().create(world);
+        return ZEEntities.AMAZON_PARROT.get().create(world);
     }
 }

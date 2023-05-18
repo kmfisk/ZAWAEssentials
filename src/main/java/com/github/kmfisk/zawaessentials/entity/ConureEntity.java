@@ -12,15 +12,15 @@ import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 
 import javax.annotation.Nullable;
 
-public class HawkHeadedParrotEntity extends ZawaFlyingEntity {
-    public HawkHeadedParrotEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
+public class ConureEntity extends ZawaFlyingEntity {
+    public ConureEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
         super(type, world);
     }
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
         // medium:  .add(Attributes.FLYING_SPEED, 0.60F).add(Attributes.MOVEMENT_SPEED, 0.225F)
         // fast:    .add(Attributes.FLYING_SPEED, 1.2F).add(Attributes.MOVEMENT_SPEED, 0.3F)
-        return createMobAttributes().add(Attributes.FLYING_SPEED, 1.2F).add(Attributes.MOVEMENT_SPEED, 0.3F).add(Attributes.MAX_HEALTH, 8.0).add(Attributes.ATTACK_DAMAGE, 1.0);
+        return createMobAttributes().add(Attributes.FLYING_SPEED, 1.2F).add(Attributes.MOVEMENT_SPEED, 0.3F).add(Attributes.MAX_HEALTH, 6.0).add(Attributes.ATTACK_DAMAGE, 1.0);
     }
 
     @Override
@@ -44,6 +44,6 @@ public class HawkHeadedParrotEntity extends ZawaFlyingEntity {
     @Nullable
     @Override
     public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
-        return ZEEntities.HAWK_HEADED_PARROT.get().create(world);
+        return ZEEntities.CONURE.get().create(world);
     }
 }

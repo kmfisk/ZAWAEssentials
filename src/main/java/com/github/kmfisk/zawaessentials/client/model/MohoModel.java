@@ -1,0 +1,677 @@
+package com.github.kmfisk.zawaessentials.client.model;
+
+import com.github.kmfisk.zawaessentials.entity.MohoEntity;
+import com.google.common.collect.ImmutableList;
+import mcp.MethodsReturnNonnullByDefault;
+import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+import org.zawamod.zawa.client.model.ZawaBaseModel;
+
+public abstract class MohoModel extends ZawaBaseModel<MohoEntity> {
+    public ModelRenderer Body;
+    public ModelRenderer Chest;
+    public ModelRenderer TailBase;
+    public ModelRenderer ThighLeft;
+    public ModelRenderer ThighRight;
+    public ModelRenderer Neck;
+    public ModelRenderer Head;
+    public ModelRenderer BeakTop;
+    public ModelRenderer Beak2;
+    public ModelRenderer BeakSideLeft;
+    public ModelRenderer BeakSideLeft_1;
+    public ModelRenderer Mouth;
+    public ModelRenderer Tail1L;
+    public ModelRenderer Tail1R;
+    public ModelRenderer TailCenter;
+    public ModelRenderer Tail1L_1;
+    public ModelRenderer Tail1R_1;
+    public ModelRenderer TailCenterTop;
+    public ModelRenderer Tail2L;
+    public ModelRenderer Tail3L;
+    public ModelRenderer Tail4L;
+    public ModelRenderer Tail2R;
+    public ModelRenderer Tail3L_1;
+    public ModelRenderer Tail4R;
+    public ModelRenderer LegLeft;
+    public ModelRenderer Toe1L;
+    public ModelRenderer Toe2L;
+    public ModelRenderer Toe3L;
+    public ModelRenderer LegRight;
+    public ModelRenderer Toe1R;
+    public ModelRenderer Toe2R;
+    public ModelRenderer Toe3R;
+    private Iterable<ModelRenderer> parts;
+
+    @Override
+    @MethodsReturnNonnullByDefault
+    public Iterable<ModelRenderer> parts() {
+        if (this.parts == null) {
+            this.parts = ImmutableList.of(this.Body);
+        }
+
+        return this.parts;
+    }
+
+    public static class Flying extends MohoModel {
+        public ModelRenderer Wing1Left;
+        public ModelRenderer Wing1Right;
+        public ModelRenderer Wing2Left;
+        public ModelRenderer Wing3Left;
+        public ModelRenderer WingTip1L;
+        public ModelRenderer WingTip2L;
+        public ModelRenderer WingTip3L;
+        public ModelRenderer WingTip4L;
+        public ModelRenderer WingTip5L;
+        public ModelRenderer WingTip6L;
+        public ModelRenderer Wing2Right;
+        public ModelRenderer Wing3Right;
+        public ModelRenderer WingTip1R;
+        public ModelRenderer WingTip2R;
+        public ModelRenderer WingTip3R;
+        public ModelRenderer WingTip4L_1;
+        public ModelRenderer WingTip5R;
+        public ModelRenderer WingTip6R;
+        
+        public Flying() {
+            this.texWidth = 64;
+            this.texHeight = 32;
+            this.Toe1R = new ModelRenderer(this, 10, 9);
+            this.Toe1R.mirror = true;
+            this.Toe1R.setPos(0.0F, 1.5F, -0.4F);
+            this.Toe1R.addBox(-0.5F, -0.5F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(Toe1R, 1.1383037381507017F, 0.0F, 0.0F);
+            this.WingTip4L_1 = new ModelRenderer(this, 18, 25);
+            this.WingTip4L_1.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip4L_1.addBox(0.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip4L_1, 0.0F, -0.18203784098300857F, 0.0F);
+            this.LegRight = new ModelRenderer(this, 12, 26);
+            this.LegRight.mirror = true;
+            this.LegRight.setPos(-0.3F, 2.0F, 0.5F);
+            this.LegRight.addBox(-0.5F, 0.0F, -1.0F, 1, 2, 1, 0.0F);
+            this.setRotateAngle(LegRight, -1.5481070465189704F, 0.0F, 0.0F);
+            this.WingTip1R = new ModelRenderer(this, 18, 25);
+            this.WingTip1R.mirror = true;
+            this.WingTip1R.setPos(-2.0F, 0.0F, 0.0F);
+            this.WingTip1R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip1R, 0.0F, -0.18203784098300857F, 0.0F);
+            this.Toe1L = new ModelRenderer(this, 10, 9);
+            this.Toe1L.setPos(0.0F, 1.5F, -0.4F);
+            this.Toe1L.addBox(-0.5F, -0.5F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(Toe1L, 1.1383037381507017F, 0.0F, 0.0F);
+            this.WingTip3L = new ModelRenderer(this, 18, 25);
+            this.WingTip3L.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip3L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip3L, 0.0F, 0.18203784098300857F, 0.0F);
+            this.WingTip5R = new ModelRenderer(this, 18, 25);
+            this.WingTip5R.mirror = true;
+            this.WingTip5R.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip5R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip5R, 0.0F, -0.18203784098300857F, 0.0F);
+            this.WingTip2R = new ModelRenderer(this, 18, 25);
+            this.WingTip2R.mirror = true;
+            this.WingTip2R.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip2R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip2R, 0.0F, -0.18203784098300857F, 0.0F);
+            this.Tail1R = new ModelRenderer(this, 16, 6);
+            this.Tail1R.setPos(-0.7F, 0.0F, 0.0F);
+            this.Tail1R.addBox(-1.0F, -1.0F, -0.5F, 2, 2, 2, 0.0F);
+            this.TailBase = new ModelRenderer(this, 16, 0);
+            this.TailBase.setPos(0.0F, 0.4F, 1.0F);
+            this.TailBase.addBox(-1.5F, -2.0F, -0.5F, 3, 4, 2, 0.0F);
+            this.setRotateAngle(TailBase, -0.40980330836826856F, 0.0F, 0.0F);
+            this.Wing1Left = new ModelRenderer(this, 26, 7);
+            this.Wing1Left.setPos(1.5F, -1.0F, -2.5F);
+            this.Wing1Left.addBox(-1.0F, -0.5F, 0.0F, 3, 1, 5, 0.0F);
+            this.setRotateAngle(Wing1Left, -0.18203784098300857F, 0.0F, 0.0F);
+            this.Tail3L = new ModelRenderer(this, 17, 7);
+            this.Tail3L.setPos(0.0F, 0.2F, -0.9F);
+            this.Tail3L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail3L, 0.0F, 0.017453292519943295F, 0.0F);
+            this.Head = new ModelRenderer(this, 0, 22);
+            this.Head.setPos(0.0F, -2.3F, 1.3F);
+            this.Head.addBox(-1.5F, -1.5F, -1.5F, 3, 3, 3, 0.0F);
+            this.setRotateAngle(Head, -0.4553564018453205F, 0.0F, 0.0F);
+            this.Tail2L = new ModelRenderer(this, 17, 7);
+            this.Tail2L.setPos(0.2F, 0.2F, -0.4F);
+            this.Tail2L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail2L, 0.0F, 0.017453292519943295F, 0.0F);
+            this.Neck = new ModelRenderer(this, 0, 16);
+            this.Neck.setPos(0.0F, -3.0F, 0.45F);
+            this.Neck.addBox(-1.0F, -3.0F, 0.0F, 2, 3, 3, 0.0F);
+            this.setRotateAngle(Neck, -0.40980330836826856F, 0.0F, 0.0F);
+            this.Toe3R = new ModelRenderer(this, 16, 10);
+            this.Toe3R.mirror = true;
+            this.Toe3R.setPos(0.0F, -0.4F, -0.3F);
+            this.Toe3R.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Toe3R, 0.0F, 0.36425021489121656F, 0.0F);
+            this.BeakSideLeft = new ModelRenderer(this, 6, 28);
+            this.BeakSideLeft.setPos(0.7F, 0.1F, -0.1F);
+            this.BeakSideLeft.addBox(-1.0F, 0.0F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(BeakSideLeft, 0.0F, 0.045553093477052F, 0.0F);
+            this.WingTip6L = new ModelRenderer(this, 18, 25);
+            this.WingTip6L.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip6L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip6L, 0.0F, 0.18203784098300857F, 0.0F);
+            this.Tail1L_1 = new ModelRenderer(this, 17, 7);
+            this.Tail1L_1.setPos(1.2F, 0.2F, -0.4F);
+            this.Tail1L_1.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail1L_1, 0.0F, 0.03490658503988659F, 0.0F);
+            this.Tail4L = new ModelRenderer(this, 10, 15);
+            this.Tail4L.setPos(0.0F, 0.2F, -0.9F);
+            this.Tail4L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 6, 0.0F);
+            this.setRotateAngle(Tail4L, 0.0F, 0.017453292519943295F, 0.0F);
+            this.TailCenterTop = new ModelRenderer(this, 18, 15);
+            this.TailCenterTop.setPos(0.0F, -0.7F, 0.0F);
+            this.TailCenterTop.addBox(-0.5F, 0.0F, 0.0F, 1, 1, 4, 0.0F);
+            this.Wing2Left = new ModelRenderer(this, 28, 13);
+            this.Wing2Left.setPos(2.0F, 0.0F, 5.0F);
+            this.Wing2Left.addBox(0.0F, -0.5F, -5.0F, 2, 1, 5, 0.0F);
+            this.setRotateAngle(Wing2Left, 0.0F, 0.18203784098300857F, 0.0F);
+            this.Tail1R_1 = new ModelRenderer(this, 17, 7);
+            this.Tail1R_1.mirror = true;
+            this.Tail1R_1.setPos(-1.2F, 0.2F, -0.4F);
+            this.Tail1R_1.addBox(0.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail1R_1, 0.0F, -0.03490658503988659F, 0.0F);
+            this.Tail3L_1 = new ModelRenderer(this, 17, 7);
+            this.Tail3L_1.mirror = true;
+            this.Tail3L_1.setPos(0.0F, 0.2F, -0.9F);
+            this.Tail3L_1.addBox(0.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail3L_1, 0.0F, -0.017453292519943295F, 0.0F);
+            this.Chest = new ModelRenderer(this, 0, 9);
+            this.Chest.setPos(0.0F, 2.7F, -2.5F);
+            this.Chest.addBox(-1.5F, -3.0F, 0.0F, 3, 3, 4, 0.0F);
+            this.setRotateAngle(Chest, 1.0471975511965976F, 0.0F, 0.0F);
+            this.Wing1Right = new ModelRenderer(this, 26, 7);
+            this.Wing1Right.mirror = true;
+            this.Wing1Right.setPos(-1.5F, -1.0F, -2.5F);
+            this.Wing1Right.addBox(-2.0F, -0.5F, 0.0F, 3, 1, 5, 0.0F);
+            this.setRotateAngle(Wing1Right, -0.18203784098300857F, -0.091106186954104F, 0.0F);
+            this.Tail2R = new ModelRenderer(this, 17, 7);
+            this.Tail2R.mirror = true;
+            this.Tail2R.setPos(-0.2F, 0.2F, -0.4F);
+            this.Tail2R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail2R, 0.0F, -0.017453292519943295F, 0.0F);
+            this.ThighRight = new ModelRenderer(this, 15, 22);
+            this.ThighRight.mirror = true;
+            this.ThighRight.setPos(-1.2F, 1.4F, -0.7F);
+            this.ThighRight.addBox(-1.0F, 0.0F, -1.0F, 2, 2, 2, 0.0F);
+            this.setRotateAngle(ThighRight, 0.7740535232594852F, 0.0F, 0.0F);
+            this.Tail1L = new ModelRenderer(this, 16, 6);
+            this.Tail1L.setPos(0.3F, 0.1F, 1.5F);
+            this.Tail1L.addBox(-1.0F, -1.0F, -0.5F, 2, 2, 2, 0.0F);
+            this.WingTip3R = new ModelRenderer(this, 18, 25);
+            this.WingTip3R.mirror = true;
+            this.WingTip3R.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip3R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip3R, 0.0F, -0.18203784098300857F, 0.0F);
+            this.Wing3Left = new ModelRenderer(this, 23, 19);
+            this.Wing3Left.setPos(2.0F, 0.0F, -5.0F);
+            this.Wing3Left.addBox(0.0F, -0.5F, 0.0F, 2, 1, 5, 0.0F);
+            this.setRotateAngle(Wing3Left, 0.0F, -0.27314402793711257F, 0.0F);
+            this.WingTip4L = new ModelRenderer(this, 18, 25);
+            this.WingTip4L.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip4L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip4L, 0.0F, 0.18203784098300857F, 0.0F);
+            this.WingTip6R = new ModelRenderer(this, 18, 25);
+            this.WingTip6R.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip6R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip6R, 0.0F, -0.18203784098300857F, 0.0F);
+            this.ThighLeft = new ModelRenderer(this, 15, 22);
+            this.ThighLeft.setPos(1.2F, 1.4F, -0.7F);
+            this.ThighLeft.addBox(-1.0F, 0.0F, -1.0F, 2, 2, 2, 0.0F);
+            this.setRotateAngle(ThighLeft, 0.7740535232594852F, 0.0F, 0.0F);
+            this.Mouth = new ModelRenderer(this, 9, 22);
+            this.Mouth.setPos(0.0F, 0.6F, 0.0F);
+            this.Mouth.addBox(-0.5F, 0.0F, -1.9F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(Mouth, -0.27314402793711257F, 0.0F, 0.0F);
+            this.Toe3L = new ModelRenderer(this, 16, 10);
+            this.Toe3L.setPos(0.0F, -0.4F, -0.3F);
+            this.Toe3L.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Toe3L, 0.0F, 0.36425021489121656F, 0.0F);
+            this.Wing3Right = new ModelRenderer(this, 23, 19);
+            this.Wing3Right.mirror = true;
+            this.Wing3Right.setPos(-2.0F, 0.0F, -5.0F);
+            this.Wing3Right.addBox(-2.0F, -0.5F, 0.0F, 2, 1, 5, 0.0F);
+            this.setRotateAngle(Wing3Right, 0.0F, 0.27314402793711257F, 0.0F);
+            this.Toe2L = new ModelRenderer(this, 16, 10);
+            this.Toe2L.setPos(0.0F, -0.4F, -0.3F);
+            this.Toe2L.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Toe2L, 0.0F, -0.36425021489121656F, 0.0F);
+            this.WingTip5L = new ModelRenderer(this, 18, 25);
+            this.WingTip5L.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip5L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip5L, 0.0F, 0.18203784098300857F, 0.0F);
+            this.Beak2 = new ModelRenderer(this, 4, 28);
+            this.Beak2.setPos(0.0F, 0.0F, -1.5F);
+            this.Beak2.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Beak2, 0.18203784098300857F, 0.0F, 0.0F);
+            this.Wing2Right = new ModelRenderer(this, 28, 13);
+            this.Wing2Right.mirror = true;
+            this.Wing2Right.setPos(-2.0F, 0.0F, 5.0F);
+            this.Wing2Right.addBox(-2.0F, -0.5F, -5.0F, 2, 1, 5, 0.0F);
+            this.setRotateAngle(Wing2Right, 0.0F, -0.18203784098300857F, 0.0F);
+            this.BeakSideLeft_1 = new ModelRenderer(this, 6, 28);
+            this.BeakSideLeft_1.mirror = true;
+            this.BeakSideLeft_1.setPos(-0.7F, 0.1F, -0.1F);
+            this.BeakSideLeft_1.addBox(0.0F, 0.0F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(BeakSideLeft_1, 0.0F, -0.045553093477052F, 0.0F);
+            this.Toe2R = new ModelRenderer(this, 16, 10);
+            this.Toe2R.setPos(0.0F, -0.4F, -0.3F);
+            this.Toe2R.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Toe2R, 0.0F, -0.36425021489121656F, 0.0F);
+            this.WingTip2L = new ModelRenderer(this, 18, 25);
+            this.WingTip2L.setPos(0.0F, 0.0F, 0.0F);
+            this.WingTip2L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip2L, 0.0F, 0.18203784098300857F, 0.0F);
+            this.Tail4R = new ModelRenderer(this, 10, 15);
+            this.Tail4R.mirror = true;
+            this.Tail4R.setPos(0.0F, 0.2F, -0.9F);
+            this.Tail4R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 6, 0.0F);
+            this.setRotateAngle(Tail4R, 0.0F, -0.017453292519943295F, 0.0F);
+            this.LegLeft = new ModelRenderer(this, 12, 26);
+            this.LegLeft.setPos(0.3F, 2.0F, 0.5F);
+            this.LegLeft.addBox(-0.5F, 0.0F, -1.0F, 1, 2, 1, 0.0F);
+            this.setRotateAngle(LegLeft, -1.5481070465189704F, 0.0F, 0.0F);
+            this.WingTip1L = new ModelRenderer(this, 18, 25);
+            this.WingTip1L.setPos(2.0F, 0.0F, 0.0F);
+            this.WingTip1L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 5, 0.0F);
+            this.setRotateAngle(WingTip1L, 0.0F, 0.18203784098300857F, 0.0F);
+            this.Body = new ModelRenderer(this, 0, 0);
+            this.Body.setPos(0.0F, 20.5F, 0.0F);
+            this.Body.addBox(-2.0F, -2.0F, -2.5F, 4, 5, 4, 0.0F);
+            this.BeakTop = new ModelRenderer(this, 0, 28);
+            this.BeakTop.setPos(0.0F, -0.5F, -1.0F);
+            this.BeakTop.addBox(-0.5F, 0.0F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(BeakTop, 0.045553093477052F, 0.0F, 0.0F);
+            this.TailCenter = new ModelRenderer(this, 24, 0);
+            this.TailCenter.setPos(-0.3F, -0.2F, 1.5F);
+            this.TailCenter.addBox(-1.0F, -0.5F, 0.0F, 2, 1, 6, 0.0F);
+            this.LegRight.addChild(this.Toe1R);
+            this.WingTip3R.addChild(this.WingTip4L_1);
+            this.ThighRight.addChild(this.LegRight);
+            this.Wing3Right.addChild(this.WingTip1R);
+            this.LegLeft.addChild(this.Toe1L);
+            this.WingTip2L.addChild(this.WingTip3L);
+            this.WingTip4L_1.addChild(this.WingTip5R);
+            this.WingTip1R.addChild(this.WingTip2R);
+            this.Tail1L.addChild(this.Tail1R);
+            this.Body.addChild(this.TailBase);
+            this.Body.addChild(this.Wing1Left);
+            this.Tail2L.addChild(this.Tail3L);
+            this.Neck.addChild(this.Head);
+            this.Tail1L_1.addChild(this.Tail2L);
+            this.Chest.addChild(this.Neck);
+            this.Toe1R.addChild(this.Toe3R);
+            this.BeakTop.addChild(this.BeakSideLeft);
+            this.WingTip5L.addChild(this.WingTip6L);
+            this.TailCenter.addChild(this.Tail1L_1);
+            this.Tail3L.addChild(this.Tail4L);
+            this.TailCenter.addChild(this.TailCenterTop);
+            this.Wing1Left.addChild(this.Wing2Left);
+            this.TailCenter.addChild(this.Tail1R_1);
+            this.Tail2R.addChild(this.Tail3L_1);
+            this.Body.addChild(this.Chest);
+            this.Body.addChild(this.Wing1Right);
+            this.Tail1R_1.addChild(this.Tail2R);
+            this.Body.addChild(this.ThighRight);
+            this.TailBase.addChild(this.Tail1L);
+            this.WingTip2R.addChild(this.WingTip3R);
+            this.Wing2Left.addChild(this.Wing3Left);
+            this.WingTip3L.addChild(this.WingTip4L);
+            this.WingTip5R.addChild(this.WingTip6R);
+            this.Body.addChild(this.ThighLeft);
+            this.BeakTop.addChild(this.Mouth);
+            this.Toe1L.addChild(this.Toe3L);
+            this.Wing2Right.addChild(this.Wing3Right);
+            this.Toe1L.addChild(this.Toe2L);
+            this.WingTip4L.addChild(this.WingTip5L);
+            this.BeakTop.addChild(this.Beak2);
+            this.Wing1Right.addChild(this.Wing2Right);
+            this.BeakTop.addChild(this.BeakSideLeft_1);
+            this.Toe1R.addChild(this.Toe2R);
+            this.WingTip1L.addChild(this.WingTip2L);
+            this.Tail3L_1.addChild(this.Tail4R);
+            this.ThighLeft.addChild(this.LegLeft);
+            this.Wing3Left.addChild(this.WingTip1L);
+            this.Head.addChild(this.BeakTop);
+            this.Tail1L.addChild(this.TailCenter);
+            this.saveBase();
+        }
+
+        @Override
+        public void setupAnim(MohoEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+        }
+
+        @Override
+        public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            this.loadBase();
+        }
+
+        @Override
+        public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            this.loadBase();
+        }
+    }
+
+    public static class Adult extends MohoModel {
+        public ModelRenderer WingFoldedLeft;
+        public ModelRenderer WingFoldedRight;
+        public ModelRenderer WingTipLeft;
+        public ModelRenderer WingTipRight;
+        
+        public Adult() {
+            this.texWidth = 64;
+            this.texHeight = 32;
+            this.TailCenterTop = new ModelRenderer(this, 18, 15);
+            this.TailCenterTop.setPos(0.0F, -0.7F, 0.0F);
+            this.TailCenterTop.addBox(-0.5F, 0.0F, 0.0F, 1, 1, 4, 0.0F);
+            this.Tail2L = new ModelRenderer(this, 17, 7);
+            this.Tail2L.setPos(0.2F, 0.2F, -0.4F);
+            this.Tail2L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail2L, 0.0F, 0.017453292519943295F, 0.0F);
+            this.Tail4L = new ModelRenderer(this, 10, 15);
+            this.Tail4L.setPos(0.0F, 0.2F, -0.9F);
+            this.Tail4L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 6, 0.0F);
+            this.setRotateAngle(Tail4L, 0.0F, 0.017453292519943295F, 0.0F);
+            this.Neck = new ModelRenderer(this, 0, 16);
+            this.Neck.setPos(0.0F, -3.0F, 0.45F);
+            this.Neck.addBox(-1.0F, -3.0F, 0.0F, 2, 3, 3, 0.0F);
+            this.setRotateAngle(Neck, -0.40980330836826856F, 0.0F, 0.0F);
+            this.Tail3L_1 = new ModelRenderer(this, 17, 7);
+            this.Tail3L_1.mirror = true;
+            this.Tail3L_1.setPos(0.0F, 0.2F, -0.9F);
+            this.Tail3L_1.addBox(0.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail3L_1, 0.0F, -0.017453292519943295F, 0.0F);
+            this.Toe3R = new ModelRenderer(this, 16, 10);
+            this.Toe3R.mirror = true;
+            this.Toe3R.setPos(0.0F, -0.4F, -0.3F);
+            this.Toe3R.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Toe3R, 0.0F, 0.36425021489121656F, 0.0F);
+            this.BeakTop = new ModelRenderer(this, 0, 28);
+            this.BeakTop.setPos(0.0F, -0.5F, -1.0F);
+            this.BeakTop.addBox(-0.5F, 0.0F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(BeakTop, 0.045553093477052F, 0.0F, 0.0F);
+            this.ThighRight = new ModelRenderer(this, 15, 22);
+            this.ThighRight.mirror = true;
+            this.ThighRight.setPos(-1.2F, 1.4F, -0.7F);
+            this.ThighRight.addBox(-1.0F, 0.0F, -1.0F, 2, 2, 2, 0.0F);
+            this.setRotateAngle(ThighRight, 0.6373942428283291F, 0.0F, 0.0F);
+            this.Toe2R = new ModelRenderer(this, 16, 10);
+            this.Toe2R.setPos(0.0F, -0.4F, -0.3F);
+            this.Toe2R.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Toe2R, 0.0F, -0.36425021489121656F, 0.0F);
+            this.WingFoldedLeft = new ModelRenderer(this, 44, 7);
+            this.WingFoldedLeft.setPos(2.0F, -1.7F, -2.9F);
+            this.WingFoldedLeft.addBox(0.0F, -0.5F, 0.0F, 4, 1, 5, 0.0F);
+            this.setRotateAngle(WingFoldedLeft, 0.0F, 0.0F, 1.5707963267948966F);
+            this.Tail1R = new ModelRenderer(this, 16, 6);
+            this.Tail1R.mirror = true;
+            this.Tail1R.setPos(-0.7F, 0.0F, 0.0F);
+            this.Tail1R.addBox(-1.0F, -1.0F, -0.5F, 2, 2, 2, 0.0F);
+            this.LegRight = new ModelRenderer(this, 12, 26);
+            this.LegRight.mirror = true;
+            this.LegRight.setPos(-0.3F, 2.0F, 0.5F);
+            this.LegRight.addBox(-0.5F, 0.0F, -1.0F, 1, 2, 1, 0.0F);
+            this.setRotateAngle(LegRight, -0.8196066167365371F, 0.0F, 0.0F);
+            this.Beak2 = new ModelRenderer(this, 4, 28);
+            this.Beak2.setPos(0.0F, 0.0F, -1.5F);
+            this.Beak2.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Beak2, 0.18203784098300857F, 0.0F, 0.0F);
+            this.Tail4R = new ModelRenderer(this, 10, 15);
+            this.Tail4R.mirror = true;
+            this.Tail4R.setPos(0.0F, 0.2F, -0.9F);
+            this.Tail4R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 6, 0.0F);
+            this.setRotateAngle(Tail4R, 0.0F, -0.017453292519943295F, 0.0F);
+            this.Toe3L = new ModelRenderer(this, 16, 10);
+            this.Toe3L.setPos(0.0F, -0.4F, -0.3F);
+            this.Toe3L.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Toe3L, 0.0F, 0.36425021489121656F, 0.0F);
+            this.Tail2R = new ModelRenderer(this, 17, 7);
+            this.Tail2R.mirror = true;
+            this.Tail2R.setPos(-0.2F, 0.2F, -0.4F);
+            this.Tail2R.addBox(0.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail2R, 0.0F, -0.017453292519943295F, 0.0F);
+            this.BeakSideLeft = new ModelRenderer(this, 6, 28);
+            this.BeakSideLeft.setPos(0.7F, 0.1F, -0.1F);
+            this.BeakSideLeft.addBox(-1.0F, 0.0F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(BeakSideLeft, 0.0F, 0.045553093477052F, 0.0F);
+            this.Toe2L = new ModelRenderer(this, 16, 10);
+            this.Toe2L.setPos(0.0F, -0.4F, -0.3F);
+            this.Toe2L.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(Toe2L, 0.0F, -0.36425021489121656F, 0.0F);
+            this.LegLeft = new ModelRenderer(this, 12, 26);
+            this.LegLeft.setPos(0.3F, 2.0F, 0.5F);
+            this.LegLeft.addBox(-0.5F, 0.0F, -1.0F, 1, 2, 1, 0.0F);
+            this.setRotateAngle(LegLeft, -0.8196066167365371F, 0.0F, 0.0F);
+            this.Toe1R = new ModelRenderer(this, 10, 9);
+            this.Toe1R.mirror = true;
+            this.Toe1R.setPos(0.0F, 2.0F, 0.0F);
+            this.Toe1R.addBox(-0.5F, -0.5F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(Toe1R, 0.4553564018453205F, 0.0F, 0.0F);
+            this.Mouth = new ModelRenderer(this, 9, 22);
+            this.Mouth.setPos(0.0F, 0.6F, 0.0F);
+            this.Mouth.addBox(-0.5F, 0.0F, -1.9F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(Mouth, -0.27314402793711257F, 0.0F, 0.0F);
+            this.TailCenter = new ModelRenderer(this, 24, 0);
+            this.TailCenter.setPos(-0.3F, -0.1F, 1.5F);
+            this.TailCenter.addBox(-1.0F, -0.5F, 0.0F, 2, 1, 6, 0.0F);
+            this.Tail1L_1 = new ModelRenderer(this, 17, 7);
+            this.Tail1L_1.setPos(1.2F, 0.2F, -0.4F);
+            this.Tail1L_1.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail1L_1, 0.0F, 0.03490658503988659F, 0.0F);
+            this.Tail1R_1 = new ModelRenderer(this, 17, 7);
+            this.Tail1R_1.mirror = true;
+            this.Tail1R_1.setPos(-1.2F, 0.2F, -0.4F);
+            this.Tail1R_1.addBox(0.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail1R_1, 0.0F, -0.03490658503988659F, 0.0F);
+            this.Tail3L = new ModelRenderer(this, 17, 7);
+            this.Tail3L.setPos(0.0F, 0.2F, -0.9F);
+            this.Tail3L.addBox(-1.0F, -0.5F, 0.0F, 1, 1, 7, 0.0F);
+            this.setRotateAngle(Tail3L, 0.0F, 0.017453292519943295F, 0.0F);
+            this.TailBase = new ModelRenderer(this, 16, 0);
+            this.TailBase.setPos(0.0F, 0.4F, 1.0F);
+            this.TailBase.addBox(-1.5F, -2.0F, -0.5F, 3, 4, 2, 0.0F);
+            this.setRotateAngle(TailBase, -0.40980330836826856F, 0.0F, 0.0F);
+            this.WingTipRight = new ModelRenderer(this, 47, 3);
+            this.WingTipRight.mirror = true;
+            this.WingTipRight.setPos(3.2F, -0.1F, 4.9F);
+            this.WingTipRight.addBox(-3.0F, -1.0F, 0.0F, 3, 1, 3, 0.0F);
+            this.setRotateAngle(WingTipRight, 0.22759093446006054F, -0.22759093446006054F, 0.0F);
+            this.Toe1L = new ModelRenderer(this, 10, 9);
+            this.Toe1L.setPos(0.0F, 2.0F, 0.0F);
+            this.Toe1L.addBox(-0.5F, -0.5F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(Toe1L, 0.4553564018453205F, 0.0F, 0.0F);
+            this.WingTipLeft = new ModelRenderer(this, 47, 3);
+            this.WingTipLeft.setPos(3.2F, -0.1F, 4.9F);
+            this.WingTipLeft.addBox(-3.0F, 0.0F, 0.0F, 3, 1, 3, 0.0F);
+            this.setRotateAngle(WingTipLeft, -0.22759093446006054F, -0.22759093446006054F, 0.0F);
+            this.Chest = new ModelRenderer(this, 0, 9);
+            this.Chest.setPos(0.0F, 2.7F, -2.5F);
+            this.Chest.addBox(-1.5F, -3.0F, 0.0F, 3, 3, 4, 0.0F);
+            this.setRotateAngle(Chest, 0.9560913642424937F, 0.0F, 0.0F);
+            this.WingFoldedRight = new ModelRenderer(this, 44, 7);
+            this.WingFoldedRight.setPos(-2.0F, -1.7F, -2.9F);
+            this.WingFoldedRight.addBox(0.0F, -0.5F, 0.0F, 4, 1, 5, 0.0F);
+            this.setRotateAngle(WingFoldedRight, 0.0F, 0.0F, 1.5707963267948966F);
+            this.Tail1L = new ModelRenderer(this, 16, 6);
+            this.Tail1L.setPos(0.3F, -0.3F, 1.5F);
+            this.Tail1L.addBox(-1.0F, -1.0F, -0.5F, 2, 2, 2, 0.0F);
+            this.setRotateAngle(Tail1L, 0.3097959422289935F, 0.0F, 0.0F);
+            this.Body = new ModelRenderer(this, 0, 0);
+            this.Body.setPos(0.0F, 20.5F, 0.0F);
+            this.Body.addBox(-2.0F, -2.0F, -2.5F, 4, 5, 4, 0.0F);
+            this.setRotateAngle(Body, -0.27314402793711257F, 0.0F, 0.0F);
+            this.BeakSideLeft_1 = new ModelRenderer(this, 6, 28);
+            this.BeakSideLeft_1.mirror = true;
+            this.BeakSideLeft_1.setPos(-0.7F, 0.1F, -0.1F);
+            this.BeakSideLeft_1.addBox(0.0F, 0.0F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(BeakSideLeft_1, 0.0F, -0.045553093477052F, 0.0F);
+            this.ThighLeft = new ModelRenderer(this, 15, 22);
+            this.ThighLeft.setPos(1.2F, 1.4F, -0.7F);
+            this.ThighLeft.addBox(-1.0F, 0.0F, -1.0F, 2, 2, 2, 0.0F);
+            this.setRotateAngle(ThighLeft, 0.6373942428283291F, 0.0F, 0.0F);
+            this.Head = new ModelRenderer(this, 0, 22);
+            this.Head.setPos(0.0F, -2.3F, 1.3F);
+            this.Head.addBox(-1.5F, -1.5F, -1.5F, 3, 3, 3, 0.0F);
+            this.setRotateAngle(Head, -0.17872171540421936F, 0.0F, 0.0F);
+            this.TailCenter.addChild(this.TailCenterTop);
+            this.Tail1L_1.addChild(this.Tail2L);
+            this.Tail3L.addChild(this.Tail4L);
+            this.Chest.addChild(this.Neck);
+            this.Tail2R.addChild(this.Tail3L_1);
+            this.Toe1R.addChild(this.Toe3R);
+            this.Head.addChild(this.BeakTop);
+            this.Body.addChild(this.ThighRight);
+            this.Toe1R.addChild(this.Toe2R);
+            this.Body.addChild(this.WingFoldedLeft);
+            this.Tail1L.addChild(this.Tail1R);
+            this.ThighRight.addChild(this.LegRight);
+            this.BeakTop.addChild(this.Beak2);
+            this.Tail3L_1.addChild(this.Tail4R);
+            this.Toe1L.addChild(this.Toe3L);
+            this.Tail1R_1.addChild(this.Tail2R);
+            this.BeakTop.addChild(this.BeakSideLeft);
+            this.Toe1L.addChild(this.Toe2L);
+            this.ThighLeft.addChild(this.LegLeft);
+            this.LegRight.addChild(this.Toe1R);
+            this.BeakTop.addChild(this.Mouth);
+            this.Tail1L.addChild(this.TailCenter);
+            this.TailCenter.addChild(this.Tail1L_1);
+            this.TailCenter.addChild(this.Tail1R_1);
+            this.Tail2L.addChild(this.Tail3L);
+            this.Body.addChild(this.TailBase);
+            this.WingFoldedRight.addChild(this.WingTipRight);
+            this.LegLeft.addChild(this.Toe1L);
+            this.WingFoldedLeft.addChild(this.WingTipLeft);
+            this.Body.addChild(this.Chest);
+            this.Body.addChild(this.WingFoldedRight);
+            this.TailBase.addChild(this.Tail1L);
+            this.BeakTop.addChild(this.BeakSideLeft_1);
+            this.Body.addChild(this.ThighLeft);
+            this.Neck.addChild(this.Head);
+            this.saveBase();
+        }
+
+        @Override
+        public void setupAnim(MohoEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+        }
+
+        @Override
+        public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            this.loadBase();
+        }
+
+        @Override
+        public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            this.loadBase();
+        }
+    }
+
+    public static class Child extends MohoModel {
+        public ModelRenderer Tail;
+        public ModelRenderer WingLeft;
+        public ModelRenderer WingRight;
+        public ModelRenderer BeakBottom;
+        public ModelRenderer FootLeft;
+        public ModelRenderer FootRight;
+        
+        public Child() {
+            this.texWidth = 32;
+            this.texHeight = 32;
+            this.WingLeft = new ModelRenderer(this, 0, 24);
+            this.WingLeft.setPos(2.0F, -1.5F, -1.7F);
+            this.WingLeft.addBox(-0.5F, 0.0F, 0.0F, 1, 2, 3, 0.0F);
+            this.FootRight = new ModelRenderer(this, 0, 0);
+            this.FootRight.mirror = true;
+            this.FootRight.setPos(-0.2F, -1.0F, -3.0F);
+            this.FootRight.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(FootRight, 0.36425021489121656F, 0.0F, 0.0F);
+            this.ThighLeft = new ModelRenderer(this, 20, 0);
+            this.ThighLeft.setPos(0.3F, 0.0F, 0.0F);
+            this.ThighLeft.addBox(0.0F, -0.9F, -1.0F, 2, 3, 2, 0.0F);
+            this.setRotateAngle(ThighLeft, 0.27314402793711257F, 0.0F, 0.0F);
+            this.BeakBottom = new ModelRenderer(this, 9, 8);
+            this.BeakBottom.setPos(0.0F, 1.7F, 0.1F);
+            this.BeakBottom.addBox(-0.5F, 0.0F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(BeakBottom, -1.0927506446736497F, 0.0F, 0.0F);
+            this.Tail = new ModelRenderer(this, 12, 0);
+            this.Tail.setPos(0.0F, 0.0F, 2.0F);
+            this.Tail.addBox(-1.5F, -1.5F, -0.3F, 3, 3, 1, 0.0F);
+            this.setRotateAngle(Tail, 0.136659280431156F, 0.0F, 0.0F);
+            this.FootLeft = new ModelRenderer(this, 0, 0);
+            this.FootLeft.setPos(0.2F, -1.0F, -3.0F);
+            this.FootLeft.addBox(-0.5F, 0.0F, -1.0F, 1, 1, 1, 0.0F);
+            this.setRotateAngle(FootLeft, 0.36425021489121656F, 0.0F, 0.0F);
+            this.LegLeft = new ModelRenderer(this, 8, 13);
+            this.LegLeft.setPos(1.4F, 2.5F, 0.7F);
+            this.LegLeft.addBox(-0.5F, -1.0F, -3.0F, 1, 1, 3, 0.0F);
+            this.setRotateAngle(LegLeft, -0.045553093477052F, 0.0F, 0.0F);
+            this.Chest = new ModelRenderer(this, 0, 8);
+            this.Chest.setPos(0.0F, -0.2F, -2.0F);
+            this.Chest.addBox(-1.5F, -1.0F, -1.5F, 3, 2, 3, 0.0F);
+            this.setRotateAngle(Chest, 0.6829473363053812F, 0.0F, 0.0F);
+            this.Head = new ModelRenderer(this, 0, 18);
+            this.Head.setPos(0.0F, -2.0F, 0.0F);
+            this.Head.addBox(-1.5F, -1.5F, -1.5F, 3, 3, 3, 0.0F);
+            this.setRotateAngle(Head, 0.045553093477052F, 0.0F, 0.0F);
+            this.LegRight = new ModelRenderer(this, 8, 13);
+            this.LegRight.mirror = true;
+            this.LegRight.setPos(-1.4F, 2.5F, 0.7F);
+            this.LegRight.addBox(-0.5F, -1.0F, -3.0F, 1, 1, 3, 0.0F);
+            this.setRotateAngle(LegRight, -0.045553093477052F, 0.0F, 0.0F);
+            this.BeakTop = new ModelRenderer(this, 9, 8);
+            this.BeakTop.setPos(0.0F, -0.7F, -1.5F);
+            this.BeakTop.addBox(-0.5F, 0.0F, -1.5F, 1, 1, 2, 0.0F);
+            this.setRotateAngle(BeakTop, 0.6373942428283291F, 0.0F, 0.0F);
+            this.Body = new ModelRenderer(this, 0, 0);
+            this.Body.setPos(0.0F, 21.9F, 0.0F);
+            this.Body.addBox(-2.0F, -2.0F, -2.0F, 4, 4, 4, 0.0F);
+            this.setRotateAngle(Body, -0.22759093446006054F, 0.0F, 0.0F);
+            this.ThighRight = new ModelRenderer(this, 20, 0);
+            this.ThighRight.mirror = true;
+            this.ThighRight.setPos(-0.3F, 0.0F, 0.0F);
+            this.ThighRight.addBox(-2.0F, -0.9F, -1.0F, 2, 3, 2, 0.0F);
+            this.setRotateAngle(ThighRight, 0.27314402793711257F, 0.0F, 0.0F);
+            this.Neck = new ModelRenderer(this, 0, 13);
+            this.Neck.setPos(0.0F, -1.0F, 0.0F);
+            this.Neck.addBox(-1.0F, -2.0F, -1.0F, 2, 3, 2, 0.0F);
+            this.setRotateAngle(Neck, -0.5009094953223726F, 0.0F, 0.0F);
+            this.WingRight = new ModelRenderer(this, 0, 24);
+            this.WingRight.mirror = true;
+            this.WingRight.setPos(-2.0F, -1.5F, -1.7F);
+            this.WingRight.addBox(-0.5F, 0.0F, 0.0F, 1, 2, 3, 0.0F);
+            this.Body.addChild(this.WingLeft);
+            this.LegRight.addChild(this.FootRight);
+            this.Body.addChild(this.ThighLeft);
+            this.BeakTop.addChild(this.BeakBottom);
+            this.Body.addChild(this.Tail);
+            this.LegLeft.addChild(this.FootLeft);
+            this.ThighLeft.addChild(this.LegLeft);
+            this.Body.addChild(this.Chest);
+            this.Neck.addChild(this.Head);
+            this.ThighRight.addChild(this.LegRight);
+            this.Head.addChild(this.BeakTop);
+            this.Body.addChild(this.ThighRight);
+            this.Chest.addChild(this.Neck);
+            this.Body.addChild(this.WingRight);
+            this.saveBase();
+        }
+
+        @Override
+        public void setupAnim(MohoEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+        }
+
+        @Override
+        public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            this.loadBase();
+        }
+
+        @Override
+        public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            this.loadBase();
+        }
+    }
+}
