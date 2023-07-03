@@ -12,20 +12,17 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 public class BudgerigarRenderer extends ZawaMobRenderer<BudgerigarEntity, BudgerigarModel> {
     private final BudgerigarModel adultModel;
     private final BudgerigarModel flyingModel;
-    private final BudgerigarModel babyModel;
 
     public BudgerigarRenderer(EntityRendererManager rendererManager) {
         super(rendererManager, new BudgerigarModel.Adult(), 1.0F); // TODO
         adultModel = model;
         flyingModel = new BudgerigarModel.Flying();
-        babyModel = new BudgerigarModel.Child();
         // todo: male texture overlay
     }
 
     @Override
     public void render(BudgerigarEntity entity, float entityYaw, float partialTicks, MatrixStack matrixStack, IRenderTypeBuffer buffer, int packedLight) {
-        if (entity.isBaby()) model = babyModel;
-        else model = entity.isFlying() ? flyingModel : adultModel;
+        model = entity.isFlying() ? flyingModel : adultModel;
         super.render(entity, entityYaw, partialTicks, matrixStack, buffer, packedLight);
     }
 

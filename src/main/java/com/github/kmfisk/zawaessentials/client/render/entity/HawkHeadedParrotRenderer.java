@@ -39,7 +39,7 @@ public class HawkHeadedParrotRenderer extends ZawaMobRenderer<HawkHeadedParrotEn
         int variantCount = entity.getTotalVariants();
         adultTextures = new ResourceLocation[variantCount];
         for (int i = 0; i < variantCount; i++)
-            adultTextures[i] = new ResourceLocation(ZawaEssentials.MOD_ID, "textures/entity/hawk_headed_parrot/hawkhead_" + (i + 1) + ".png");
+            adultTextures[i] = new ResourceLocation(ZawaEssentials.MOD_ID, "textures/entity/hawk_headed_parrot/hawk_headed_parrot_" + (i + 1) + ".png");
     }
 
     @Override
@@ -47,6 +47,6 @@ public class HawkHeadedParrotRenderer extends ZawaMobRenderer<HawkHeadedParrotEn
         int variantCount = entity.getTotalVariants();
         babyTextures = new ResourceLocation[variantCount];
         for (int i = 0; i < variantCount; i++)
-            babyTextures[i] = new ResourceLocation(ZawaEssentials.MOD_ID, "textures/entity/hawk_headed_parrot/hawkhead_" + (i + 1) + ".png");
+            babyTextures[i] = new ResourceLocation(ZawaEssentials.MOD_ID, "textures/entity/hawk_headed_parrot/hawk_headed_parrot_baby_" + (i + 1) + ".png");
     }
 }

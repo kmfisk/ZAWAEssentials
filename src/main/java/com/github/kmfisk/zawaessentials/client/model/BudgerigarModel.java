@@ -56,7 +56,7 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
         public ModelRenderer WingTip3R;
         public ModelRenderer WingTip4R;
         public ModelRenderer WingTip4R_1;
-        
+
         public Flying() {
             this.texWidth = 64;
             this.texHeight = 64;
@@ -389,28 +389,6 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
             this.Tail.addChild(this.TailFeatherL1);
             this.TailFeatherR1.addChild(this.TailFeatherL2_1);
             this.Head.addChild(this.Forehead);
-            this.saveBase();
-        }
-
-        @Override
-        public void setupAnim(BudgerigarEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-        }
-
-        @Override
-        public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            this.loadBase();
-        }
-
-        @Override
-        public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            this.loadBase();
-        }
-    }
-
-    public static class Child extends BudgerigarModel {
-        public Child() {
-            // TODO: Insert child model
             this.saveBase();
         }
 

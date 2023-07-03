@@ -44,6 +44,8 @@ public class CongoGrayParrotRenderer extends ZawaMobRenderer<CongoGrayParrotEnti
 
     @Override
     public void setupBabyTextures(CongoGrayParrotEntity entity) {
+        //all wild-type babies for single-species birds use the same baby (baby_1)
+        //so, for example, gray 1-3 use baby 1
         int variantCount = entity.getTotalVariants();
         babyTextures = new ResourceLocation[variantCount];
         for (int i = 0; i < variantCount; i++)
