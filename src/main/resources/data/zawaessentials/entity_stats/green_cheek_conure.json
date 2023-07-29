@@ -25,5 +25,11 @@
     ]
   },
   "variant_count": 12,
-  "captive_variants": 5
+  "captive_variants": [
+    "turquoise",
+    "pineapple",
+    "yellow_sided",
+    "mint",
+    "moon_cheek"
+  ]
 }

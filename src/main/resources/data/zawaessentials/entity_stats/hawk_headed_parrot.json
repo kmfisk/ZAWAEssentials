@@ -25,5 +25,7 @@
     ]
   },
   "variant_count": 4,
-  "captive_variants": 1
+  "captive_variants": [
+    "blue"
+  ]
 }

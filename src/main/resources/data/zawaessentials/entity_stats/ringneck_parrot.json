@@ -25,5 +25,11 @@
     ]
   },
   "variant_count": 9,
-  "captive_variants": 5
+  "captive_variants": [
+    "blue",
+    "violet",
+    "lutino",
+    "white",
+    "gray"
+  ]
 }

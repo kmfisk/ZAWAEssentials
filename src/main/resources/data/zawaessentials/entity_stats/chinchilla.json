@@ -25,5 +25,17 @@
     ]
   },
   "variant_count": 14,
-  "captive_variants": 11
+  "captive_variants": [
+    "mosaic",
+    "chocolate",
+    "honey",
+    "beige",
+    "brown_velvet",
+    "black_velvet",
+    "ebony",
+    "blue_diamond",
+    "white_face",
+    "wilson_white",
+    "albino"
+  ]
 }

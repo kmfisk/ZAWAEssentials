@@ -25,5 +25,11 @@
     ]
   },
   "variant_count": 8,
-  "captive_variants": 5
+  "captive_variants": [
+    "blue",
+    "turquoise",
+    "gray",
+    "yellow",
+    "white"
+  ]
 }

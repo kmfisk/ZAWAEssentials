@@ -23,6 +23,8 @@
       "zawa:beef_ice_treat"
     ]
   },
-  "variant_count": 6,
-  "captive_variants": 1
+  "variant_count": 5,
+  "captive_variants": [
+    "graffiti"
+  ]
 }

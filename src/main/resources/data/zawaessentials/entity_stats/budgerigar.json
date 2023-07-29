@@ -25,5 +25,17 @@
     ]
   },
   "variant_count": 14,
-  "captive_variants": 11
+  "captive_variants": [
+    "blue",
+    "turquoise",
+    "light_blue",
+    "gray",
+    "violet",
+    "yellow",
+    "pied_green",
+    "pied_blue",
+    "white",
+    "albino",
+    "gynandro"
+  ]
 }

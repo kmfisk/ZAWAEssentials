@@ -25,5 +25,13 @@
     ]
   },
   "variant_count": 10,
-  "captive_variants": 7
+  "captive_variants": [
+    "pied",
+    "yellow_lutino",
+    "lutino",
+    "white_face",
+    "white_face_pied",
+    "white",
+    "albino"
+  ]
 }

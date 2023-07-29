@@ -6,13 +6,15 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 
 import javax.annotation.Nullable;
 
-public class EclectusEntity extends ZawaFlyingEntity {
+public class EclectusEntity extends ZawaFlyingEntity implements SpeciesVariantsEntity {
     public EclectusEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
         super(type, world);
     }
@@ -45,5 +47,10 @@ public class EclectusEntity extends ZawaFlyingEntity {
     @Override
     public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
         return ZEEntities.ECLECTUS.get().create(world);
+    }
+
+    @Override
+    public int getVariantByBiome(IWorld iWorld) {
+        return random.nextInt(getWildVariants());
     }
 }

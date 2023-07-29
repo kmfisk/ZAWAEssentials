@@ -25,5 +25,8 @@
     ]
   },
   "variant_count": 6,
-  "captive_variants": 2
+  "captive_variants": [
+    "pied",
+    "blue"
+  ]
 }
