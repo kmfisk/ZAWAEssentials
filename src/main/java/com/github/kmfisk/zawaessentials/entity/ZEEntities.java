@@ -19,15 +19,7 @@ import org.zawamod.zawa.world.entity.animal.ZawaEntities;
 public class ZEEntities {
     public static final DeferredRegister<EntityType<?>> REGISTRAR = DeferredRegister.create(ForgeRegistries.ENTITIES, ZawaEssentials.MOD_ID);
 
-    // todo: babies, hitboxes, scaling
-
-    public static final RegistryObject<EntityType<AmazonParrotEntity>> AMAZON_PARROT =
-            new Builder<>(AmazonParrotEntity::new, EntityClassification.CREATURE)
-                    .attributes(AmazonParrotEntity::registerAttributes)
-                    .renderer(() -> AmazonParrotRenderer::new)
-                    .spawn(ZawaSpawnCategory.DEEP_RAINFOREST, 5, 1, 2)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
-                    .build(REGISTRAR, "amazon_parrot");
+    // todo: hitboxes, scaling
 
     public static final RegistryObject<EntityType<AustralianRingneckParrotEntity>> AUSTRALIAN_RINGNECK_PARROT =
             new Builder<>(AustralianRingneckParrotEntity::new, EntityClassification.CREATURE)
