@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
 import org.zawamod.zawa.client.model.ZawaModelRenderer;
 
@@ -307,6 +308,12 @@ public abstract class ParrotBaseModel<E extends Entity> extends ZawaBaseModel<E>
         @Override
         public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
+            this.loadBase();
+            float speed = 1.0f;
+            float degree = 1.0f;
+            this.Tail.xRot = MathHelper.cos((limbSwing * speed * 0.1F) + (float) Math.PI) * (degree * 0.05F) * limbSwingAmount * 0.5F + 0.35F;
+            this.Head.xRot = MathHelper.cos(2.0F + (limbSwing * speed * 0.1F) + (float) Math.PI) * (degree * 0.08F) * limbSwingAmount * 0.5F + -0.05F;
+
         }
 
         @Override
