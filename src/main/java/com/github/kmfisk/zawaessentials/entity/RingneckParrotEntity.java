@@ -27,7 +27,7 @@ public class RingneckParrotEntity extends ZawaFlyingEntity implements SpeciesVar
 
     @Override
     protected void registerGoals() {
-//        super.registerGoals();
+        super.registerGoals();
         // TODO: temperament goals
     }
 
