@@ -1,19 +1,22 @@
 package com.github.kmfisk.zawaessentials.entity;
 
+import com.github.kmfisk.zawaessentials.item.ZEItems;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaBaseEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaLandEntity;
 
 import javax.annotation.Nullable;
 
-public class GreaterPrairieChickenEntity extends ZawaLandEntity {
+public class GreaterPrairieChickenEntity extends ZawaLandEntity implements OviparousEntity {
     public GreaterPrairieChickenEntity(EntityType<? extends ZawaBaseEntity> type, World world) {
         super(type, world);
     }
@@ -46,5 +49,10 @@ public class GreaterPrairieChickenEntity extends ZawaLandEntity {
     @Override
     public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
         return ZEEntities.GREATER_PRAIRIE_CHICKEN.get().create(world);
+    }
+
+    @Override
+    public ItemStack getBreedEggItem() {
+        return ZEItems.GREATER_PRAIRIE_CHICKEN_EGG.get().getDefaultInstance();
     }
 }
