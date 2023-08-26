@@ -2,6 +2,7 @@ package com.github.kmfisk.zawaessentials.client.render.entity;
 
 import com.github.kmfisk.zawaessentials.client.model.BudgerigarModel;
 import com.github.kmfisk.zawaessentials.entity.BudgerigarEntity;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
@@ -14,5 +15,10 @@ public class BudgerigarRenderer extends ZawaMobRenderer<BudgerigarEntity, Budger
     @Override
     protected boolean hasBabyVariants(BudgerigarEntity entity) {
         return false;
+    }
+
+    @Override
+    protected void scale(BudgerigarEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        super.scale(entity, matrixStack, partialTickTime);
     }
 }
