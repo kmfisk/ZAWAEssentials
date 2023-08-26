@@ -24,7 +24,7 @@ public class ManedWolfEntity extends ZawaLandEntity {
 
     @Override
     protected void registerGoals() {
-        super.registerGoals();
+//        super.registerGoals();
         // TODO: temperament goals
     }
 
