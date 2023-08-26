@@ -341,6 +341,20 @@ public abstract class GreaterPrairieChickenModel extends ZawaBaseModel<GreaterPr
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
+            float speed = 1.0f;
+            float degree = 1.0f;
+
+            if (isSwimming) {
+                limbSwing = (float) entity.tickCount;
+                limbSwingAmount = 0.3F;
+            }
+
+            if (entity.isSprinting() && !isSwimming) {
+
+
+            } else {
+
+            }
         }
     }
 
