@@ -216,6 +216,11 @@ public abstract class ManedWolfModel<E extends Entity> extends ZawaBaseModel<E> 
         }
 
         @Override
+        public void setupAnim(E entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+        }
+
+        @Override
         public void playIdleAnimation(Entity entity, float v, float v1, float v2, float v3, float v4) {
             this.loadBase();
         }
@@ -377,6 +382,11 @@ public abstract class ManedWolfModel<E extends Entity> extends ZawaBaseModel<E> 
             this.Chest.addChild(this.Body);
             this.Hips.addChild(this.ThighRight);
             this.saveBase();
+        }
+
+        @Override
+        public void setupAnim(E entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
         }
 
         @Override
