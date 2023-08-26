@@ -8,19 +8,20 @@ import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
-import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
+import org.zawamod.zawa.world.entity.animal.ZawaBaseEntity;
+import org.zawamod.zawa.world.entity.animal.ZawaLandEntity;
 
 import javax.annotation.Nullable;
 
-public class GreaterPrairieChickenEntity extends ZawaFlyingEntity {
-    public GreaterPrairieChickenEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
+public class GreaterPrairieChickenEntity extends ZawaLandEntity {
+    public GreaterPrairieChickenEntity(EntityType<? extends ZawaBaseEntity> type, World world) {
         super(type, world);
     }
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
         // medium:  .add(Attributes.FLYING_SPEED, 0.60F).add(Attributes.MOVEMENT_SPEED, 0.225F)
         // fast:    .add(Attributes.FLYING_SPEED, 1.2F).add(Attributes.MOVEMENT_SPEED, 0.3F)
-        return createMobAttributes().add(Attributes.FLYING_SPEED, 1.2F).add(Attributes.MOVEMENT_SPEED, 0.3F).add(Attributes.MAX_HEALTH, 10.0).add(Attributes.ATTACK_DAMAGE, 1.0);
+        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.3F).add(Attributes.MAX_HEALTH, 10.0).add(Attributes.ATTACK_DAMAGE, 1.0);
     }
 
     @Override
