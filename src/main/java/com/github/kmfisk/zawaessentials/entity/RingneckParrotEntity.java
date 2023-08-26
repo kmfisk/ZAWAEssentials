@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.IWorld;
@@ -43,7 +44,7 @@ public class RingneckParrotEntity extends ZawaFlyingEntity implements SpeciesVar
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        // TODO: temperament goals
+        this.goalSelector.addGoal(1, new PanicGoal(this, 1.33D));
     }
 
     @Override

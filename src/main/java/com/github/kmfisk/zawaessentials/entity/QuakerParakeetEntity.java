@@ -7,10 +7,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.zawamod.zawa.world.entity.OviparousEntity;
+import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 
 import javax.annotation.Nullable;
@@ -29,7 +31,8 @@ public class QuakerParakeetEntity extends ZawaFlyingEntity implements OviparousE
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        // TODO: temperament goals
+        this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 1.5D, 1.33D, true));
+        this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
     }
 
     @Override
