@@ -14,10 +14,7 @@ public class ChinchillaRenderer extends ZawaMobRenderer<ChinchillaEntity, Chinch
 
     @Override
     protected void scale(ChinchillaEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        super.scale(entity, matrixStack, partialTickTime);
-        float scale = entity.isBaby() ? 0.8F : 0.8F;
-        matrixStack.scale(scale, scale, scale);
-
+        matrixStack.scale(0.8F, 0.8F, 0.8F);
         super.scale(entity, matrixStack, partialTickTime);
     }
 
