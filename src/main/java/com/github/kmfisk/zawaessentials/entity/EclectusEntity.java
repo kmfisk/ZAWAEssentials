@@ -31,6 +31,11 @@ public class EclectusEntity extends ZawaFlyingEntity implements SpeciesVariantsE
     }
 
     @Override
+    public float getMaleRatio() {
+        return 0.67F;
+    }
+
+    @Override
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 1.5D, 1.33D, true));
