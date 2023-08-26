@@ -29,7 +29,7 @@ public class GreaterPrairieChickenEntity extends ZawaLandEntity implements Ovipa
 
     @Override
     protected void registerGoals() {
-//        super.registerGoals();
+        super.registerGoals();
         // TODO: temperament goals
     }
 

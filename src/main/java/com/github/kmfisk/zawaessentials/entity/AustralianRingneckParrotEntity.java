@@ -30,7 +30,7 @@ public class AustralianRingneckParrotEntity extends ZawaFlyingEntity implements 
 
     @Override
     protected void registerGoals() {
-        super.registerGoals();
+//        super.registerGoals();
         // TODO: temperament goals
     }
 

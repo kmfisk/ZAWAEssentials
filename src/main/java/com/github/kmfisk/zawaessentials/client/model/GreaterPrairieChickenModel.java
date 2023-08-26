@@ -486,7 +486,7 @@ public abstract class GreaterPrairieChickenModel extends ZawaBaseModel<GreaterPr
 
         @Override
         public void setupAnim(GreaterPrairieChickenEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            super.setupAnim(entity, entity.tickCount, 0.3F, ageInTicks, netHeadYaw, headPitch);
+            super.setupAnim(entity, limbSwing,limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
         }
 
         @Override

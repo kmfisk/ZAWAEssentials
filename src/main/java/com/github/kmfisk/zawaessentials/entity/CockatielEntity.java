@@ -42,6 +42,7 @@ public class CockatielEntity extends ZawaFlyingEntity implements OviparousEntity
     public float getScale() {
         // TODO
         return super.getScale();
+
     }
 
     @Nullable

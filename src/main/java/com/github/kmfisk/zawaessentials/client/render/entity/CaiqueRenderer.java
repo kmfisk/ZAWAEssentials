@@ -14,5 +14,9 @@ public class CaiqueRenderer extends ZawaMobRenderer<CaiqueEntity, HawkHeadedParr
     @Override
     protected void scale(CaiqueEntity entity, MatrixStack matrixStack, float partialTickTime) {
         super.scale(entity, matrixStack, partialTickTime);
+        float scale = entity.isBaby() ? 0.6F : 0.75F;
+        matrixStack.scale(scale, scale, scale);
+
+        super.scale(entity, matrixStack, partialTickTime);
     }
 }
