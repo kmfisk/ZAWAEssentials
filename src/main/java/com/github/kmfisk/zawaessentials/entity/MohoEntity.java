@@ -7,6 +7,9 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.entity.ai.goal.PanicGoal;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.IWorld;
@@ -43,7 +46,8 @@ public class MohoEntity extends ZawaFlyingEntity implements SpeciesVariantsEntit
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        // TODO: temperament goals
+        this.goalSelector.addGoal(1, new PanicGoal(this, 1.33D));
+        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PlayerEntity.class, 16.0F, 0.8D, 1.33D, (entity) -> AVOID_PLAYERS.test(entity) && !this.isTame()));
     }
 
     @Override
