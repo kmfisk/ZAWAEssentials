@@ -8,16 +8,30 @@ import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Tuple;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import org.zawamod.zawa.config.ZawaSpawnCategory;
 import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ConureEntity extends ZawaFlyingEntity implements SpeciesVariantsEntity, OviparousEntity {
+    public static final List<Tuple<String, ZawaSpawnCategory>> VARIANT_SPAWNS = new ArrayList<>(Arrays.asList(
+            new Tuple<>("sun", ZawaSpawnCategory.TROPICAL_ALPINE),
+            new Tuple<>("jenday", ZawaSpawnCategory.WET_RAINFOREST),
+            new Tuple<>("nanday", ZawaSpawnCategory.TEMPERATE_FOREST),
+            new Tuple<>("mitred", ZawaSpawnCategory.TEMPERATE_ALPINE),
+            new Tuple<>("golden", ZawaSpawnCategory.DEEP_RAINFOREST),
+            new Tuple<>("blue_crowned", ZawaSpawnCategory.DRY_FOREST)
+    ));
+
     public ConureEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
         super(type, world);
     }
@@ -59,6 +73,20 @@ public class ConureEntity extends ZawaFlyingEntity implements SpeciesVariantsEnt
 
     @Override
     public int getVariantByBiome(IWorld iWorld) {
+        String biome = level.getBiome(this.blockPosition()).getRegistryName().toString();
+        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
+            return 0;
+        if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
+            return 1;
+        if (ZawaSpawnCategory.TEMPERATE_FOREST.getBiomes().contains(biome))
+            return 2;
+        if (ZawaSpawnCategory.TEMPERATE_ALPINE.getBiomes().contains(biome))
+            return 3;
+        if (ZawaSpawnCategory.DEEP_RAINFOREST.getBiomes().contains(biome))
+            return 4;
+        if (ZawaSpawnCategory.DRY_FOREST.getBiomes().contains(biome))
+            return 5;
+
         return random.nextInt(getWildVariants());
     }
 }

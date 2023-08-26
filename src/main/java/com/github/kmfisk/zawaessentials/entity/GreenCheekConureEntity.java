@@ -8,16 +8,28 @@ import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Tuple;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import org.zawamod.zawa.config.ZawaSpawnCategory;
 import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class GreenCheekConureEntity extends ZawaFlyingEntity implements SpeciesVariantsEntity, OviparousEntity {
+    public static final List<Tuple<String, ZawaSpawnCategory>> VARIANT_SPAWNS = new ArrayList<>(Arrays.asList(
+            new Tuple<>("green_cheek", ZawaSpawnCategory.WET_FOREST),
+            new Tuple<>("painted", ZawaSpawnCategory.DRY_GRASSLAND),
+            new Tuple<>("crimson_bellied", ZawaSpawnCategory.DRY_RAINFOREST),
+            new Tuple<>("fiery_shouldered", ZawaSpawnCategory.WET_RAINFOREST)
+    ));
+
     public GreenCheekConureEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
         super(type, world);
     }
@@ -59,6 +71,16 @@ public class GreenCheekConureEntity extends ZawaFlyingEntity implements SpeciesV
 
     @Override
     public int getVariantByBiome(IWorld iWorld) {
+        String biome = level.getBiome(this.blockPosition()).getRegistryName().toString();
+        if (ZawaSpawnCategory.WET_FOREST.getBiomes().contains(biome))
+            return 0;
+        if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
+            return 1;
+        if (ZawaSpawnCategory.DRY_RAINFOREST.getBiomes().contains(biome))
+            return 2;
+        if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
+            return 3;
+
         return random.nextInt(getWildVariants());
     }
 }

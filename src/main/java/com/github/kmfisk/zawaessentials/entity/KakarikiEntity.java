@@ -8,16 +8,27 @@ import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Tuple;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import org.zawamod.zawa.config.ZawaSpawnCategory;
 import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class KakarikiEntity extends ZawaFlyingEntity implements SpeciesVariantsEntity, OviparousEntity {
+    public static final List<Tuple<String, ZawaSpawnCategory>> VARIANT_SPAWNS = new ArrayList<>(Arrays.asList(
+            new Tuple<>("red_fronted", ZawaSpawnCategory.COASTAL_TAIGA),
+            new Tuple<>("yellow_fronted", ZawaSpawnCategory.COLD_GRASSLAND),
+            new Tuple<>("antipodes_island", ZawaSpawnCategory.COASTAL_TUNDRA)
+    ));
+
     public KakarikiEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
         super(type, world);
     }
@@ -59,6 +70,14 @@ public class KakarikiEntity extends ZawaFlyingEntity implements SpeciesVariantsE
 
     @Override
     public int getVariantByBiome(IWorld iWorld) {
+        String biome = level.getBiome(this.blockPosition()).getRegistryName().toString();
+        if (ZawaSpawnCategory.COASTAL_TAIGA.getBiomes().contains(biome))
+            return 0;
+        if (ZawaSpawnCategory.COLD_GRASSLAND.getBiomes().contains(biome))
+            return 1;
+        if (ZawaSpawnCategory.COASTAL_TUNDRA.getBiomes().contains(biome))
+            return 2;
+
         return random.nextInt(getWildVariants());
     }
 }
