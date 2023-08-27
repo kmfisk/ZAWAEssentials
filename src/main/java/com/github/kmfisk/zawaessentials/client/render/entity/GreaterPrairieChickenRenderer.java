@@ -8,7 +8,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class GreaterPrairieChickenRenderer extends ZawaMobRenderer<GreaterPrairieChickenEntity, GreaterPrairieChickenModel> {
     public GreaterPrairieChickenRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new GreaterPrairieChickenModel.Adult(), new GreaterPrairieChickenModel.Child(), 0.75F); // TODO
+        super(rendererManager, new GreaterPrairieChickenModel.Adult(), new GreaterPrairieChickenModel.Child(), 0.3F); // TODO
+
     }
 
     @Override
@@ -18,6 +19,9 @@ public class GreaterPrairieChickenRenderer extends ZawaMobRenderer<GreaterPrairi
 
     @Override
     protected void scale(GreaterPrairieChickenEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale = entity.isBaby() ? 0.5F : 0.9F;
+        matrixStack.scale(scale, scale, scale);
+
         super.scale(entity, matrixStack, partialTickTime);
     }
 }

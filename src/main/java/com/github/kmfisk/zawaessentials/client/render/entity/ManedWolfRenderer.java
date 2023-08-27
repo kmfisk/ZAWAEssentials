@@ -14,6 +14,9 @@ public class ManedWolfRenderer extends ZawaMobRenderer<ManedWolfEntity, ManedWol
 
     @Override
     protected void scale(ManedWolfEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale = entity.isBaby() ? 0.75F : 0.95F;
+        matrixStack.scale(scale, scale, scale);
+
         super.scale(entity, matrixStack, partialTickTime);
     }
 
