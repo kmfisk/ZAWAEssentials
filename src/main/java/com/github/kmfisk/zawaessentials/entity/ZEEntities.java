@@ -27,7 +27,7 @@ public class ZEEntities {
                     .attributes(AustralianRingneckParrotEntity::registerAttributes)
                     .renderer(() -> AustralianRingneckParrotRenderer::new)
                     .spawns(2, 1, 2, ZawaSpawnCategory.DRY_RAINFOREST, ZawaSpawnCategory.DRY_GRASSLAND)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.7F, 0.7F).clientTrackingRange(10))
                     .build(REGISTRAR, "australian_ringneck_parrot");
 
     public static final RegistryObject<EntityType<BudgerigarEntity>> BUDGERIGAR =
@@ -35,7 +35,7 @@ public class ZEEntities {
                     .attributes(BudgerigarEntity::registerAttributes)
                     .renderer(() -> BudgerigarRenderer::new)
                     .spawn(ZawaSpawnCategory.DRY_GRASSLAND, 10, 3, 4)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.3F, 0.3F).clientTrackingRange(10))
                     .build(REGISTRAR, "budgerigar");
 
     public static final RegistryObject<EntityType<CaiqueEntity>> CAIQUE =
@@ -43,7 +43,7 @@ public class ZEEntities {
                     .attributes(CaiqueEntity::registerAttributes)
                     .renderer(() -> CaiqueRenderer::new)
                     .spawn(ZawaSpawnCategory.DEEP_RAINFOREST, 8, 1, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.7F, 0.7F).clientTrackingRange(10))
                     .build(REGISTRAR, "caique");
 
     public static final RegistryObject<EntityType<ChinchillaEntity>> CHINCHILLA =
@@ -51,7 +51,7 @@ public class ZEEntities {
                     .attributes(ChinchillaEntity::registerAttributes)
                     .renderer(() -> ChinchillaRenderer::new)
                     .spawn(ZawaSpawnCategory.TUNDRA_ALPINE, 5, 1, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.6F, 0.6F).clientTrackingRange(10))
                     .build(REGISTRAR, "chinchilla");
 
     public static final RegistryObject<EntityType<CockatielEntity>> COCKATIEL =
@@ -59,7 +59,7 @@ public class ZEEntities {
                     .attributes(CockatielEntity::registerAttributes)
                     .renderer(() -> CockatielRenderer::new)
                     .spawn(ZawaSpawnCategory.DRY_FOREST, 8, 2, 3)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.6F, 0.6F).clientTrackingRange(10))
                     .build(REGISTRAR, "cockatiel");
 
     public static final RegistryObject<EntityType<CongoGrayParrotEntity>> CONGO_GRAY_PARROT =
@@ -67,7 +67,7 @@ public class ZEEntities {
                     .attributes(CongoGrayParrotEntity::registerAttributes)
                     .renderer(() -> CongoGrayParrotRenderer::new)
                     .spawn(ZawaSpawnCategory.DEEP_RAINFOREST, 5, 1, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.7F, 0.7F).clientTrackingRange(10))
                     .build(REGISTRAR, "congo_gray_parrot");
 
     public static final RegistryObject<EntityType<ConureEntity>> CONURE =
@@ -75,7 +75,7 @@ public class ZEEntities {
                     .attributes(ConureEntity::registerAttributes)
                     .renderer(() -> ConureRenderer::new)
                     .spawnVariant(ConureEntity.VARIANT_SPAWNS, 8, 2, 3)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.6F, 0.6F).clientTrackingRange(10))
                     .build(REGISTRAR, "conure");
 
     public static final RegistryObject<EntityType<EclectusEntity>> ECLECTUS =
@@ -83,7 +83,7 @@ public class ZEEntities {
                     .attributes(EclectusEntity::registerAttributes)
                     .renderer(() -> EclectusRenderer::new)
                     .spawn(ZawaSpawnCategory.DEEP_RAINFOREST, 5, 1, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.7F, 0.7F).clientTrackingRange(10))
                     .build(REGISTRAR, "eclectus");
 
     public static final RegistryObject<EntityType<GreaterPrairieChickenEntity>> GREATER_PRAIRIE_CHICKEN =
@@ -91,7 +91,7 @@ public class ZEEntities {
                     .attributes(GreaterPrairieChickenEntity::registerAttributes)
                     .renderer(() -> GreaterPrairieChickenRenderer::new)
                     .spawn(ZawaSpawnCategory.DRY_GRASSLAND, 8, 3, 4)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.6F, 0.6F).clientTrackingRange(10))
                     .build(REGISTRAR, "greater_prairie_chicken");
 
     public static final RegistryObject<EntityType<GreenCheekConureEntity>> GREEN_CHEEK_CONURE =
@@ -99,7 +99,7 @@ public class ZEEntities {
                     .attributes(GreenCheekConureEntity::registerAttributes)
                     .renderer(() -> GreenCheekConureRenderer::new)
                     .spawnVariant(GreenCheekConureEntity.VARIANT_SPAWNS, 8, 1, 2)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.6F, 0.6F).clientTrackingRange(10))
                     .build(REGISTRAR, "green_cheek_conure");
 
     public static final RegistryObject<EntityType<HawkHeadedParrotEntity>> HAWK_HEADED_PARROT =
@@ -107,7 +107,7 @@ public class ZEEntities {
                     .attributes(HawkHeadedParrotEntity::registerAttributes)
                     .renderer(() -> HawkHeadedParrotRenderer::new)
                     .spawn(ZawaSpawnCategory.DEEP_RAINFOREST, 5, 0, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.7F, 0.7F).clientTrackingRange(10))
                     .build(REGISTRAR, "hawk_headed_parrot");
 
     public static final RegistryObject<EntityType<KakarikiEntity>> KAKARIKI =
@@ -115,7 +115,7 @@ public class ZEEntities {
                     .attributes(KakarikiEntity::registerAttributes)
                     .renderer(() -> KakarikiRenderer::new)
                     .spawnVariant(KakarikiEntity.VARIANT_SPAWNS, 8, 1, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.6F, 0.6F).clientTrackingRange(10))
                     .build(REGISTRAR, "kakariki");
 
     public static final RegistryObject<EntityType<KeaEntity>> KEA =
@@ -123,7 +123,7 @@ public class ZEEntities {
                     .attributes(KeaEntity::registerAttributes)
                     .renderer(() -> KeaRenderer::new)
                     .spawn(ZawaSpawnCategory.TUNDRA_ALPINE, 2, 1, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.8F, 0.8F).clientTrackingRange(10))
                     .build(REGISTRAR, "kea");
 
     public static final RegistryObject<EntityType<ManedWolfEntity>> MANED_WOLF =
@@ -131,7 +131,7 @@ public class ZEEntities {
                     .attributes(ManedWolfEntity::registerAttributes)
                     .renderer(() -> ManedWolfRenderer::new)
                     .spawn(ZawaSpawnCategory.DRY_GRASSLAND, 2, 1, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.9F, 1.3F).clientTrackingRange(10))
                     .build(REGISTRAR, "maned_wolf");
 
     public static final RegistryObject<EntityType<MohoEntity>> MOHO =
@@ -139,7 +139,7 @@ public class ZEEntities {
                     .attributes(MohoEntity::registerAttributes)
                     .renderer(() -> MohoRenderer::new)
                     .spawnVariant(MohoEntity.VARIANT_SPAWNS, 5, 0, 1)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.5F, 0.5F).clientTrackingRange(10))
                     .build(REGISTRAR, "moho");
 
     public static final RegistryObject<EntityType<PoicephalusParrotEntity>> POICEPHALUS_PARROT =
@@ -147,7 +147,7 @@ public class ZEEntities {
                     .attributes(PoicephalusParrotEntity::registerAttributes)
                     .renderer(() -> PoicephalusParrotRenderer::new)
                     .spawnVariant(PoicephalusParrotEntity.VARIANT_SPAWNS, 8, 2, 3)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.6F, 0.6F).clientTrackingRange(10))
                     .build(REGISTRAR, "poicephalus_parrot");
 
     public static final RegistryObject<EntityType<QuakerParakeetEntity>> QUAKER_PARAKEET =
@@ -155,7 +155,7 @@ public class ZEEntities {
                     .attributes(QuakerParakeetEntity::registerAttributes)
                     .renderer(() -> QuakerParakeetRenderer::new)
                     .spawn(ZawaSpawnCategory.DRY_RAINFOREST, 10, 2, 4)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.7F, 0.7F).clientTrackingRange(10))
                     .build(REGISTRAR, "quaker_parakeet");
 
     public static final RegistryObject<EntityType<RingneckParrotEntity>> RINGNECK_PARROT =
@@ -163,7 +163,7 @@ public class ZEEntities {
                     .attributes(RingneckParrotEntity::registerAttributes)
                     .renderer(() -> RingneckParrotRenderer::new)
                     .spawnVariant(RingneckParrotEntity.VARIANT_SPAWNS, 10, 3, 4)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.8F, 0.8F).clientTrackingRange(10))
                     .build(REGISTRAR, "ringneck_parrot");
 
     public static final RegistryObject<EntityType<RosellaEntity>> ROSELLA =
@@ -171,7 +171,7 @@ public class ZEEntities {
                     .attributes(RosellaEntity::registerAttributes)
                     .renderer(() -> RosellaRenderer::new)
                     .spawnVariant(RosellaEntity.VARIANT_SPAWNS, 8, 2, 3)
-                    .data(entityBuilder -> entityBuilder.sized(1.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.8F, 0.8F).clientTrackingRange(10))
                     .build(REGISTRAR, "rosella");
 
     public static void registerSpawnPlacements() {

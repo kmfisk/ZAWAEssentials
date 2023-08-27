@@ -20,7 +20,7 @@ public class BudgerigarRenderer extends ZawaMobRenderer<BudgerigarEntity, Budger
 
     @Override
     protected void scale(BudgerigarEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.55F : 0.6F;
+        float scale = entity.isBaby() ? 0.6F : 0.6F;
         matrixStack.scale(scale, scale, scale);
 
         super.scale(entity, matrixStack, partialTickTime);
