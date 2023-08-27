@@ -30,9 +30,9 @@ public class KeaEntity extends ZawaFlyingEntity implements OviparousEntity {
 
     @Override
     protected void registerGoals() {
-        super.registerGoals();
-        this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 1.5D, 1.33D, true));
-        this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
+//        super.registerGoals();
+//        this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 1.5D, 1.33D, true));
+//        this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
     }
 
     @Override
