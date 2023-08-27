@@ -512,7 +512,7 @@ public abstract class MohoModel extends ZawaBaseModel<MohoEntity> {
             this.setRotateAngle(ThighLeft, 0.6373942428283291F, 0.0F, 0.0F);
             this.Head = new ZawaModelRenderer(this, 0, 22);
             this.Head.setPos(0.0F, -2.3F, 1.3F);
-            this.Head.addBox(-1.5F, -1.5F, -1.5F, 3, 3, 3, 0.0F);
+            this.Head.addBox(-1.5F, -1.5F, -1.5F, 3, 3, 3, 0.01F);
             this.setRotateAngle(Head, -0.17872171540421936F, 0.0F, 0.0F);
             this.TailCenter.addChild(this.TailCenterTop);
             this.Tail1L_1.addChild(this.Tail2L);
@@ -554,7 +554,7 @@ public abstract class MohoModel extends ZawaBaseModel<MohoEntity> {
 
         @Override
         public void setupAnim(MohoEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            super.setupAnim(entity, entity.tickCount, 0.3F, ageInTicks, netHeadYaw, headPitch);
+            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             this.Neck.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.xRot = (headPitch / (180F / (float) Math.PI)) - 0.178F;
