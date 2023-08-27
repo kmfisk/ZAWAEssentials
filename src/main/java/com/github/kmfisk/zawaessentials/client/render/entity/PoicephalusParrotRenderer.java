@@ -18,6 +18,10 @@ public class PoicephalusParrotRenderer extends ZawaMobRenderer<PoicephalusParrot
 
     @Override
     protected void scale(PoicephalusParrotEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale;
+        if (entity.isBaby()) scale = 0.6F;
+        else scale = entity.getVariant() == 4 ? 1F : 0.75F;
+        matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }
 }

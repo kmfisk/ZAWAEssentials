@@ -13,6 +13,9 @@ public class HawkHeadedParrotRenderer extends ZawaMobRenderer<HawkHeadedParrotEn
 
     @Override
     protected void scale(HawkHeadedParrotEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale = entity.isBaby() ? 0.6F : 0.75F;
+        matrixStack.scale(scale, scale, scale);
+
         super.scale(entity, matrixStack, partialTickTime);
     }
 }

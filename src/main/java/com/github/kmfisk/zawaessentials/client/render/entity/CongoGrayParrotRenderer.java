@@ -13,6 +13,8 @@ public class CongoGrayParrotRenderer extends ZawaMobRenderer<CongoGrayParrotEnti
 
     @Override
     protected void scale(CongoGrayParrotEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale = entity.isBaby() ? 0.7F : 0.9F;
+        matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }
 }

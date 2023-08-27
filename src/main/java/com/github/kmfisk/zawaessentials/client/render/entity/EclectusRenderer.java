@@ -18,6 +18,8 @@ public class EclectusRenderer extends ZawaMobRenderer<EclectusEntity, HawkHeaded
 
     @Override
     protected void scale(EclectusEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        if (entity.isBaby()) matrixStack.scale(0.7F, 0.7F, 0.7F);
         super.scale(entity, matrixStack, partialTickTime);
+
     }
 }

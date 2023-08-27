@@ -13,6 +13,10 @@ public class ConureRenderer extends ZawaMobRenderer<ConureEntity, ParrotBaseMode
 
     @Override
     protected void scale(ConureEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale;
+        if (entity.isBaby()) scale = 0.6F;
+        else scale = entity.getVariant() == 5 ? 0.8F : 0.7F;
+        matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }
 }

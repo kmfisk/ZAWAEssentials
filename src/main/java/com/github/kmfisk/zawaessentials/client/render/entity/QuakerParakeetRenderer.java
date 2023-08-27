@@ -13,6 +13,9 @@ public class QuakerParakeetRenderer extends ZawaMobRenderer<QuakerParakeetEntity
 
     @Override
     protected void scale(QuakerParakeetEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale = entity.isBaby() ? 0.5F : 0.75F;
+        matrixStack.scale(scale, scale, scale);
+
         super.scale(entity, matrixStack, partialTickTime);
     }
 }

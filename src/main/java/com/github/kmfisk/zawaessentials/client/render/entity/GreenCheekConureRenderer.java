@@ -13,6 +13,8 @@ public class GreenCheekConureRenderer extends ZawaMobRenderer<GreenCheekConureEn
 
     @Override
     protected void scale(GreenCheekConureEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale = entity.isBaby() ? 0.5F : 0.65F;
+        matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }
 }

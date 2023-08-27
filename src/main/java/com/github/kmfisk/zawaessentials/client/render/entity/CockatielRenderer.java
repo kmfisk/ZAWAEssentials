@@ -23,6 +23,8 @@ public class CockatielRenderer extends ZawaMobRenderer<CockatielEntity, Cockatie
 
     @Override
     protected void scale(CockatielEntity entity, MatrixStack matrixStack, float partialTickTime) {
+        float scale = entity.isBaby() ? 0.5F : 0.65F;
+        matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }
 }
