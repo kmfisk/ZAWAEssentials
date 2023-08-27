@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
 import org.zawamod.zawa.client.model.ZawaModelRenderer;
 
@@ -497,7 +498,7 @@ public abstract class MohoModel extends ZawaBaseModel<MohoEntity> {
             this.Tail1L.addBox(-1.0F, -1.0F, -0.5F, 2, 2, 2, 0.0F);
             this.setRotateAngle(Tail1L, 0.3097959422289935F, 0.0F, 0.0F);
             this.Body = new ZawaModelRenderer(this, 0, 0);
-            this.Body.setPos(0.0F, 20.5F, 0.0F);
+            this.Body.setPos(0.0F, 18.5F, 0.0F);
             this.Body.addBox(-2.0F, -2.0F, -2.5F, 4, 5, 4, 0.0F);
             this.setRotateAngle(Body, -0.27314402793711257F, 0.0F, 0.0F);
             this.BeakSideLeft_1 = new ZawaModelRenderer(this, 6, 28);
@@ -553,7 +554,7 @@ public abstract class MohoModel extends ZawaBaseModel<MohoEntity> {
 
         @Override
         public void setupAnim(MohoEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+            super.setupAnim(entity, entity.tickCount, 0.3F, ageInTicks, netHeadYaw, headPitch);
             this.Neck.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.xRot = (headPitch / (180F / (float) Math.PI)) - 0.178F;
@@ -563,11 +564,31 @@ public abstract class MohoModel extends ZawaBaseModel<MohoEntity> {
         @Override
         public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
+            float speed = 1.0f;
+            float degree = 1.0f;
+            this.Neck.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.1F) * limbSwingAmount * (degree * 0.18F) * 0.5F - 0.40F;
+            this.Head.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.1F) * limbSwingAmount * (degree * 0.2F) * -0.5F - 0.45F;
+            this.TailBase.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.1F) * limbSwingAmount * (degree * 0.2F) * -0.5F - 0.409F;
         }
 
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
+            float speed = 1.5f;
+            float degree = 1.0f;
+            this.Neck.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * -0.3F) * 0.5F - 0.40F;
+            this.Head.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * 0.2F) * -0.5F - 0.45F;
+            this.Body.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * 0.2F) * -0.5F - 0.273F;
+            this.Body.y = MathHelper.cos(6.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * 4F) * -0.5F + 18.5F;
+            this.TailBase.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * -0.2F) * -0.5F - 0.409F;
+
+            this.ThighLeft.xRot = MathHelper.cos(7.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * 3.5F) * 0.5F + 0.774F;
+            this.LegLeft.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * 1.5F) * 0.5F - 0.819F;
+            this.Toe1L.xRot = MathHelper.cos(4.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * -1.5F) * 0.5F + 0.455F;
+            this.ThighRight.xRot = MathHelper.cos(7.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * 3.5F) * 0.5F + 0.774F;
+            this.LegRight.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * 1.5F) * 0.5F - 0.819F;
+            this.Toe1R.xRot = MathHelper.cos(4.0F + limbSwing * speed * 0.4F) * limbSwingAmount * (degree * -1.5F) * 0.5F + 0.455F;
+
         }
     }
 
