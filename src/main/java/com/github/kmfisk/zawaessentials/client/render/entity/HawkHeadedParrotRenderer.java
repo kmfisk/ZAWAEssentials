@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class HawkHeadedParrotRenderer extends ZawaMobRenderer<HawkHeadedParrotEntity, HawkHeadedParrotModel<HawkHeadedParrotEntity>> {
     public HawkHeadedParrotRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new HawkHeadedParrotModel.Adult<>(), new HawkHeadedParrotModel.Flying<>(), new HawkHeadedParrotModel.Child<>(), 1.0F); // TODO
+        super(rendererManager, new HawkHeadedParrotModel.Adult<>(), new HawkHeadedParrotModel.Flying<>(), new HawkHeadedParrotModel.Child<>(), 0.27F); // TODO
     }
 
     @Override

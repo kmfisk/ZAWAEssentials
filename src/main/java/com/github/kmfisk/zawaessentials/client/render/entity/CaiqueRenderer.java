@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class CaiqueRenderer extends ZawaMobRenderer<CaiqueEntity, HawkHeadedParrotModel<CaiqueEntity>> {
     public CaiqueRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new HawkHeadedParrotModel.Adult<>(), new HawkHeadedParrotModel.Flying<>(), new HawkHeadedParrotModel.Child<>(), 1.0F); // TODO
+        super(rendererManager, new HawkHeadedParrotModel.Adult<>(), new HawkHeadedParrotModel.Flying<>(), new HawkHeadedParrotModel.Child<>(), 0.3F); // TODO
     }
 
     @Override

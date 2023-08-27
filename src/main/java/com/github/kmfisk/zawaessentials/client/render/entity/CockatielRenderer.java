@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class CockatielRenderer extends ZawaMobRenderer<CockatielEntity, CockatielModel> {
     public CockatielRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new CockatielModel.Adult(), new CockatielModel.Flying(), new CockatielModel.Child(), 1.0F); // TODO
+        super(rendererManager, new CockatielModel.Adult(), new CockatielModel.Flying(), new CockatielModel.Child(), 0.25F); // TODO
     }
 
     @Override
