@@ -12,6 +12,11 @@ public class EclectusRenderer extends ZawaMobRenderer<EclectusEntity, HawkHeaded
     }
 
     @Override
+    protected boolean hasBabyVariants(EclectusEntity entity) {
+        return false;
+    }
+
+    @Override
     protected boolean isSexuallyDimorphic() {
         return true;
     }
