@@ -31,9 +31,9 @@ public class BudgerigarEntity extends ZawaFlyingEntity implements OviparousEntit
 
     @Override
     protected void registerGoals() {
-        super.registerGoals();
-        this.goalSelector.addGoal(1, new PanicGoal(this, 1.33D));
-        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PlayerEntity.class, 16.0F, 0.8D, 1.33D, (entity) -> AVOID_PLAYERS.test(entity) && !this.isTame()));
+//        super.registerGoals();
+//        this.goalSelector.addGoal(1, new PanicGoal(this, 1.33D));
+//        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, PlayerEntity.class, 16.0F, 0.8D, 1.33D, (entity) -> AVOID_PLAYERS.test(entity) && !this.isTame()));
     }
 
     @Override
