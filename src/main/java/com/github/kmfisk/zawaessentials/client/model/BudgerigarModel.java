@@ -75,7 +75,7 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
             this.FootRight = new ZawaModelRenderer(this, 7, 16);
             this.FootRight.mirror = true;
             this.FootRight.setPos(0.0F, 0.5F, -0.7F);
-            this.FootRight.addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, 0.0F, 0.0F, 0.0F);
+            this.FootRight.addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, 0.0F, 0.0F, -0.1F);
             this.setRotateAngle(FootRight, 0.8651597048872669F, 0.13665927909957545F, 0.0F);
             this.WingTip1L = new ZawaModelRenderer(this, 10, 20);
             this.WingTip1L.setPos(2.0F, 0.0F, 0.0F);
@@ -164,8 +164,8 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
             this.setRotateAngle(WingTip4R, 0.0F, 0.0F, 0.24434609527920614F);
             this.LegRight = new ZawaModelRenderer(this, 8, 13);
             this.LegRight.mirror = true;
-            this.LegRight.setPos(-1.0F, 0.9F, -0.6F);
-            this.LegRight.addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
+            this.LegRight.setPos(-0.9F, 0.9F, -0.6F);
+            this.LegRight.addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, -0.1F);
             this.setRotateAngle(LegRight, -0.0911061832922575F, 0.0F, 0.0F);
             this.Neck = new ZawaModelRenderer(this, 0, 13);
             this.Neck.setPos(0.0F, -2.6F, 0.1F);
@@ -173,7 +173,7 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
             this.setRotateAngle(Neck, -0.18203784630933073F, 0.0F, 0.0F);
             this.FootLeft = new ZawaModelRenderer(this, 7, 16);
             this.FootLeft.setPos(0.0F, 0.5F, -0.7F);
-            this.FootLeft.addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, 0.0F, 0.0F, 0.0F);
+            this.FootLeft.addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, 0.0F, 0.0F, -0.1F);
             this.setRotateAngle(FootLeft, 0.9105382388075086F, -0.13665927909957545F, 0.0F);
             this.Head = new ZawaModelRenderer(this, 0, 7);
             this.Head.setPos(0.0F, -0.5F, 0.1F);
@@ -194,8 +194,8 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
             this.Wing1Right.addBox(-2.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
             this.setRotateAngle(Wing1Right, 0.0F, 0.0F, 0.04555309164612875F);
             this.LegLeft = new ZawaModelRenderer(this, 8, 13);
-            this.LegLeft.setPos(1.0F, 0.9F, -0.6F);
-            this.LegLeft.addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
+            this.LegLeft.setPos(0.9F, 0.9F, -0.6F);
+            this.LegLeft.addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, -0.1F);
             this.setRotateAngle(LegLeft, -0.0911061832922575F, 0.0F, 0.0F);
             this.Tail = new ZawaModelRenderer(this, 12, 4);
             this.Tail.setPos(0.0F, 1.0F, 0.3F);
@@ -249,7 +249,7 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
 
         @Override
         public void setupAnim(BudgerigarEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+            super.setupAnim(entity, entity.tickCount, 0.3F, ageInTicks, netHeadYaw, headPitch);
         }
 
         @Override
@@ -260,6 +260,20 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
+            float speed = 1.4f;
+            float degree = 1.2f;
+            this.Body.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F + 1.548F;
+            this.Body.y = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.5F) * 0.5F + 20.5F;
+            this.Neck.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F - 0.364F;
+            this.Head.xRot = MathHelper.cos(3.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.1F -0.86F;
+            this.TailBase.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.5F;
+
+            this.Wing1Left.yRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 4F) * 0.5F - 0.364F;
+            this.Wing1Left.x = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -3F) * 0.5F + 0.1F;
+            this.Wing2Left.zRot = MathHelper.cos(1.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 2F) * 0.5F - 0.364F;
+            this.Wing1Right.yRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -4F) * 0.5F + 0.364F;
+            this.Wing1Right.x = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 3F) * 0.5F - 0.1F;
+            this.Wing2Right.zRot = MathHelper.cos(1.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -2F) * 0.5F + 0.364F;
         }
     }
 

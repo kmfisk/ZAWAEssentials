@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class KeaRenderer extends ZawaMobRenderer<KeaEntity, KeaModel> {
     public KeaRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new KeaModel.Adult(), new KeaModel.Flying(), new KeaModel.Child(), 0.6F); // TODO
+        super(rendererManager, /*new KeaModel.Adult(),*/ new KeaModel.Flying(), new KeaModel.Child(), 0.6F); // TODO
     }
 
     @Override

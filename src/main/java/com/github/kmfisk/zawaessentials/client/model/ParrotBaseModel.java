@@ -313,7 +313,6 @@ public abstract class ParrotBaseModel<E extends Entity> extends ZawaBaseModel<E>
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
-            this.loadBase();
             float speed = 1.0f;
             float degree = 1.0f;
             this.Body.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F + 1.548F;
