@@ -421,12 +421,24 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
             float degree = 1.0f;
             this.Neck.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.4F) * 0.5F - 0.182F;
             this.Head.xRot = MathHelper.cos(limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.4F) * 0.5F - 0.591F;
-            this.Tail.xRot = MathHelper.cos(limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.4F) * 0.5F - 0.0455F;
         }
 
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
+            float speed = 1.0f;
+            float degree = 1.0f;
+            this.Body.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * -0.1F) * 0.5F + 0.856F;
+            this.Body.y = MathHelper.cos(3.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * 0.1F) * 0.5F + 21.3F;
+            this.Body.yRot = MathHelper.cos(4.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 0.25F) * 0.5F;
+            this.Neck.xRot = MathHelper.cos(1.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * 0.2F) * 0.5F - 0.182F;
+            this.Head.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * -0.2F) * 0.5F - 0.591F;
+
+            this.LegLeft.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * -2.3F) * 0.5F - 0.819F;
+            this.FootLeft.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 2.3F) * 0.5F;
+            this.LegRight.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 2.3F) * 0.5F - 0.819F;
+            this.FootRight.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * -2.3F) * 0.5F;
+
         }
     }
 }
