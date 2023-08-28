@@ -213,7 +213,7 @@ public abstract class ChinchillaModel<E extends Entity> extends ZawaBaseModel<E>
 
 
             } else {
-                float speed = 1.0f;
+                float speed = 1.9f;
                 float degree = 1.0f;
                 this.Neck.xRot = MathHelper.cos(1.0F + limbSwing * speed * 0.5F) * limbSwingAmount * (degree * 0.2F) * 0.5F - 0.546F;
                 this.Head.xRot = MathHelper.cos(3.0F + limbSwing * speed * 0.5F) * limbSwingAmount * (degree * - 0.4F) * 0.5F + 0.546F;
