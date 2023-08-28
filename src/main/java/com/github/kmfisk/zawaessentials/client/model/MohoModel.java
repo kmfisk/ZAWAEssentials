@@ -350,6 +350,20 @@ public abstract class MohoModel extends ZawaBaseModel<MohoEntity> {
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
+            float speed = 2.5F;
+            float degree = 0.9f;
+            this.Body.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F;
+            this.Body.y = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.5F) * 0.5F + 20.5F;
+            this.Neck.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F - 0.364F;
+            this.Head.xRot = MathHelper.cos(3.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.1F - 0.455F;
+            this.TailBase.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.5F;
+
+            this.Wing1Left.zRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 22F) * 0.1F;
+            this.Wing2Left.yRot = MathHelper.cos(4.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 4F) * 0.1F + 0.182F;
+            this.Wing1Left.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -5F) * 0.1F;
+            this.Wing1Right.zRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -22F) * 0.1F;
+            this.Wing2Right.yRot = MathHelper.cos(4.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -4F) * 0.1F - 0.182F;
+            this.Wing1Right.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 5F) * 0.1F;
         }
     }
 
