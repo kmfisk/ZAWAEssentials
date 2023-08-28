@@ -9,7 +9,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class BudgerigarRenderer extends ZawaMobRenderer<BudgerigarEntity, BudgerigarModel> {
     public BudgerigarRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, /*new BudgerigarModel.Adult(),*/ new BudgerigarModel.Flying(), new BudgerigarModel.Adult(), 0.09F); // TODO
+        super(rendererManager, new BudgerigarModel.Adult(), new BudgerigarModel.Flying(), new BudgerigarModel.Adult(), 0.09F); // TODO
         // todo: male texture overlay
     }
 

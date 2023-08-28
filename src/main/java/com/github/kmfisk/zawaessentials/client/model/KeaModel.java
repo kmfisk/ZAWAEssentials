@@ -336,7 +336,7 @@ public abstract class KeaModel extends ZawaBaseModel<KeaEntity> {
 
         @Override
         public void setupAnim(KeaEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+            super.setupAnim(entity, entity.tickCount, 0.3F, ageInTicks, netHeadYaw, headPitch);
 
         }
 
