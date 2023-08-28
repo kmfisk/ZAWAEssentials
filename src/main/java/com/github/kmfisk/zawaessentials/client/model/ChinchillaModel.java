@@ -213,8 +213,8 @@ public abstract class ChinchillaModel<E extends Entity> extends ZawaBaseModel<E>
 
 
             } else {
-                float speed = 1.9f;
-                float degree = 1.0f;
+                float speed = 2f;
+                float degree = 0.8f;
                 this.Neck.xRot = MathHelper.cos(1.0F + limbSwing * speed * 0.5F) * limbSwingAmount * (degree * 0.2F) * 0.5F - 0.546F;
                 this.Head.xRot = MathHelper.cos(3.0F + limbSwing * speed * 0.5F) * limbSwingAmount * (degree * - 0.4F) * 0.5F + 0.546F;
                 this.Tail1.xRot = MathHelper.cos(1.0F + limbSwing * speed * 0.5F) * limbSwingAmount * (degree * 0.5F) * 0.5F - 0.455F;
@@ -354,6 +354,10 @@ public abstract class ChinchillaModel<E extends Entity> extends ZawaBaseModel<E>
         @Override
         public void setupAnim(E entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+            this.Neck.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
+            this.Head.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
+            this.Head.xRot = (headPitch / (180F / (float) Math.PI)) + 0.409F;
+            this.Head.zRot = headPitch / (180F / (float) Math.PI) * 0.05F;
         }
 
         @Override
