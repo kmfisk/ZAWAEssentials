@@ -8,6 +8,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
@@ -72,13 +73,15 @@ public class ZEBlocks {
 
     private static <T extends Block> RegistryObject<T> registerWithItem(String name, Supplier<T> block) {
         RegistryObject<T> registryObject = REGISTRAR.register(name, block);
-        ZEItems.REGISTRAR.register(name, () -> new BlockItem(registryObject.get(), new Item.Properties().tab(Zawa.ITEMS_GROUP)));
+        ZEItems.REGISTRAR.register(name, () -> new BlockItem(registryObject.get(), new Item.Properties().tab(Zawa.DECORATIONS_GROUP)));
         return registryObject;
     }
 
     @OnlyIn(Dist.CLIENT)
     public static void setRenderLayers() {
         RenderType cutoutMipped = RenderType.cutoutMipped();
-//        RenderTypeLookup.setRenderLayer(BLOCK.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer(BELL_TOY.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer(PLUSHIES.get("moho").get(), cutoutMipped);
+        for (int i = 0; i < 16; i++) RenderTypeLookup.setRenderLayer(T_SHIRT_RACKS.get(DyeColor.byId(i).getName()).get(), cutoutMipped);
     }
 }
