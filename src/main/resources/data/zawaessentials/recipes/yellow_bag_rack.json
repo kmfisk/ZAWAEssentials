@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "zawaessentialsgroup",
+  "pattern": [
+    "DPD",
+    "PDP",
+    "DPD"
+  ],
+  "key": {
+    "D": [
+      { "item": "minecraft:dirt" }
+    ],
+   "P": [
+      { "item": "minecraft:acacia_planks" }
+    ]
+
+  },
+  "result": {
+    "item": "zawaessentials:yellow_bag_rack",
+    "count": 16
+  }
+}

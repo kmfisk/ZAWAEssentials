@@ -49,8 +49,8 @@ public class ZEBlocks {
     public static final Map<String, RegistryObject<Block>> PLUSHIES = new HashMap<>();
 
     static {
-        for (String plush : new String[]{"sun_conure", "cockatiel", "blue_budgerigar", "green_budgerigar", "moho",
-                "maned_wolf", "chinchilla", "prairie_chicken"})
+        for (String plush : new String[]{"blue_budgerigar", "chinchilla", "cockatiel", "green_budgerigar", "maned_wolf",
+                "moho", "prairie_chicken", "sun_conure"})
             PLUSHIES.put(plush, registerWithItem(plush + "_plush", () -> new PlushBlock(AbstractBlock.Properties.of(Material.WOOL).sound(SoundType.WOOL))));
 
 
@@ -64,8 +64,8 @@ public class ZEBlocks {
 
         for (int i = 0; i < 16; i++) {
             DyeColor color = DyeColor.byId(i);
-            T_SHIRT_RACKS.put(color.getName(), registerWithItem(color.getName() + "_t_shirt_rack", () -> new Block(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
             BAG_RACKS.put(color.getName(), registerWithItem(color.getName() + "_bag_rack", () -> new Block(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
+            T_SHIRT_RACKS.put(color.getName(), registerWithItem(color.getName() + "_t_shirt_rack", () -> new Block(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
             ZOO_CUPS.put(color.getName(), registerWithItem(color.getName() + "_zoo_cup", () -> new Block(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
         }
     }
