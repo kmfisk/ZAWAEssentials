@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class ConureRenderer extends ZawaMobRenderer<ConureEntity, ParrotBaseModel<ConureEntity>> {
     public ConureRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new ParrotBaseModel.Adult<>(), new ParrotBaseModel.Flying<>(), new ParrotBaseModel.Child<>(), 0.27F); // TODO
+        super(rendererManager, new ParrotBaseModel.Adult<>(), new ParrotBaseModel.Flying<>(), new ParrotBaseModel.Child<>(), 0.27F);
     }
 
     @Override

@@ -9,7 +9,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class BudgerigarRenderer extends ZawaMobRenderer<BudgerigarEntity, BudgerigarModel> {
     public BudgerigarRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new BudgerigarModel.Adult(), new BudgerigarModel.Flying(), new BudgerigarModel.Adult(), 0.09F); // TODO
+        super(rendererManager, new BudgerigarModel.Adult(), new BudgerigarModel.Flying(), new BudgerigarModel.Adult(), 0.09F);
         // todo: male texture overlay
     }
 
@@ -20,9 +20,7 @@ public class BudgerigarRenderer extends ZawaMobRenderer<BudgerigarEntity, Budger
 
     @Override
     protected void scale(BudgerigarEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.6F : 0.6F;
-        matrixStack.scale(scale, scale, scale);
-
+        matrixStack.scale(0.6F, 0.6F, 0.6F);
         super.scale(entity, matrixStack, partialTickTime);
     }
 

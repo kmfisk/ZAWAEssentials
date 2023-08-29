@@ -9,7 +9,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class ChinchillaRenderer extends ZawaMobRenderer<ChinchillaEntity, ChinchillaModel<ChinchillaEntity>> {
     public ChinchillaRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new ChinchillaModel.Adult<>(), new ChinchillaModel.Child<>(), 0.6F); // TODO
+        super(rendererManager, new ChinchillaModel.Adult<>(), new ChinchillaModel.Child<>(), 0.6F);
     }
 
     @Override

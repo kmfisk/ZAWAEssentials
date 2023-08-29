@@ -342,7 +342,7 @@ public abstract class CockatielModel extends ZawaBaseModel<CockatielEntity> {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             this.Neck.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
-            this.Head.xRot = (headPitch / (180F / (float) Math.PI)) -0.455F;
+            this.Head.xRot = (headPitch / (180F / (float) Math.PI)) - 0.455F;
             this.Head.zRot = headPitch / (180F / (float) Math.PI) * 0.05F;
 
         }
@@ -355,13 +355,12 @@ public abstract class CockatielModel extends ZawaBaseModel<CockatielEntity> {
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
-            this.loadBase();
             float speed = 1.0f;
             float degree = 1.0f;
             this.Body.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F + 1.548F;
             this.Body.y = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.5F) * 0.5F + 20.5F;
             this.Neck.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F - 0.364F;
-            this.Head.xRot = MathHelper.cos(3.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.1F -0.86F;
+            this.Head.xRot = MathHelper.cos(3.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.1F - 0.86F;
             this.Tail.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.5F;
 
             this.Wing1Left.yRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 4F) * 0.5F - 0.364F;
@@ -575,7 +574,7 @@ public abstract class CockatielModel extends ZawaBaseModel<CockatielEntity> {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             this.Neck.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
             this.Head.yRot = netHeadYaw / (180F / (float) Math.PI) * 0.25F;
-            this.Head.xRot = (headPitch / (180F / (float) Math.PI)) -0.455F;
+            this.Head.xRot = (headPitch / (180F / (float) Math.PI)) - 0.455F;
             this.Head.zRot = headPitch / (180F / (float) Math.PI) * 0.05F;
         }
 

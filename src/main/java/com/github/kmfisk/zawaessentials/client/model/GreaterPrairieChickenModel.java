@@ -361,15 +361,15 @@ public abstract class GreaterPrairieChickenModel extends ZawaBaseModel<GreaterPr
             }
 
             if (entity.isSprinting() && !isSwimming) {
-
+                // todo: sprint anim?
 
             } else {
                 this.Body.xRot = MathHelper.cos(3F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -0.1F) * 0.5F - 0.364F;
                 this.Body.yRot = MathHelper.cos(3F + limbSwing * speed * 0.3F) * limbSwingAmount * (degree * 0.25F) * 0.5F;
                 this.Body.y = MathHelper.cos(2F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -0.9F) * 0.5F + 18.9F;
-                this.Chest.xRot = MathHelper.cos(3F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -0.2F) * 0.5F + + 0.86F;
-                this.Neck1.xRot = MathHelper.cos(4F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.7F + - 0.50F;
-                this.Neck2.xRot = MathHelper.cos(2F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * - 0.4F) * 0.5F + -0.27F;
+                this.Chest.xRot = MathHelper.cos(3F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -0.2F) * 0.5F + +0.86F;
+                this.Neck1.xRot = MathHelper.cos(4F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.7F + -0.50F;
+                this.Neck2.xRot = MathHelper.cos(2F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -0.4F) * 0.5F + -0.27F;
                 this.Head.xRot = MathHelper.cos(2F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.5F) * 0.5F + 0.36F;
                 this.Head.z = MathHelper.cos(2F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -0.6F) * 0.5F + 1.0F;
 
@@ -490,7 +490,7 @@ public abstract class GreaterPrairieChickenModel extends ZawaBaseModel<GreaterPr
 
         @Override
         public void setupAnim(GreaterPrairieChickenEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            super.setupAnim(entity, limbSwing,limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+            super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
         }
 
         @Override

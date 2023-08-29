@@ -20,8 +20,6 @@ import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 public class ZEEntities {
     public static final DeferredRegister<EntityType<?>> REGISTRAR = DeferredRegister.create(ForgeRegistries.ENTITIES, ZawaEssentials.MOD_ID);
 
-    // todo: hitboxes, scaling, shadows, stats
-
     public static final RegistryObject<EntityType<AustralianRingneckParrotEntity>> AUSTRALIAN_RINGNECK_PARROT =
             new Builder<>(AustralianRingneckParrotEntity::new, EntityClassification.CREATURE)
                     .attributes(AustralianRingneckParrotEntity::registerAttributes)

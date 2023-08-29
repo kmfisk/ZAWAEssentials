@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class KakarikiRenderer extends ZawaMobRenderer<KakarikiEntity, ParrotBaseModel<KakarikiEntity>> {
     public KakarikiRenderer(EntityRendererManager rendererManager) {
-        super(rendererManager, new ParrotBaseModel.Adult<>(), new ParrotBaseModel.Flying<>(), new ParrotBaseModel.Child<>(), 0.25F); // TODO
+        super(rendererManager, new ParrotBaseModel.Adult<>(), new ParrotBaseModel.Flying<>(), new ParrotBaseModel.Child<>(), 0.25F);
     }
 
     @Override
