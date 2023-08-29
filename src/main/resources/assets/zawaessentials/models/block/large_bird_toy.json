@@ -1,15 +1,15 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "domestic decor/backup textures/blocks/stripped_birch_log",
-		"1": "domestic decor/backup textures/blocks/stripped_dark_oak_log",
-		"2": "domestic decor/backup textures/blocks/stripped_jungle_log",
-		"3": "domestic decor/backup textures/blocks/stripped_spruce_log",
-		"4": "zawa blocks/rope",
-		"5": "domestic decor/backup textures/blocks/oak_log",
-		"6": "domestic decor/backup textures/blocks/jungle_log",
-		"7": "domestic decor/backup textures/blocks/1.16_colors/light_blue_concrete",
-		"particle": "domestic decor/backup textures/blocks/stripped_birch_log"
+		"0": "block/stripped_birch_log",
+		"1": "block/stripped_dark_oak_log",
+		"2": "block/stripped_jungle_log",
+		"3": "block/stripped_spruce_log",
+		"4": "zawa:block/rope",
+		"5": "block/oak_log",
+		"6": "block/jungle_log",
+		"7": "block/light_blue_concrete",
+		"particle": "block/stripped_birch_log"
 	},
 	"elements": [
 		{
@@ -142,7 +142,7 @@
 				"south": {"uv": [0, 0, 2, 2], "texture": "#6"},
 				"west": {"uv": [0, 0, 2, 2], "texture": "#6"},
 				"up": {"uv": [0, 0, 2, 2], "texture": "#2"},
-				"down": {"uv": [0, 0, 2, 2], "texture": "#missing"}
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
 			}
 		},
 		{

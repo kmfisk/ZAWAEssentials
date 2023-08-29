@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "maned_wolf_plush",
-		"particle": "maned_wolf_plush"
+		"0": "zawaessentials:block/maned_wolf_plush",
+		"particle": "#0"
 	},
 	"elements": [
 		{

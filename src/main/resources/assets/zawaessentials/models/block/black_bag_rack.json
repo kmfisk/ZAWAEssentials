@@ -1,0 +1,7 @@
+{
+  "parent": "zawaessentials:block/bag_rack",
+  "textures": {
+    "1": "block/iron_block",
+    "2": "zawaessentials:block/pattern_black"
+  }
+}

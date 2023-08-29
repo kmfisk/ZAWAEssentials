@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "domestic decor/backup textures/blocks/jungle_log",
-		"2": "rope",
-		"3": "domestic decor/backup textures/blocks/jungle_log_top",
-		"4": "domestic decor/backup textures/blocks/cyan_concrete",
-		"particle": "domestic decor/backup textures/blocks/jungle_log"
+		"0": "block/jungle_log",
+		"2": "zawa:block/rope",
+		"3": "block/jungle_log_top",
+		"4": "block/cyan_concrete",
+		"particle": "block/jungle_log"
 	},
 	"elements": [
 		{

@@ -1,0 +1,7 @@
+{
+  "parent": "zawaessentials:block/zoo_cup",
+  "textures": {
+    "2": "zawaessentials:block/pattern_yellow"
+  }
+}
+

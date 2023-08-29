@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "domestic decor/backup textures/blocks/spruce_log",
-		"2": "rope",
-		"3": "domestic decor/backup textures/blocks/spruce_log_top",
-		"4": "domestic decor/backup textures/blocks/green_concrete",
-		"particle": "domestic decor/backup textures/blocks/spruce_log"
+		"0": "block/spruce_log",
+		"2": "zawa:block/rope",
+		"3": "block/spruce_log_top",
+		"4": "block/green_concrete",
+		"particle": "block/spruce_log"
 	},
 	"elements": [
 		{

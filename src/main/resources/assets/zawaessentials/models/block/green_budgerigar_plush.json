@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "green_budgerigar_plush",
-		"particle": "green_budgerigar_plush"
+		"0": "zawaessentials:block/green_budgerigar_plush",
+		"particle": "#0"
 	},
 	"elements": [
 		{
@@ -118,7 +118,7 @@
 			"from": [7, 0, 11],
 			"to": [9, 1, 14],
 			"faces": {
-				"north": {"uv": [0, 0, 2, 1], "texture": "#missing"},
+				"north": {"uv": [0, 0, 2, 1], "texture": "#0"},
 				"east": {"uv": [4, 3, 5, 6], "rotation": 90, "texture": "#0"},
 				"south": {"uv": [4, 3, 5, 6], "texture": "#0"},
 				"west": {"uv": [4, 3, 5, 6], "rotation": 270, "texture": "#0"},

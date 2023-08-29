@@ -1,13 +1,13 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "rope",
-		"1": "dark_oak_log",
-		"2": "stripped_birch_log",
-		"3": "light_blue_concrete",
-		"4": "lime_concrete",
-		"5": "red_concrete",
-		"particle": "rope"
+		"0": "zawa:block/rope",
+		"1": "block/dark_oak_log",
+		"2": "block/stripped_birch_log",
+		"3": "block/light_blue_concrete",
+		"4": "block/lime_concrete",
+		"5": "block/red_concrete",
+		"particle": "#0"
 	},
 	"elements": [
 		{

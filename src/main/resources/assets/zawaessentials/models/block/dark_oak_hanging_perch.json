@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "domestic decor/backup textures/blocks/dark_oak_log",
-		"2": "rope",
-		"3": "domestic decor/backup textures/blocks/dark_oak_log_top",
-		"4": "domestic decor/backup textures/blocks/blue_concrete",
-		"particle": "domestic decor/backup textures/blocks/dark_oak_log"
+		"0": "block/dark_oak_log",
+		"2": "zawa:block/rope",
+		"3": "block/dark_oak_log_top",
+		"4": "block/blue_concrete",
+		"particle": "block/dark_oak_log"
 	},
 	"elements": [
 		{

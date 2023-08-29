@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "gray_concrete",
-		"1": "white_concrete_powder",
-		"2": "yellow_concrete",
-		"particle": "gray_concrete"
+		"0": "block/gray_concrete",
+		"1": "block/white_concrete_powder",
+		"2": "block/yellow_concrete",
+		"particle": "block/gray_concrete"
 	},
 	"elements": [
 		{
