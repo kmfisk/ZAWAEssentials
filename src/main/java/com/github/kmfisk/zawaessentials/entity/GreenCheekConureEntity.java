@@ -28,7 +28,10 @@ public class GreenCheekConureEntity extends ZawaFlyingEntity implements SpeciesV
             new Tuple<>("green_cheek", ZawaSpawnCategory.WET_FOREST),
             new Tuple<>("painted", ZawaSpawnCategory.DRY_GRASSLAND),
             new Tuple<>("crimson_bellied", ZawaSpawnCategory.DRY_RAINFOREST),
-            new Tuple<>("fiery_shouldered", ZawaSpawnCategory.WET_RAINFOREST)
+            new Tuple<>("fiery_shouldered", ZawaSpawnCategory.WET_RAINFOREST),
+            new Tuple<>("ochre_marked", ZawaSpawnCategory.DRY_RAINFOREST),
+            new Tuple<>("white_necked", ZawaSpawnCategory.DEEP_RAINFOREST),
+            new Tuple<>("black_capped", ZawaSpawnCategory.WET_FOREST)
     ));
 
     public GreenCheekConureEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
@@ -74,13 +77,15 @@ public class GreenCheekConureEntity extends ZawaFlyingEntity implements SpeciesV
     public int getVariantByBiome(IWorld iWorld) {
         String biome = level.getBiome(this.blockPosition()).getRegistryName().toString();
         if (ZawaSpawnCategory.WET_FOREST.getBiomes().contains(biome))
-            return 0;
+            return random.nextBoolean() ? 0 : 6;
         if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
             return 1;
         if (ZawaSpawnCategory.DRY_RAINFOREST.getBiomes().contains(biome))
-            return 2;
+            return random.nextBoolean() ? 2 : 4;
         if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
             return 3;
+        if (ZawaSpawnCategory.DEEP_RAINFOREST.getBiomes().contains(biome))
+            return 5;
 
         return random.nextInt(getWildVariants());
     }
