@@ -1,7 +1,9 @@
 {
   "parent": "zawaessentials:block/zoo_cup",
   "textures": {
-    "2": "zawaessentials:block/pattern_lime"
+    "0": "block/lime_concrete",
+    "1": "block/lime_stained_glass",
+    "2": "zawaessentials:block/pattern_lime",
+    "3": "block/lime_wool"
   }
 }
-

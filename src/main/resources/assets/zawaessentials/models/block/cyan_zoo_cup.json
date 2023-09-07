@@ -1,7 +1,9 @@
 {
   "parent": "zawaessentials:block/zoo_cup",
   "textures": {
-    "2": "zawaessentials:block/pattern_cyan"
+    "0": "block/cyan_concrete",
+    "1": "block/cyan_stained_glass",
+    "2": "zawaessentials:block/pattern_cyan",
+    "3": "block/cyan_wool"
   }
 }
-
