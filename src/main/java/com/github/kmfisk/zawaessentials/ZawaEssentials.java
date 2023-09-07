@@ -12,6 +12,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(ZawaEssentials.MOD_ID)
 public class ZawaEssentials {
     public static final String MOD_ID = "zawaessentials";
+    public static final String[] PLUSHIES_LIST = new String[]{"blue_budgerigar", "chinchilla", "cockatiel", "green_budgerigar", "maned_wolf", "moho", "prairie_chicken", "sun_conure"};
 
     public ZawaEssentials() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

@@ -1,5 +1,6 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": "false",
 	"textures": {
 		"0": "zawa:block/rope",
 		"1": "block/dark_oak_log",

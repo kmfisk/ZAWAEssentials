@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "zawaessentials:block/security_camera"
+    },
+    "facing=east": {
+      "model": "zawaessentials:block/security_camera", "y": 90
+    },
+    "facing=south": {
+      "model": "zawaessentials:block/security_camera", "y": 180
+    },
+    "facing=west": {
+      "model": "zawaessentials:block/security_camera", "y": 270
     }
   }
 }

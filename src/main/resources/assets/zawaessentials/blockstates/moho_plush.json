@@ -1,9 +1,16 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "zawaessentials:block/moho_plush"
+    },
+    "facing=east": {
+      "model": "zawaessentials:block/moho_plush", "y": 90
+    },
+    "facing=south": {
+      "model": "zawaessentials:block/moho_plush", "y": 180
+    },
+    "facing=west": {
+      "model": "zawaessentials:block/moho_plush", "y": 270
     }
   }
 }
-
-

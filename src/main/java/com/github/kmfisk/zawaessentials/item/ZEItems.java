@@ -1,16 +1,30 @@
 package com.github.kmfisk.zawaessentials.item;
 
 import com.github.kmfisk.zawaessentials.ZawaEssentials;
+import com.github.kmfisk.zawaessentials.block.ZEBlocks;
 import com.github.kmfisk.zawaessentials.entity.ZEEntities;
 import net.minecraft.item.Item;
+import net.minecraft.util.Util;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.zawamod.zawa.Zawa;
+import org.zawamod.zawa.world.item.PlushBlockItem;
 import org.zawamod.zawa.world.item.ZawaEggItem;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.github.kmfisk.zawaessentials.ZawaEssentials.PLUSHIES_LIST;
 
 public class ZEItems {
     public static final DeferredRegister<Item> REGISTRAR = DeferredRegister.create(ForgeRegistries.ITEMS, ZawaEssentials.MOD_ID);
+
+    // Deco Items
+    public static final List<RegistryObject<Item>> PLUSHIES = Util.make(new ArrayList<>(), list -> {
+        for (String plush : PLUSHIES_LIST)
+            list.add(REGISTRAR.register(plush + "_plush", () -> new PlushBlockItem(ZEBlocks.PLUSHIES.get(plush).get(), new Item.Properties().tab(Zawa.DECORATIONS_GROUP))));
+    });
 
     public static final RegistryObject<Item> AUSTRALIAN_RINGNECK_PARROT_EGG = REGISTRAR.register("australian_ringneck_parrot_egg", () -> new ZawaEggItem(ZEEntities.AUSTRALIAN_RINGNECK_PARROT, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
     public static final RegistryObject<Item> BUDGERIGAR_EGG = REGISTRAR.register("budgerigar_egg", () -> new ZawaEggItem(ZEEntities.BUDGERIGAR, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));

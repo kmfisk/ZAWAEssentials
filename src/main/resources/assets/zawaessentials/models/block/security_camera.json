@@ -1,9 +1,10 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": "false",
 	"textures": {
 		"0": "block/black_concrete",
 		"1": "block/gray_concrete",
-		"particle": "block/black_concrete"
+		"particle": "#0"
 	},
 	"elements": [
 		{

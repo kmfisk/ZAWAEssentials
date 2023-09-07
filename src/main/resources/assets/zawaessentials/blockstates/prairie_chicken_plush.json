@@ -1,9 +1,16 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "zawaessentials:block/prairie_chicken_plush"
+    },
+    "facing=east": {
+      "model": "zawaessentials:block/prairie_chicken_plush", "y": 90
+    },
+    "facing=south": {
+      "model": "zawaessentials:block/prairie_chicken_plush", "y": 180
+    },
+    "facing=west": {
+      "model": "zawaessentials:block/prairie_chicken_plush", "y": 270
     }
   }
 }
-
-

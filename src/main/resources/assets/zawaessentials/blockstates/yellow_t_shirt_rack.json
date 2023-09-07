@@ -1,9 +1,16 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "zawaessentials:block/yellow_t_shirt_rack"
+    },
+    "facing=east": {
+      "model": "zawaessentials:block/yellow_t_shirt_rack", "y": 90
+    },
+    "facing=south": {
+      "model": "zawaessentials:block/yellow_t_shirt_rack", "y": 180
+    },
+    "facing=west": {
+      "model": "zawaessentials:block/yellow_t_shirt_rack", "y": 270
     }
   }
 }
-
-

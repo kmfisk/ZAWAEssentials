@@ -21,6 +21,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.zawamod.zawa.Zawa;
 import org.zawamod.zawa.world.block.PlushBlock;
+import org.zawamod.zawa.world.block.ZawaEnrichmentBlock;
 import org.zawamod.zawa.world.block.ZawaFenceBlock;
 import org.zawamod.zawa.world.block.ZawaFenceGateBlock;
 
@@ -28,18 +29,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import static com.github.kmfisk.zawaessentials.ZawaEssentials.PLUSHIES_LIST;
+
 public class ZEBlocks {
     public static final DeferredRegister<Block> REGISTRAR = DeferredRegister.create(ForgeRegistries.BLOCKS, ZawaEssentials.MOD_ID);
-    private static final String[] WOOD_TYPES_LIST = new String[]{"acacia", "birch", "dark_oak", "jungle", "oak", "spruce", "crimson", "warped"};
+    public static final String[] WOOD_TYPES_LIST = new String[]{"acacia", "birch", "dark_oak", "jungle", "oak", "spruce", "crimson", "warped"};
 
-    public static final RegistryObject<Block> CUP_FEEDER = registerWithItem("cup_feeder", () -> new Block(AbstractBlock.Properties.of(Material.STONE)));
-
-    public static final RegistryObject<Block> BELL_TOY = registerWithItem("bell_toy", () -> new Block(AbstractBlock.Properties.of(Material.STONE)));
+    public static final RegistryObject<Block> CUP_FEEDER = registerWithItem("cup_feeder", () -> new ZawaEnrichmentBlock(Block.box(2.0, 1.0, 2.0, 14.0, 16.0, 14.0), AbstractBlock.Properties.of(Material.WOOD).noOcclusion()));
+    public static final RegistryObject<Block> BELL_TOY = registerWithItem("bell_toy", () -> new ZawaEnrichmentBlock(Block.box(2.0, 1.0, 2.0, 14.0, 16.0, 14.0), AbstractBlock.Properties.of(Material.WOOD).noOcclusion()));
     public static final Map<String, RegistryObject<Block>> HANGING_PERCHES = Util.make(new HashMap<>(), map -> {
         for (String woodType : WOOD_TYPES_LIST)
-            map.put(woodType, registerWithItem(woodType + "_hanging_perch", () -> new Block(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
+            map.put(woodType, registerWithItem(woodType + "_hanging_perch", () -> new HangingPerchBlock(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
     });
-    public static final RegistryObject<Block> LARGE_BIRD_TOY = registerWithItem("large_bird_toy", () -> new Block(AbstractBlock.Properties.of(Material.STONE)));
+    public static final RegistryObject<Block> LARGE_BIRD_TOY = registerWithItem("large_bird_toy", () -> new ZawaEnrichmentBlock(Block.box(2.0, 1.0, 2.0, 14.0, 16.0, 14.0), AbstractBlock.Properties.of(Material.WOOD).noOcclusion()));
 
     public static final Map<String, RegistryObject<Block>> CABLE_FENCES = Util.make(new HashMap<>(), map -> {
         for (String woodType : WOOD_TYPES_LIST)
@@ -61,28 +63,27 @@ public class ZEBlocks {
     public static final Map<String, RegistryObject<Block>> BAG_RACKS = Util.make(new HashMap<>(), map -> {
         for (int i = 0; i < 16; i++) {
             DyeColor color = DyeColor.byId(i);
-            map.put(color.getName(), registerWithItem(color.getName() + "_bag_rack", () -> new Block(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
+            map.put(color.getName(), registerWithItem(color.getName() + "_bag_rack", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
         }
     });
-    public static final RegistryObject<Block> FLOODLIGHT = registerWithItem("floodlight", () -> new Block(AbstractBlock.Properties.of(Material.STONE)));
-    public static final RegistryObject<Block> SECURITY_CAMERA = registerWithItem("security_camera", () -> new Block(AbstractBlock.Properties.of(Material.STONE)));
+    public static final RegistryObject<Block> FLOODLIGHT = registerWithItem("floodlight", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.STONE).noOcclusion()));
+    public static final RegistryObject<Block> SECURITY_CAMERA = registerWithItem("security_camera", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.STONE).noOcclusion()));
     public static final Map<String, RegistryObject<Block>> T_SHIRT_RACKS = Util.make(new HashMap<>(), map -> {
         for (int i = 0; i < 16; i++) {
             DyeColor color = DyeColor.byId(i);
-            map.put(color.getName(), registerWithItem(color.getName() + "_t_shirt_rack", () -> new Block(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
+            map.put(color.getName(), registerWithItem(color.getName() + "_t_shirt_rack", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
         }
     });
     public static final Map<String, RegistryObject<Block>> ZOO_CUPS = Util.make(new HashMap<>(), map -> {
         for (int i = 0; i < 16; i++) {
             DyeColor color = DyeColor.byId(i);
-            map.put(color.getName(), registerWithItem(color.getName() + "_zoo_cup", () -> new Block(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
+            map.put(color.getName(), registerWithItem(color.getName() + "_zoo_cup", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
         }
     });
 
     public static final Map<String, RegistryObject<Block>> PLUSHIES = Util.make(new HashMap<>(), map -> {
-        for (String plush : new String[]{"blue_budgerigar", "chinchilla", "cockatiel", "green_budgerigar", "maned_wolf",
-                "moho", "prairie_chicken", "sun_conure"})
-            map.put(plush, registerWithItem(plush + "_plush", () -> new PlushBlock(AbstractBlock.Properties.of(Material.WOOL).sound(SoundType.WOOL))));
+        for (String plush : PLUSHIES_LIST)
+            map.put(plush, REGISTRAR.register(plush + "_plush", () -> new PlushBlock(AbstractBlock.Properties.of(Material.WOOL).sound(SoundType.WOOL).noOcclusion())));
     });
 
     private static <T extends Block> RegistryObject<T> registerWithItem(String name, Supplier<T> block) {

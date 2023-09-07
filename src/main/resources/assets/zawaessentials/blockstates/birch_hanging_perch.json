@@ -1,9 +1,16 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "zawaessentials:block/birch_hanging_perch"
+    },
+    "facing=east": {
+      "model": "zawaessentials:block/birch_hanging_perch", "y": 90
+    },
+    "facing=south": {
+      "model": "zawaessentials:block/birch_hanging_perch", "y": 180
+    },
+    "facing=west": {
+      "model": "zawaessentials:block/birch_hanging_perch", "y": 270
     }
   }
 }
-
-

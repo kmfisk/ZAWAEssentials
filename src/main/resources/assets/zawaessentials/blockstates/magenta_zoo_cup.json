@@ -1,9 +1,16 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "zawaessentials:block/magenta_zoo_cup"
+    },
+    "facing=east": {
+      "model": "zawaessentials:block/magenta_zoo_cup", "y": 90
+    },
+    "facing=south": {
+      "model": "zawaessentials:block/magenta_zoo_cup", "y": 180
+    },
+    "facing=west": {
+      "model": "zawaessentials:block/magenta_zoo_cup", "y": 270
     }
   }
 }
-
-
