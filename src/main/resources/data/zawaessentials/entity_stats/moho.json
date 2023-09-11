@@ -13,15 +13,18 @@
   "enrichment": {
     "zawa:blocks": [
       "zawa:perching_stand",
-      "zawa:tire_swing",
-      "zawa:leaf_browse",
-      "zawa:hay_browse",
       "zawa:sprinkler",
-      "zawa:puzzle_feeder"
-    ],
-    "zawa:entities": [
-      "zawa:scented_ball",
-      "zawa:apple_ice_treat"
+      "zawa:puzzle_feeder",
+      "zawaessentials:cup_feeder",
+      "zawaessentials:bell_toy",
+      "zawaessentials:acacia_hanging_perch",
+      "zawaessentials:birch_hanging_perch",
+      "zawaessentials:dark_oak_hanging_perch",
+      "zawaessentials:jungle_hanging_perch",
+      "zawaessentials:oak_hanging_perch",
+      "zawaessentials:spruce_hanging_perch",
+      "zawaessentials:crimson_hanging_perch",
+      "zawaessentials:warped_hanging_perch"
     ]
   },
   "variant_count": 4

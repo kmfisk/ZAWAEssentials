@@ -17,7 +17,18 @@
       "zawa:leaf_browse",
       "zawa:hay_browse",
       "zawa:sprinkler",
-      "zawa:puzzle_feeder"
+      "zawa:puzzle_feeder",
+      "zawaessentials:cup_feeder",
+      "zawaessentials:bell_toy",
+      "zawaessentials:acacia_hanging_perch",
+      "zawaessentials:birch_hanging_perch",
+      "zawaessentials:dark_oak_hanging_perch",
+      "zawaessentials:jungle_hanging_perch",
+      "zawaessentials:oak_hanging_perch",
+      "zawaessentials:spruce_hanging_perch",
+      "zawaessentials:crimson_hanging_perch",
+      "zawaessentials:warped_hanging_perch",
+      "zawaessentials:large_bird_toy"
     ],
     "zawa:entities": [
       "zawa:scented_ball",
