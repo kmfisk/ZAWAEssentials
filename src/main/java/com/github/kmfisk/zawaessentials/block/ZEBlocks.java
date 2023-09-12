@@ -66,8 +66,8 @@ public class ZEBlocks {
             map.put(color.getName(), registerWithItem(color.getName() + "_bag_rack", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
         }
     });
-    public static final RegistryObject<Block> FLOODLIGHT = registerWithItem("floodlight", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.STONE).noOcclusion()));
-    public static final RegistryObject<Block> SECURITY_CAMERA = registerWithItem("security_camera", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.STONE).noOcclusion()));
+    public static final RegistryObject<Block> FLOODLIGHT = registerWithItem("floodlight", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.DECORATION).noCollission().noOcclusion().lightLevel(light -> 15).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SECURITY_CAMERA = registerWithItem("security_camera", () -> new RotationalBlock(AbstractBlock.Properties.of(Material.DECORATION).noCollission().noOcclusion().sound(SoundType.STONE)));
     public static final Map<String, RegistryObject<Block>> T_SHIRT_RACKS = Util.make(new HashMap<>(), map -> {
         for (int i = 0; i < 16; i++) {
             DyeColor color = DyeColor.byId(i);
