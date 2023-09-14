@@ -17,7 +17,7 @@ public class ZawaEssentials {
     public ZawaEssentials() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ZEEntities.REGISTRAR.register(bus);
+        ZEEntities.REGISTRY.initialize();
         ZEItems.REGISTRAR.register(bus);
         ZEBlocks.REGISTRAR.register(bus);
 
