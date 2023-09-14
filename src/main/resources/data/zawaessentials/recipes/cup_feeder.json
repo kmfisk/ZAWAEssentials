@@ -2,21 +2,33 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "DBN",
+    "GBR",
+    "LB "
   ],
   "key": {
     "D": [
-      { "item": "minecraft:dirt" }
+      { "item": "minecraft:red_dye" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "B": [
+      { "item": "minecraft:bowl" }
+    ],
+    "N": [
+      { "item": "minecraft:iron_nugget" }
+    ],
+    "G": [
+      { "item": "minecraft:lime_dye" }
+    ],
+    "R": [
+      { "item": "zawa:rope" }
+    ],
+    "L": [
+      { "item": "minecraft:light_blue_dye" }
     ]
 
   },
   "result": {
     "item": "zawaessentials:cup_feeder",
-    "count": 16
+    "count": 1
   }
 }

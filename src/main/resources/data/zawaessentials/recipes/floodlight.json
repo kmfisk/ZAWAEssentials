@@ -2,21 +2,29 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "GGG",
+    "PTG",
+    " IN"
   ],
   "key": {
-    "D": [
-      { "item": "minecraft:dirt" }
+    "G": [
+      { "item": "minecraft:gray_concrete" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "P": [
+      { "item": "minecraft:glass_pane" }
+    ],
+    "T": [
+      { "item": "minecraft:torch" }
+    ],
+    "I": [
+      { "item": "minecraft:iron_ingot" }
+    ],
+    "N": [
+      { "item": "minecraft:iron_nugget" }
     ]
-
   },
   "result": {
     "item": "zawaessentials:floodlight",
-    "count": 16
+    "count": 8
   }
 }

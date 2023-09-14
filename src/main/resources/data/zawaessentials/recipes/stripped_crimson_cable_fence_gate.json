@@ -2,21 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "IFI"
   ],
   "key": {
-    "D": [
-      { "item": "minecraft:dirt" }
+    "I": [
+      { "item": "minecraft:stripped_crimson_stem" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "F": [
+      { "item": "zawaessentials:crimson_cable_fence" }
     ]
-
   },
   "result": {
     "item": "zawaessentials:stripped_crimson_cable_fence_gate",
-    "count": 16
+    "count": 1
   }
 }

@@ -2,21 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "L L",
+    "NRN",
+    "L L"
   ],
   "key": {
-    "D": [
-      { "item": "minecraft:dirt" }
+    "L": [
+      { "item": "minecraft:spruce_log" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "N": [
+      { "item": "minecraft:iron_nugget" }
+    ],
+    "R": [
+      { "item": "zawa:rope" }
     ]
-
   },
   "result": {
     "item": "zawaessentials:spruce_cable_fence",
-    "count": 16
+    "count": 8
   }
 }

@@ -2,21 +2,38 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "GRO",
+    "YSE",
+    "PEB"
   ],
   "key": {
-    "D": [
-      { "item": "minecraft:dirt" }
+    "G": [
+      { "item": "minecraft:gray_wool" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "R": [
+      { "item": "minecraft:red_wool" }
+    ],
+    "O": [
+      { "item": "minecraft:orange_wool" }
+    ],
+    "Y": [
+      { "item": "minecraft:yellow_wool" }
+    ],
+    "S": [
+      { "item": "minecraft:string" }
+    ],
+    "E": [
+      { "item": "minecraft:green_wool" }
+    ],
+    "P": [
+      { "item": "minecraft:pink_wool" }
+    ],
+    "B": [
+      { "item": "minecraft:blue_wool" }
     ]
-
   },
   "result": {
     "item": "zawaessentials:sun_conure_plush",
-    "count": 16
+    "count": 1
   }
 }

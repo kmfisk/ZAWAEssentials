@@ -2,21 +2,29 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "PPL",
+    "WSL",
+    "PLB"
   ],
   "key": {
-    "D": [
-      { "item": "minecraft:dirt" }
+    "P": [
+      { "item": "minecraft:pink_wool" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "L": [
+      { "item": "minecraft:light_blue_wool" }
+    ],
+    "W": [
+      { "item": "minecraft:white_wool" }
+    ],
+    "S": [
+      { "item": "minecraft:string" }
+    ],
+    "B": [
+      { "item": "minecraft:blue_wool" }
     ]
-
   },
   "result": {
     "item": "zawaessentials:blue_budgerigar_plush",
-    "count": 16
+    "count": 1
   }
 }

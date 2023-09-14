@@ -2,21 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "PPD",
+    "GGG"
   ],
   "key": {
-    "D": [
-      { "item": "minecraft:dirt" }
+    "P": [
+      { "item": "minecraft:paper" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "D": [
+      { "item": "minecraft:light_blue_dye" }
+    ],
+    "G": [
+      { "item": "minecraft:glass_bottle" }
     ]
-
   },
   "result": {
     "item": "zawaessentials:light_blue_zoo_cup",
-    "count": 16
+    "count": 1
   }
 }

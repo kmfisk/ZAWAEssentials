@@ -2,21 +2,29 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "GGG",
+    "PRG",
+    " IN"
   ],
   "key": {
-    "D": [
-      { "item": "minecraft:dirt" }
+    "G": [
+      { "item": "minecraft:gray_concrete" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "P": [
+      { "item": "minecraft:black_stained_glass_pane" }
+    ],
+    "R": [
+      { "item": "minecraft:redstone_block" }
+    ],
+    "I": [
+      { "item": "minecraft:iron_ingot" }
+    ],
+    "N": [
+      { "item": "minecraft:iron_nugget" }
     ]
-
   },
   "result": {
     "item": "zawaessentials:security_camera",
-    "count": 16
+    "count": 8
   }
 }

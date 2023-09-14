@@ -2,21 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "group": "zawaessentialsgroup",
   "pattern": [
-    "DPD",
-    "PDP",
-    "DPD"
+    "IFI"
   ],
   "key": {
-    "D": [
-      { "item": "minecraft:dirt" }
+    "I": [
+      { "item": "minecraft:birch_log" }
     ],
-   "P": [
-      { "item": "minecraft:acacia_planks" }
+    "F": [
+      { "item": "zawaessentials:birch_cable_fence" }
     ]
-
   },
   "result": {
     "item": "zawaessentials:birch_cable_fence_gate",
-    "count": 16
+    "count": 1
   }
 }
