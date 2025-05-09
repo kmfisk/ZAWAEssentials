@@ -12,7 +12,7 @@ import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.util.Tuple;
-import net.minecraft.world.LevelAccessor;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.server.level.ServerLevel;
 import org.zawamod.zawa.config.ZawaSpawnCategory;
@@ -74,8 +74,8 @@ public class RosellaEntity extends ZawaFlyingEntity implements SpeciesVariantsEn
     }
 
     @Override
-    public int getVariantByBiome(LevelAccessor iWorld) {
-        String biome = level.getBiome(this.blockPosition()).getRegistryName().toString();
+    public int getVariantByBiome(LevelAccessor level) {
+        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
         if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
             return random.nextBoolean() ? 0 : 3;
         if (ZawaSpawnCategory.DRY_FOREST.getBiomes().contains(biome))

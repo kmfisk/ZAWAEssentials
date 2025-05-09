@@ -1,6 +1,8 @@
 package com.github.kmfisk.zawaessentials.entity;
 
 import com.github.kmfisk.zawaessentials.item.ZEItems;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Tuple;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
@@ -11,10 +13,8 @@ import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.util.Tuple;
-import net.minecraft.world.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.LevelAccessor;
 import org.zawamod.zawa.config.ZawaSpawnCategory;
 import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
@@ -73,8 +73,8 @@ public class KakarikiEntity extends ZawaFlyingEntity implements SpeciesVariantsE
     }
 
     @Override
-    public int getVariantByBiome(LevelAccessor iWorld) {
-        String biome = level.getBiome(this.blockPosition()).getRegistryName().toString();
+    public int getVariantByBiome(LevelAccessor level) {
+        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
         if (ZawaSpawnCategory.COASTAL_TAIGA.getBiomes().contains(biome))
             return 0;
         if (ZawaSpawnCategory.COLD_GRASSLAND.getBiomes().contains(biome))

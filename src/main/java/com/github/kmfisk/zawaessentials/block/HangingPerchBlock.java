@@ -1,15 +1,14 @@
 package com.github.kmfisk.zawaessentials.block;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BlockState;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.zawamod.zawa.world.block.EnrichmentBlock;
-import org.zawamod.zawa.world.block.ZawaEnrichmentBlock;
 
 public class HangingPerchBlock extends RotationalBlock implements EnrichmentBlock {
     protected final VoxelShape northShape = Block.box(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
@@ -20,7 +19,7 @@ public class HangingPerchBlock extends RotationalBlock implements EnrichmentBloc
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, IBlockReader reader, BlockPos pos, ISelectionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter reader, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         switch (direction) {
             case SOUTH:

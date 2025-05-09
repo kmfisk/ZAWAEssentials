@@ -62,7 +62,7 @@ public class AustralianRingneckParrotEntity extends ZawaFlyingEntity implements 
     }
 
     @Override
-    public int getVariantByBiome(LevelAccessor iWorld) {
+    public int getVariantByBiome(LevelAccessor level) {
         return random.nextInt(getWildVariants());
     }
 }
