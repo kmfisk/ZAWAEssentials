@@ -2,12 +2,12 @@ package com.github.kmfisk.zawaessentials.client.render.entity;
 
 import com.github.kmfisk.zawaessentials.client.model.MohoModel;
 import com.github.kmfisk.zawaessentials.entity.MohoEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class MohoRenderer extends ZawaMobRenderer<MohoEntity, MohoModel> {
-    public MohoRenderer(EntityRendererManager rendererManager) {
+    public MohoRenderer(EntityRendererProvider.Context rendererManager) {
         super(rendererManager, new MohoModel.Adult(), new MohoModel.Flying(), new MohoModel.Child(), 0.15F);
     }
 
@@ -17,7 +17,7 @@ public class MohoRenderer extends ZawaMobRenderer<MohoEntity, MohoModel> {
     }
 
     @Override
-    protected void scale(MohoEntity entity, MatrixStack matrixStack, float partialTickTime) {
+    protected void scale(MohoEntity entity, PoseStack matrixStack, float partialTickTime) {
         float scale = entity.isBaby() ? 0.5F : 0.8F;
         matrixStack.scale(scale, scale, scale);
 

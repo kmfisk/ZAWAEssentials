@@ -1,17 +1,17 @@
 package com.github.kmfisk.zawaessentials.entity;
 
 import com.github.kmfisk.zawaessentials.item.ZEItems;
-import net.minecraft.entity.AgeableEntity;
-import net.minecraft.entity.EntitySize;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.Pose;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.HurtByTargetGoal;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.server.level.ServerLevel;
 import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
@@ -20,11 +20,11 @@ import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 import javax.annotation.Nullable;
 
 public class EclectusEntity extends ZawaFlyingEntity implements SpeciesVariantsEntity, OviparousEntity {
-    public EclectusEntity(EntityType<? extends ZawaFlyingEntity> type, World world) {
+    public EclectusEntity(EntityType<? extends ZawaFlyingEntity> type, Level world) {
         super(type, world);
     }
 
-    public static AttributeModifierMap.MutableAttribute registerAttributes() {
+    public static AttributeSupplier.Builder registerAttributes() {
         // medium:  .add(Attributes.FLYING_SPEED, 0.60F).add(Attributes.MOVEMENT_SPEED, 0.225F)
         // fast:    .add(Attributes.FLYING_SPEED, 1.2F).add(Attributes.MOVEMENT_SPEED, 0.3F)
         return createMobAttributes().add(Attributes.FLYING_SPEED, 1.2F).add(Attributes.MOVEMENT_SPEED, 0.3F).add(Attributes.MAX_HEALTH, 8.0).add(Attributes.ATTACK_DAMAGE, 1.0);
@@ -43,7 +43,7 @@ public class EclectusEntity extends ZawaFlyingEntity implements SpeciesVariantsE
     }
 
     @Override
-    protected float getStandingEyeHeight(Pose pose, EntitySize size) {
+    protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         // TODO
         return super.getStandingEyeHeight(pose, size);
     }
@@ -56,7 +56,7 @@ public class EclectusEntity extends ZawaFlyingEntity implements SpeciesVariantsE
 
     @Nullable
     @Override
-    public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
+    public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
         return ZEEntities.ECLECTUS.get().create(world);
     }
 
@@ -66,7 +66,7 @@ public class EclectusEntity extends ZawaFlyingEntity implements SpeciesVariantsE
     }
 
     @Override
-    public int getVariantByBiome(IWorld iWorld) {
+    public int getVariantByBiome(LevelAccessor iWorld) {
         return random.nextInt(getWildVariants());
     }
 }

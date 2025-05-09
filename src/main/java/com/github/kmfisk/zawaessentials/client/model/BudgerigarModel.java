@@ -2,11 +2,11 @@ package com.github.kmfisk.zawaessentials.client.model;
 
 import com.github.kmfisk.zawaessentials.entity.BudgerigarEntity;
 import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
 import org.zawamod.zawa.client.model.ZawaModelRenderer;
@@ -408,7 +408,7 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
         }
 
         @Override
-        public void renderToBuffer(MatrixStack poseStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        public void renderToBuffer(PoseStack poseStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
             if (this.young) {
                 poseStack.pushPose();
                 poseStack.scale(0.5F, 0.5F, 0.5F);
