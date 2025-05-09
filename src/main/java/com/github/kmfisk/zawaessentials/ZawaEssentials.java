@@ -38,6 +38,7 @@ public class ZawaEssentials {
     }
 
     private void setupClient(final FMLClientSetupEvent event) {
+        ZEEntities.registerRenderers();
         ZEBlocks.setRenderLayers();
     }
 
