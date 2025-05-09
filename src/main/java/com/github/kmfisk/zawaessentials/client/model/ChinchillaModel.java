@@ -49,30 +49,38 @@ public abstract class ChinchillaModel<E extends Entity> extends ZawaBaseModel<E>
 
         public Adult(ModelPart root) {
             this.Body = root.getChild("Body");
-            this.HandRight = this.ArmRight.getChild("HandRight");
-            this.EarLeft = this.Head.getChild("EarLeft");
-            this.ArmRight = this.ArmBaseRight.getChild("ArmRight");
             this.Chest = this.Body.getChild("Chest");
-            this.ThighLeft = this.Body.getChild("ThighLeft");
             this.Neck = this.Chest.getChild("Neck");
             this.Head = this.Neck.getChild("Head");
-            this.Tail3 = this.Tail2.getChild("Tail3");
-            this.ArmBaseRight = this.Chest.getChild("ArmBaseRight");
-            this.TopSnout = this.Snout.getChild("TopSnout");
-            this.ArmLeft = this.ArmBaseLeft.getChild("ArmLeft");
-            this.ArmBaseLeft = this.Chest.getChild("ArmBaseLeft");
+            this.EarLeft = this.Head.getChild("EarLeft");
+
             this.Snout = this.Head.getChild("Snout");
-            this.LegLeft = this.ThighLeft.getChild("LegLeft");
-            this.LegRight = this.ThighRight.getChild("LegRight");
-            this.ThighRight = this.Body.getChild("ThighRight");
+            this.TopSnout = this.Snout.getChild("TopSnout");
+
             this.Mouth = this.Snout.getChild("Mouth");
+
             this.EarRight = this.Head.getChild("EarRight");
-            this.FootLeft = this.LegLeft.getChild("FootLeft");
-            this.Back = this.Body.getChild("Back");
-            this.FootRight = this.LegRight.getChild("FootRight");
+
+            this.ArmBaseRight = this.Chest.getChild("ArmBaseRight");
+            this.ArmRight = this.ArmBaseRight.getChild("ArmRight");
+            this.HandRight = this.ArmRight.getChild("HandRight");
+
+            this.ArmBaseLeft = this.Chest.getChild("ArmBaseLeft");
+            this.ArmLeft = this.ArmBaseLeft.getChild("ArmLeft");
             this.HandLeft = this.ArmLeft.getChild("HandLeft");
+
+            this.ThighLeft = this.Body.getChild("ThighLeft");
+            this.LegLeft = this.ThighLeft.getChild("LegLeft");
+            this.FootLeft = this.LegLeft.getChild("FootLeft");
+
+            this.ThighRight = this.Body.getChild("ThighRight");
+            this.LegRight = this.ThighRight.getChild("LegRight");
+            this.FootRight = this.LegRight.getChild("FootRight");
+
+            this.Back = this.Body.getChild("Back");
             this.Tail1 = this.Back.getChild("Tail1");
             this.Tail2 = this.Tail1.getChild("Tail2");
+            this.Tail3 = this.Tail2.getChild("Tail3");
         }
 
         public static LayerDefinition createBodyLayer() {
@@ -202,25 +210,34 @@ public abstract class ChinchillaModel<E extends Entity> extends ZawaBaseModel<E>
 
         public Child(ModelPart root) {
             this.Body = root.getChild("Body");
-            this.HandLeft = this.ArmLeft.getChild("HandLeft");
             this.Belly = this.Body.getChild("Belly");
-            this.TopSnout = this.Snout.getChild("TopSnout");
-            this.Snout = this.Head.getChild("Snout");
-            this.FootRight = this.ThighRight.getChild("FootRight");
-            this.Tail2 = this.Tail1.getChild("Tail2");
-            this.EarRight = this.Head.getChild("EarRight");
-            this.ArmLeft = this.Chest.getChild("ArmLeft");
+
             this.Chest = this.Body.getChild("Chest");
-            this.EarLeft = this.Head.getChild("EarLeft");
-            this.Tail1 = this.Body.getChild("Tail1");
-            this.Head = this.Neck.getChild("Head");
-            this.HandRight = this.ArmRight.getChild("HandRight");
-            this.FootLeft = this.ThighLeft.getChild("FootLeft");
+            this.ArmLeft = this.Chest.getChild("ArmLeft");
+            this.HandLeft = this.ArmLeft.getChild("HandLeft");
+
             this.Neck = this.Chest.getChild("Neck");
-            this.ArmRight = this.Chest.getChild("ArmRight");
+            this.Head = this.Neck.getChild("Head");
+            this.Snout = this.Head.getChild("Snout");
+            this.TopSnout = this.Snout.getChild("TopSnout");
+
             this.Mouth = this.Snout.getChild("Mouth");
+
+            this.EarRight = this.Head.getChild("EarRight");
+
+            this.EarLeft = this.Head.getChild("EarLeft");
+
+            this.ArmRight = this.Chest.getChild("ArmRight");
+            this.HandRight = this.ArmRight.getChild("HandRight");
+
+            this.Tail1 = this.Body.getChild("Tail1");
+            this.Tail2 = this.Tail1.getChild("Tail2");
+
             this.ThighLeft = this.Body.getChild("ThighLeft");
+            this.FootLeft = this.ThighLeft.getChild("FootLeft");
+
             this.ThighRight = this.Body.getChild("ThighRight");
+            this.FootRight = this.ThighRight.getChild("FootRight");
         }
 
         public static LayerDefinition createBodyLayer() {

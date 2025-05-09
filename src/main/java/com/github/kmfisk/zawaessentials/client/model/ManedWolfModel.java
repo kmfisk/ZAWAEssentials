@@ -55,35 +55,46 @@ public abstract class ManedWolfModel<E extends Entity> extends ZawaBaseModel<E> 
 
         public Adult(ModelPart root) {
             this.Chest = root.getChild("Chest");
-            this.LowerLegLeft = this.UpperLegLeft.getChild("LowerLegLeft");
-            this.UpperLegLeft = this.ThighLeft.getChild("UpperLegLeft");
-            this.Mane = this.Neck.getChild("Mane");
-            this.NeckLower = this.Neck.getChild("NeckLower");
-            this.ThighLeft = this.Hips.getChild("ThighLeft");
-            this.FootLeft = this.LowerLegLeft.getChild("FootLeft");
-            this.HandRight = this.ArmRight.getChild("HandRight");
-            this.Tail1 = this.Hips.getChild("Tail1");
-            this.ArmLeft = this.UpperArmLeft.getChild("ArmLeft");
-            this.UpperLegRight = this.ThighRight.getChild("UpperLegRight");
-            this.Hips = this.Body.getChild("Hips");
-            this.TopSnout = this.Snout.getChild("TopSnout");
-            this.Belly = this.Body.getChild("Belly");
             this.Body = this.Chest.getChild("Body");
-            this.Mouth = this.Snout.getChild("Mouth");
-            this.ArmRight = this.UpperArmRight.getChild("ArmRight");
-            this.ArmBaseLeft = this.Chest.getChild("ArmBaseLeft");
-            this.LowerLegRight = this.UpperLegRight.getChild("LowerLegRight");
-            this.Head = this.Neck.getChild("Head");
-            this.UpperArmRight = this.ArmBaseRight.getChild("UpperArmRight");
-            this.ArmBaseRight = this.Chest.getChild("ArmBaseRight");
-            this.UpperArmLeft = this.ArmBaseLeft.getChild("UpperArmLeft");
-            this.Snout = this.Head.getChild("Snout");
-            this.ThighRight = this.Hips.getChild("ThighRight");
-            this.HandLeft = this.ArmLeft.getChild("HandLeft");
-            this.EarLeft = this.Head.getChild("EarLeft");
-            this.FootRight = this.LowerLegRight.getChild("FootRight");
-            this.Neck = this.Chest.getChild("Neck");
+            this.Hips = this.Body.getChild("Hips");
+            this.ThighLeft = this.Hips.getChild("ThighLeft");
+            this.UpperLegLeft = this.ThighLeft.getChild("UpperLegLeft");
+            this.LowerLegLeft = this.UpperLegLeft.getChild("LowerLegLeft");
+            this.FootLeft = this.LowerLegLeft.getChild("FootLeft");
+
+            this.Tail1 = this.Hips.getChild("Tail1");
             this.Tail2 = this.Tail1.getChild("Tail2");
+
+            this.ThighRight = this.Hips.getChild("ThighRight");
+            this.UpperLegRight = this.ThighRight.getChild("UpperLegRight");
+            this.LowerLegRight = this.UpperLegRight.getChild("LowerLegRight");
+            this.FootRight = this.LowerLegRight.getChild("FootRight");
+
+            this.Belly = this.Body.getChild("Belly");
+
+            this.ArmBaseLeft = this.Chest.getChild("ArmBaseLeft");
+            this.UpperArmLeft = this.ArmBaseLeft.getChild("UpperArmLeft");
+            this.ArmLeft = this.UpperArmLeft.getChild("ArmLeft");
+            this.HandLeft = this.ArmLeft.getChild("HandLeft");
+
+            this.ArmBaseRight = this.Chest.getChild("ArmBaseRight");
+            this.UpperArmRight = this.ArmBaseRight.getChild("UpperArmRight");
+            this.ArmRight = this.UpperArmRight.getChild("ArmRight");
+            this.HandRight = this.ArmRight.getChild("HandRight");
+
+            this.Neck = this.Chest.getChild("Neck");
+            this.Mane = this.Neck.getChild("Mane");
+
+            this.NeckLower = this.Neck.getChild("NeckLower");
+
+            this.Head = this.Neck.getChild("Head");
+            this.Snout = this.Head.getChild("Snout");
+            this.TopSnout = this.Snout.getChild("TopSnout");
+
+            this.Mouth = this.Snout.getChild("Mouth");
+
+            this.EarLeft = this.Head.getChild("EarLeft");
+
             this.EarRight = this.Head.getChild("EarRight");
         }
 
@@ -235,34 +246,44 @@ public abstract class ManedWolfModel<E extends Entity> extends ZawaBaseModel<E> 
     public static class Child<E extends Entity> extends ManedWolfModel<E> {
         public Child(ModelPart root) {
             this.Chest = root.getChild("Chest");
-            this.EarRight = this.Head.getChild("EarRight");
             this.ArmBaseLeft = this.Chest.getChild("ArmBaseLeft");
-            this.Hips = this.Body.getChild("Hips");
-            this.ThighLeft = this.Hips.getChild("ThighLeft");
             this.UpperArmLeft = this.ArmBaseLeft.getChild("UpperArmLeft");
-            this.Head = this.Neck.getChild("Head");
-            this.ArmBaseRight = this.Chest.getChild("ArmBaseRight");
             this.ArmLeft = this.UpperArmLeft.getChild("ArmLeft");
-            this.HandRight = this.ArmRight.getChild("HandRight");
-            this.FootRight = this.LowerLegRight.getChild("FootRight");
-            this.Neck = this.Chest.getChild("Neck");
+            this.HandLeft = this.ArmLeft.getChild("HandLeft");
+
+            this.ArmBaseRight = this.Chest.getChild("ArmBaseRight");
             this.UpperArmRight = this.ArmBaseRight.getChild("UpperArmRight");
             this.ArmRight = this.UpperArmRight.getChild("ArmRight");
-            this.HandLeft = this.ArmLeft.getChild("HandLeft");
+            this.HandRight = this.ArmRight.getChild("HandRight");
+
+            this.Neck = this.Chest.getChild("Neck");
+            this.Head = this.Neck.getChild("Head");
+            this.EarRight = this.Head.getChild("EarRight");
+
             this.EarLeft = this.Head.getChild("EarLeft");
-            this.Mouth = this.Snout.getChild("Mouth");
-            this.TopSnout = this.Snout.getChild("TopSnout");
-            this.UpperLegLeft = this.ThighLeft.getChild("UpperLegLeft");
-            this.FootLeft = this.LowerLegLeft.getChild("FootLeft");
+
             this.Snout = this.Head.getChild("Snout");
+            this.Mouth = this.Snout.getChild("Mouth");
+
+            this.TopSnout = this.Snout.getChild("TopSnout");
+
             this.NeckLower = this.Neck.getChild("NeckLower");
-            this.LowerLegLeft = this.UpperLegLeft.getChild("LowerLegLeft");
-            this.LowerLegRight = this.UpperLegRight.getChild("LowerLegRight");
+
             this.Mane = this.Neck.getChild("Mane");
-            this.Tail1 = this.Hips.getChild("Tail1");
-            this.UpperLegRight = this.ThighRight.getChild("UpperLegRight");
+
             this.Body = this.Chest.getChild("Body");
+            this.Hips = this.Body.getChild("Hips");
+            this.ThighLeft = this.Hips.getChild("ThighLeft");
+            this.UpperLegLeft = this.ThighLeft.getChild("UpperLegLeft");
+            this.LowerLegLeft = this.UpperLegLeft.getChild("LowerLegLeft");
+            this.FootLeft = this.LowerLegLeft.getChild("FootLeft");
+
+            this.Tail1 = this.Hips.getChild("Tail1");
+
             this.ThighRight = this.Hips.getChild("ThighRight");
+            this.UpperLegRight = this.ThighRight.getChild("UpperLegRight");
+            this.LowerLegRight = this.UpperLegRight.getChild("LowerLegRight");
+            this.FootRight = this.LowerLegRight.getChild("FootRight");
         }
 
         public static LayerDefinition createBodyLayer() {

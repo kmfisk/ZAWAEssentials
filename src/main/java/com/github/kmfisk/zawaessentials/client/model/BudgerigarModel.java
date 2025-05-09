@@ -59,40 +59,50 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
 
         public Flying(ModelPart root) {
             this.Body = root.getChild("Body");
-            this.WingTip2L = this.WingTip1L.getChild("WingTip2L");
-            this.TailFeatherCenter = this.TailBase.getChild("TailFeatherCenter");
-            this.BeakLeft = this.Head.getChild("BeakLeft");
-            this.FootRight = this.LegRight.getChild("FootRight");
+            this.Wing1Left = this.Body.getChild("Wing1Left");
+            this.Wing2Left = this.Wing1Left.getChild("Wing2Left");
+            this.Wing3Left = this.Wing2Left.getChild("Wing3Left");
             this.WingTip1L = this.Wing3Left.getChild("WingTip1L");
+            this.WingTip2L = this.WingTip1L.getChild("WingTip2L");
+            this.WingTip3L = this.WingTip2L.getChild("WingTip3L");
+            this.WingTip4L = this.WingTip3L.getChild("WingTip4L");
+            this.WingTip4L_1 = this.WingTip4L.getChild("WingTip4L_1");
+
+            this.TailBase = this.Body.getChild("TailBase");
+            this.TailFeatherCenter = this.TailBase.getChild("TailFeatherCenter");
+
+            this.Tail = this.TailBase.getChild("Tail");
             this.TailFeatherR1 = this.Tail.getChild("TailFeatherR1");
             this.TailFeatherL2_1 = this.TailFeatherR1.getChild("TailFeatherL2_1");
+
             this.TailFeatherL1 = this.Tail.getChild("TailFeatherL1");
-            this.WingTip3L = this.WingTip2L.getChild("WingTip3L");
-            this.Wing2Right = this.Wing1Right.getChild("Wing2Right");
             this.TailFeatherL2 = this.TailFeatherL1.getChild("TailFeatherL2");
-            this.CereRight = this.Head.getChild("CereRight");
-            this.Wing2Left = this.Wing1Left.getChild("Wing2Left");
-            this.WingTip2R = this.WingTip1R.getChild("WingTip2R");
-            this.WingTip4L = this.WingTip3L.getChild("WingTip4L");
-            this.BeakRight = this.BeakLeft.getChild("BeakRight");
-            this.Wing1Left = this.Body.getChild("Wing1Left");
-            this.TailBase = this.Body.getChild("TailBase");
-            this.Wing3Left = this.Wing2Left.getChild("Wing3Left");
-            this.WingTip4L_1 = this.WingTip4L.getChild("WingTip4L_1");
-            this.Wing3Right = this.Wing2Right.getChild("Wing3Right");
-            this.Forehead = this.Head.getChild("Forehead");
-            this.WingTip4R = this.WingTip3R.getChild("WingTip4R");
+
             this.LegRight = this.Body.getChild("LegRight");
+            this.FootRight = this.LegRight.getChild("FootRight");
+
             this.Neck = this.Body.getChild("Neck");
-            this.FootLeft = this.LegLeft.getChild("FootLeft");
             this.Head = this.Neck.getChild("Head");
-            this.WingTip3R = this.WingTip2R.getChild("WingTip3R");
-            this.WingTip1R = this.Wing3Right.getChild("WingTip1R");
-            this.Wing1Right = this.Body.getChild("Wing1Right");
-            this.LegLeft = this.Body.getChild("LegLeft");
-            this.Tail = this.TailBase.getChild("Tail");
+            this.BeakLeft = this.Head.getChild("BeakLeft");
+            this.BeakRight = this.BeakLeft.getChild("BeakRight");
+
+            this.CereRight = this.Head.getChild("CereRight");
+
+            this.Forehead = this.Head.getChild("Forehead");
+
             this.CereLeft = this.Head.getChild("CereLeft");
+
+            this.Wing1Right = this.Body.getChild("Wing1Right");
+            this.Wing2Right = this.Wing1Right.getChild("Wing2Right");
+            this.Wing3Right = this.Wing2Right.getChild("Wing3Right");
+            this.WingTip1R = this.Wing3Right.getChild("WingTip1R");
+            this.WingTip2R = this.WingTip1R.getChild("WingTip2R");
+            this.WingTip3R = this.WingTip2R.getChild("WingTip3R");
+            this.WingTip4R = this.WingTip3R.getChild("WingTip4R");
             this.WingTip4R_1 = this.WingTip4R.getChild("WingTip4R_1");
+
+            this.LegLeft = this.Body.getChild("LegLeft");
+            this.FootLeft = this.LegLeft.getChild("FootLeft");
         }
 
         public static LayerDefinition createBodyLayer() {
@@ -182,27 +192,37 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
         public Adult(ModelPart root) {
             this.Body = root.getChild("Body");
             this.Neck = this.Body.getChild("Neck");
-            this.CereRight = this.Head.getChild("CereRight");
-            this.Forehead = this.Head.getChild("Forehead");
             this.Head = this.Neck.getChild("Head");
-            this.TailFeatherCenter = this.TailBase.getChild("TailFeatherCenter");
-            this.WingFoldedRight1 = this.WingFoldedRight.getChild("WingFoldedRight1");
-            this.TailFeatherL2_1 = this.TailFeatherR1.getChild("TailFeatherL2_1");
-            this.FootRight = this.LegRight.getChild("FootRight");
-            this.LegLeft = this.Body.getChild("LegLeft");
-            this.WingFoldedRight = this.Body.getChild("WingFoldedRight");
-            this.TailFeatherL1 = this.Tail.getChild("TailFeatherL1");
+            this.CereRight = this.Head.getChild("CereRight");
+
+            this.Forehead = this.Head.getChild("Forehead");
+
             this.BeakLeft = this.Head.getChild("BeakLeft");
-            this.FootLeft = this.LegLeft.getChild("FootLeft");
-            this.WingFoldedLeft = this.Body.getChild("WingFoldedLeft");
             this.BeakRight = this.BeakLeft.getChild("BeakRight");
-            this.WingFoldedLeft1 = this.WingFoldedLeft.getChild("WingFoldedLeft1");
-            this.Tail = this.TailBase.getChild("Tail");
-            this.LegRight = this.Body.getChild("LegRight");
-            this.TailFeatherL2 = this.TailFeatherL1.getChild("TailFeatherL2");
-            this.TailBase = this.Body.getChild("TailBase");
+
             this.CereLeft = this.Head.getChild("CereLeft");
+
+            this.LegLeft = this.Body.getChild("LegLeft");
+            this.FootLeft = this.LegLeft.getChild("FootLeft");
+
+            this.WingFoldedRight = this.Body.getChild("WingFoldedRight");
+            this.WingFoldedRight1 = this.WingFoldedRight.getChild("WingFoldedRight1");
+
+            this.WingFoldedLeft = this.Body.getChild("WingFoldedLeft");
+            this.WingFoldedLeft1 = this.WingFoldedLeft.getChild("WingFoldedLeft1");
+
+            this.LegRight = this.Body.getChild("LegRight");
+            this.FootRight = this.LegRight.getChild("FootRight");
+
+            this.TailBase = this.Body.getChild("TailBase");
+            this.TailFeatherCenter = this.TailBase.getChild("TailFeatherCenter");
+
+            this.Tail = this.TailBase.getChild("Tail");
+            this.TailFeatherL1 = this.Tail.getChild("TailFeatherL1");
+            this.TailFeatherL2 = this.TailFeatherL1.getChild("TailFeatherL2");
+
             this.TailFeatherR1 = this.Tail.getChild("TailFeatherR1");
+            this.TailFeatherL2_1 = this.TailFeatherR1.getChild("TailFeatherL2_1");
         }
 
         public static LayerDefinition createBodyLayer() {
