@@ -1,14 +1,15 @@
 package com.github.kmfisk.zawaessentials.client.render.entity;
 
 import com.github.kmfisk.zawaessentials.client.model.ParrotBaseModel;
+import com.github.kmfisk.zawaessentials.client.model.ZEModelLayers;
 import com.github.kmfisk.zawaessentials.entity.ConureEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class ConureRenderer extends ZawaMobRenderer<ConureEntity, ParrotBaseModel<ConureEntity>> {
-    public ConureRenderer(EntityRendererProvider.Context rendererManager) {
-        super(rendererManager, new ParrotBaseModel.Adult<>(), new ParrotBaseModel.Flying<>(), new ParrotBaseModel.Child<>(), 0.27F);
+    public ConureRenderer(EntityRendererProvider.Context context) {
+        super(context, new ParrotBaseModel.Adult<>(context.bakeLayer(ZEModelLayers.CONURE_ADULT)), new ParrotBaseModel.Flying<>(context.bakeLayer(ZEModelLayers.CONURE_FLYING)), new ParrotBaseModel.Child<>(context.bakeLayer(ZEModelLayers.CONURE_CHILD)), 0.27F);
     }
 
     @Override

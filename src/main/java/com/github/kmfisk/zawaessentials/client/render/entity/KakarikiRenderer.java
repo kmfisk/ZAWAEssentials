@@ -1,14 +1,15 @@
 package com.github.kmfisk.zawaessentials.client.render.entity;
 
 import com.github.kmfisk.zawaessentials.client.model.ParrotBaseModel;
+import com.github.kmfisk.zawaessentials.client.model.ZEModelLayers;
 import com.github.kmfisk.zawaessentials.entity.KakarikiEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class KakarikiRenderer extends ZawaMobRenderer<KakarikiEntity, ParrotBaseModel<KakarikiEntity>> {
-    public KakarikiRenderer(EntityRendererProvider.Context rendererManager) {
-        super(rendererManager, new ParrotBaseModel.Adult<>(), new ParrotBaseModel.Flying<>(), new ParrotBaseModel.Child<>(), 0.25F);
+    public KakarikiRenderer(EntityRendererProvider.Context context) {
+        super(context, new ParrotBaseModel.Adult<>(context.bakeLayer(ZEModelLayers.KAKARIKI_ADULT)), new ParrotBaseModel.Flying<>(context.bakeLayer(ZEModelLayers.KAKARIKI_FLYING)), new ParrotBaseModel.Child<>(context.bakeLayer(ZEModelLayers.KAKARIKI_CHILD)), 0.25F);
     }
 
     @Override

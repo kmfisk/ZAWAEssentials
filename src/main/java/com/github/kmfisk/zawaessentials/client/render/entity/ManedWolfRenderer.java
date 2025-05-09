@@ -1,6 +1,7 @@
 package com.github.kmfisk.zawaessentials.client.render.entity;
 
 import com.github.kmfisk.zawaessentials.client.model.ManedWolfModel;
+import com.github.kmfisk.zawaessentials.client.model.ZEModelLayers;
 import com.github.kmfisk.zawaessentials.entity.ManedWolfEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -8,8 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class ManedWolfRenderer extends ZawaMobRenderer<ManedWolfEntity, ManedWolfModel<ManedWolfEntity>> {
-    public ManedWolfRenderer(EntityRendererProvider.Context rendererManager) {
-        super(rendererManager, new ManedWolfModel.Adult<>(), new ManedWolfModel.Child<>(), 1.0F);
+    public ManedWolfRenderer(EntityRendererProvider.Context context) {
+        super(context, new ManedWolfModel.Adult<>(context.bakeLayer(ZEModelLayers.MANED_WOLF_ADULT)), new ManedWolfModel.Child<>(context.bakeLayer(ZEModelLayers.MANED_WOLF_CHILD)), 1.0F);
     }
 
     @Override

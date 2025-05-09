@@ -1,14 +1,15 @@
 package com.github.kmfisk.zawaessentials.client.render.entity;
 
 import com.github.kmfisk.zawaessentials.client.model.HawkHeadedParrotModel;
+import com.github.kmfisk.zawaessentials.client.model.ZEModelLayers;
 import com.github.kmfisk.zawaessentials.entity.PoicephalusParrotEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class PoicephalusParrotRenderer extends ZawaMobRenderer<PoicephalusParrotEntity, HawkHeadedParrotModel<PoicephalusParrotEntity>> {
-    public PoicephalusParrotRenderer(EntityRendererProvider.Context rendererManager) {
-        super(rendererManager, new HawkHeadedParrotModel.Adult<>(), new HawkHeadedParrotModel.Flying<>(), new HawkHeadedParrotModel.Child<>(), 0.3F);
+    public PoicephalusParrotRenderer(EntityRendererProvider.Context context) {
+        super(context, new HawkHeadedParrotModel.Adult<>(context.bakeLayer(ZEModelLayers.POICEPHALUS_PARROT_ADULT)), new HawkHeadedParrotModel.Flying<>(context.bakeLayer(ZEModelLayers.POICEPHALUS_PARROT_FLYING)), new HawkHeadedParrotModel.Child<>(context.bakeLayer(ZEModelLayers.POICEPHALUS_PARROT_CHILD)), 0.3F);
     }
 
     @Override

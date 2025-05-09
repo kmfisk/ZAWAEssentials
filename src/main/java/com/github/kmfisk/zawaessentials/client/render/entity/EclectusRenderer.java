@@ -2,6 +2,7 @@ package com.github.kmfisk.zawaessentials.client.render.entity;
 
 import com.github.kmfisk.zawaessentials.ZawaEssentials;
 import com.github.kmfisk.zawaessentials.client.model.HawkHeadedParrotModel;
+import com.github.kmfisk.zawaessentials.client.model.ZEModelLayers;
 import com.github.kmfisk.zawaessentials.entity.EclectusEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -13,8 +14,8 @@ import org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaBaseEntity;
 
 public class EclectusRenderer extends ZawaMobRenderer<EclectusEntity, HawkHeadedParrotModel<EclectusEntity>> {
-    public EclectusRenderer(EntityRendererProvider.Context rendererManager) {
-        super(rendererManager, new HawkHeadedParrotModel.Adult<>(), new HawkHeadedParrotModel.Flying<>(), new HawkHeadedParrotModel.Child<>(), 0.3F);
+    public EclectusRenderer(EntityRendererProvider.Context context) {
+        super(context, new HawkHeadedParrotModel.Adult<>(context.bakeLayer(ZEModelLayers.ECLECTUS_ADULT)), new HawkHeadedParrotModel.Flying<>(context.bakeLayer(ZEModelLayers.ECLECTUS_FLYING)), new HawkHeadedParrotModel.Child<>(context.bakeLayer(ZEModelLayers.ECLECTUS_CHILD)), 0.3F);
     }
 
     @Override

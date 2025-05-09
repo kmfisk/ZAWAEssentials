@@ -1,14 +1,15 @@
 package com.github.kmfisk.zawaessentials.client.render.entity;
 
 import com.github.kmfisk.zawaessentials.client.model.ParrotBaseModel;
+import com.github.kmfisk.zawaessentials.client.model.ZEModelLayers;
 import com.github.kmfisk.zawaessentials.entity.AustralianRingneckParrotEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class AustralianRingneckParrotRenderer extends ZawaMobRenderer<AustralianRingneckParrotEntity, ParrotBaseModel<AustralianRingneckParrotEntity>> {
-    public AustralianRingneckParrotRenderer(EntityRendererProvider.Context rendererManager) {
-        super(rendererManager, new ParrotBaseModel.Adult<>(), new ParrotBaseModel.Flying<>(), new ParrotBaseModel.Child<>(), 0.3F);
+    public AustralianRingneckParrotRenderer(EntityRendererProvider.Context context) {
+        super(context, new ParrotBaseModel.Adult<>(context.bakeLayer(ZEModelLayers.AUSTRALIAN_RINGNECK_PARROT_ADULT)), new ParrotBaseModel.Flying<>(context.bakeLayer(ZEModelLayers.AUSTRALIAN_RINGNECK_PARROT_FLYING)), new ParrotBaseModel.Child<>(context.bakeLayer(ZEModelLayers.AUSTRALIAN_RINGNECK_PARROT_CHILD)), 0.3F);
     }
 
     @Override
