@@ -3,248 +3,146 @@ package com.github.kmfisk.zawaessentials.client.model;
 import com.github.kmfisk.zawaessentials.entity.BudgerigarEntity;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import mcp.MethodsReturnNonnullByDefault;
-import net.minecraft.client.renderer.model.ModelRenderer;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.math.MathHelper;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
-import org.zawamod.zawa.client.model.ZawaModelRenderer;
 
 public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
-    public ZawaModelRenderer Body;
-    public ZawaModelRenderer Neck;
-    public ZawaModelRenderer TailBase;
-    public ZawaModelRenderer LegLeft;
-    public ZawaModelRenderer LegRight;
-    public ZawaModelRenderer Head;
-    public ZawaModelRenderer Forehead;
-    public ZawaModelRenderer BeakLeft;
-    public ZawaModelRenderer CereLeft;
-    public ZawaModelRenderer CereRight;
-    public ZawaModelRenderer BeakRight;
-    public ZawaModelRenderer Tail;
-    public ZawaModelRenderer TailFeatherCenter;
-    public ZawaModelRenderer TailFeatherL1;
-    public ZawaModelRenderer TailFeatherR1;
-    public ZawaModelRenderer TailFeatherL2;
-    public ZawaModelRenderer TailFeatherL2_1;
-    public ZawaModelRenderer FootLeft;
-    public ZawaModelRenderer FootRight;
-    private Iterable<ModelRenderer> parts;
+    public ModelPart Body;
+    public ModelPart Neck;
+    public ModelPart TailBase;
+    public ModelPart LegLeft;
+    public ModelPart LegRight;
+    public ModelPart Head;
+    public ModelPart Forehead;
+    public ModelPart BeakLeft;
+    public ModelPart CereLeft;
+    public ModelPart CereRight;
+    public ModelPart BeakRight;
+    public ModelPart Tail;
+    public ModelPart TailFeatherCenter;
+    public ModelPart TailFeatherL1;
+    public ModelPart TailFeatherR1;
+    public ModelPart TailFeatherL2;
+    public ModelPart TailFeatherL2_1;
+    public ModelPart FootLeft;
+    public ModelPart FootRight;
+    private Iterable<ModelPart> parts;
 
     @Override
-    @MethodsReturnNonnullByDefault
-    public Iterable<ModelRenderer> parts() {
+    public Iterable<ModelPart> parts() {
         if (this.parts == null) this.parts = ImmutableList.of(this.Body);
         return this.parts;
     }
 
     public static class Flying extends BudgerigarModel {
-        public ZawaModelRenderer Wing1Left;
-        public ZawaModelRenderer Wing1Right;
-        public ZawaModelRenderer Wing2Left;
-        public ZawaModelRenderer Wing3Left;
-        public ZawaModelRenderer WingTip1L;
-        public ZawaModelRenderer WingTip2L;
-        public ZawaModelRenderer WingTip3L;
-        public ZawaModelRenderer WingTip4L;
-        public ZawaModelRenderer WingTip4L_1;
-        public ZawaModelRenderer Wing2Right;
-        public ZawaModelRenderer Wing3Right;
-        public ZawaModelRenderer WingTip1R;
-        public ZawaModelRenderer WingTip2R;
-        public ZawaModelRenderer WingTip3R;
-        public ZawaModelRenderer WingTip4R;
-        public ZawaModelRenderer WingTip4R_1;
+        public ModelPart Wing1Left;
+        public ModelPart Wing1Right;
+        public ModelPart Wing2Left;
+        public ModelPart Wing3Left;
+        public ModelPart WingTip1L;
+        public ModelPart WingTip2L;
+        public ModelPart WingTip3L;
+        public ModelPart WingTip4L;
+        public ModelPart WingTip4L_1;
+        public ModelPart Wing2Right;
+        public ModelPart Wing3Right;
+        public ModelPart WingTip1R;
+        public ModelPart WingTip2R;
+        public ModelPart WingTip3R;
+        public ModelPart WingTip4R;
+        public ModelPart WingTip4R_1;
 
-        public Flying() {
-            this.texWidth = 32;
-            this.texHeight = 32;
-            this.WingTip2L = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip2L.setPos(0.0F, 0.0F, 0.0F);
-            this.WingTip2L.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip2L, 0.0F, 0.0F, -0.24434609527920614F);
-            this.TailFeatherCenter = new ZawaModelRenderer(this, 12, 7);
-            this.TailFeatherCenter.setPos(0.0F, 1.7F, -0.2F);
-            this.TailFeatherCenter.addBox(-0.5F, -2.0F, -0.4F, 1.0F, 8.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherCenter, 0.0911061832922575F, 0.0F, 0.0F);
-            this.BeakLeft = new ZawaModelRenderer(this, 0, 22);
-            this.BeakLeft.setPos(0.0F, -0.9F, -2.3F);
-            this.BeakLeft.addBox(-0.3F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.FootRight = new ZawaModelRenderer(this, 7, 16);
-            this.FootRight.mirror = true;
-            this.FootRight.setPos(0.0F, 0.5F, -0.7F);
-            this.FootRight.addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, 0.0F, 0.0F, -0.1F);
-            this.setRotateAngle(FootRight, 0.8651597048872669F, 0.13665927909957545F, 0.0F);
-            this.WingTip1L = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip1L.setPos(2.0F, 0.0F, 0.0F);
-            this.WingTip1L.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip1L, 0.0F, 0.0F, -0.24434609527920614F);
-            this.Body = new ZawaModelRenderer(this, 0, 0);
-            this.Body.setPos(0.0F, 21.9F, 0.0F);
-            this.Body.addBox(-1.5F, -2.0F, -1.5F, 3.0F, 4.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Body, 1.5025538891260521F, 0.0F, 0.0F);
-            this.TailFeatherR1 = new ZawaModelRenderer(this, 16, 7);
-            this.TailFeatherR1.mirror = true;
-            this.TailFeatherR1.setPos(-1.2F, -1.1F, -0.5F);
-            this.TailFeatherR1.addBox(0.0F, 0.0F, -0.5F, 1.0F, 6.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherR1, 0.0F, 0.0F, 0.031066860186156363F);
-            this.TailFeatherL2_1 = new ZawaModelRenderer(this, 16, 7);
-            this.TailFeatherL2_1.setPos(-0.3F, -0.6F, -0.1F);
-            this.TailFeatherL2_1.addBox(0.0F, 0.0F, -0.5F, 1.0F, 5.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherL2_1, 0.0F, 0.0F, 0.11833332694706204F);
-            this.TailFeatherL1 = new ZawaModelRenderer(this, 16, 7);
-            this.TailFeatherL1.setPos(1.2F, -1.1F, -0.5F);
-            this.TailFeatherL1.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 6.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherL1, 0.0F, 0.0F, -0.031066860186156363F);
-            this.WingTip3L = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip3L.setPos(0.0F, 0.0F, 0.0F);
-            this.WingTip3L.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip3L, 0.0F, 0.0F, -0.24434609527920614F);
-            this.Wing2Right = new ZawaModelRenderer(this, 20, 20);
-            this.Wing2Right.mirror = true;
-            this.Wing2Right.setPos(-2.0F, 4.0F, 0.0F);
-            this.Wing2Right.addBox(-2.0F, -4.0F, -0.5F, 2.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Wing2Right, 0.0F, 0.0F, 0.10471975511965977F);
-            this.TailFeatherL2 = new ZawaModelRenderer(this, 16, 7);
-            this.TailFeatherL2.setPos(0.3F, -0.6F, -0.1F);
-            this.TailFeatherL2.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 5.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherL2, 0.0F, 0.0F, -0.13578661946700535F);
-            this.CereRight = new ZawaModelRenderer(this, 0, 25);
-            this.CereRight.mirror = true;
-            this.CereRight.setPos(-0.5F, -1.2F, -2.5F);
-            this.CereRight.addBox(-0.5F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(CereRight, 0.0F, 0.1502728426045993F, 0.0F);
-            this.Wing2Left = new ZawaModelRenderer(this, 20, 20);
-            this.Wing2Left.setPos(2.0F, 4.0F, 0.0F);
-            this.Wing2Left.addBox(0.0F, -4.0F, -0.5F, 2.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Wing2Left, 0.0F, 0.0F, -0.10471975511965977F);
-            this.WingTip2R = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip2R.mirror = true;
-            this.WingTip2R.setPos(0.0F, 0.0F, 0.0F);
-            this.WingTip2R.addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip2R, 0.0F, 0.0F, 0.24434609527920614F);
-            this.WingTip4L = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip4L.setPos(0.0F, 0.0F, 0.0F);
-            this.WingTip4L.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip4L, 0.0F, 0.0F, -0.24434609527920614F);
-            this.BeakRight = new ZawaModelRenderer(this, 0, 22);
-            this.BeakRight.mirror = true;
-            this.BeakRight.setPos(0.0F, 0.0F, 0.0F);
-            this.BeakRight.addBox(-0.7F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.Wing1Left = new ZawaModelRenderer(this, 14, 20);
-            this.Wing1Left.setPos(1.0F, -2.0F, 0.6F);
-            this.Wing1Left.addBox(0.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Wing1Left, 0.0F, 0.0F, -0.04555309164612875F);
-            this.TailBase = new ZawaModelRenderer(this, 12, 0);
-            this.TailBase.setPos(0.0F, 2.6F, 0.0F);
-            this.TailBase.addBox(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailBase, 0.04555309164612875F, 0.0F, 0.0F);
-            this.Wing3Left = new ZawaModelRenderer(this, 26, 20);
-            this.Wing3Left.setPos(2.0F, -4.0F, 0.0F);
-            this.Wing3Left.addBox(0.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Wing3Left, 0.0F, 0.0F, 0.13962634015954636F);
-            this.WingTip4L_1 = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip4L_1.setPos(0.0F, 0.0F, 0.0F);
-            this.WingTip4L_1.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip4L_1, 0.0F, 0.0F, -0.24434609527920614F);
-            this.Wing3Right = new ZawaModelRenderer(this, 26, 20);
-            this.Wing3Right.mirror = true;
-            this.Wing3Right.setPos(-2.0F, -4.0F, 0.0F);
-            this.Wing3Right.addBox(-2.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Wing3Right, 0.0F, 0.0F, -0.13962634015954636F);
-            this.Forehead = new ZawaModelRenderer(this, 0, 18);
-            this.Forehead.setPos(0.0F, -1.9F, -2.0F);
-            this.Forehead.addBox(-1.0F, 0.0F, 0.0F, 2.0F, 1.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.WingTip4R = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip4R.mirror = true;
-            this.WingTip4R.setPos(0.0F, 0.0F, 0.0F);
-            this.WingTip4R.addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip4R, 0.0F, 0.0F, 0.24434609527920614F);
-            this.LegRight = new ZawaModelRenderer(this, 8, 13);
-            this.LegRight.mirror = true;
-            this.LegRight.setPos(-0.9F, 0.9F, -0.6F);
-            this.LegRight.addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, -0.1F);
-            this.setRotateAngle(LegRight, -0.0911061832922575F, 0.0F, 0.0F);
-            this.Neck = new ZawaModelRenderer(this, 0, 13);
-            this.Neck.setPos(0.0F, -2.6F, 0.1F);
-            this.Neck.addBox(-1.0F, -1.0F, -1.0F, 2.0F, 3.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Neck, -0.18203784630933073F, 0.0F, 0.0F);
-            this.FootLeft = new ZawaModelRenderer(this, 7, 16);
-            this.FootLeft.setPos(0.0F, 0.5F, -0.7F);
-            this.FootLeft.addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, 0.0F, 0.0F, -0.1F);
-            this.setRotateAngle(FootLeft, 0.9105382388075086F, -0.13665927909957545F, 0.0F);
-            this.Head = new ZawaModelRenderer(this, 0, 7);
-            this.Head.setPos(0.0F, -0.5F, 0.1F);
-            this.Head.addBox(-1.5F, -1.5F, -1.5F, 3.0F, 3.0F, 3.0F, 0.01F, 0.0F, 0.0F);
-            this.setRotateAngle(Head, -1.092750655326294F, 0.0F, 0.0F);
-            this.WingTip3R = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip3R.mirror = true;
-            this.WingTip3R.setPos(0.0F, 0.0F, 0.0F);
-            this.WingTip3R.addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip3R, 0.0F, 0.0F, 0.24434609527920614F);
-            this.WingTip1R = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip1R.setPos(-2.0F, 0.0F, 0.0F);
-            this.WingTip1R.addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip1R, 0.0F, 0.0F, 0.24434609527920614F);
-            this.Wing1Right = new ZawaModelRenderer(this, 14, 20);
-            this.Wing1Right.mirror = true;
-            this.Wing1Right.setPos(-1.0F, -2.0F, 0.6F);
-            this.Wing1Right.addBox(-2.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Wing1Right, 0.0F, 0.0F, 0.04555309164612875F);
-            this.LegLeft = new ZawaModelRenderer(this, 8, 13);
-            this.LegLeft.setPos(0.9F, 0.9F, -0.6F);
-            this.LegLeft.addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, -0.1F);
-            this.setRotateAngle(LegLeft, -0.0911061832922575F, 0.0F, 0.0F);
-            this.Tail = new ZawaModelRenderer(this, 12, 4);
-            this.Tail.setPos(0.0F, 1.0F, 0.3F);
-            this.Tail.addBox(-1.0F, -0.2F, -0.5F, 2.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Tail, 0.04555309164612875F, 0.0F, 0.0F);
-            this.CereLeft = new ZawaModelRenderer(this, 0, 25);
-            this.CereLeft.setPos(0.5F, -1.2F, -2.5F);
-            this.CereLeft.addBox(-0.5F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(CereLeft, 0.0F, -0.1502728426045993F, 0.0F);
-            this.WingTip4R_1 = new ZawaModelRenderer(this, 10, 20);
-            this.WingTip4R_1.mirror = true;
-            this.WingTip4R_1.setPos(0.0F, 0.0F, 0.0F);
-            this.WingTip4R_1.addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingTip4R_1, 0.0F, 0.0F, 0.24434609527920614F);
-            this.WingTip1L.addChild(this.WingTip2L);
-            this.TailBase.addChild(this.TailFeatherCenter);
-            this.Head.addChild(this.BeakLeft);
-            this.LegRight.addChild(this.FootRight);
-            this.Wing3Left.addChild(this.WingTip1L);
-            this.Tail.addChild(this.TailFeatherR1);
-            this.TailFeatherR1.addChild(this.TailFeatherL2_1);
-            this.Tail.addChild(this.TailFeatherL1);
-            this.WingTip2L.addChild(this.WingTip3L);
-            this.Wing1Right.addChild(this.Wing2Right);
-            this.TailFeatherL1.addChild(this.TailFeatherL2);
-            this.Head.addChild(this.CereRight);
-            this.Wing1Left.addChild(this.Wing2Left);
-            this.WingTip1R.addChild(this.WingTip2R);
-            this.WingTip3L.addChild(this.WingTip4L);
-            this.BeakLeft.addChild(this.BeakRight);
-            this.Body.addChild(this.Wing1Left);
-            this.Body.addChild(this.TailBase);
-            this.Wing2Left.addChild(this.Wing3Left);
-            this.WingTip4L.addChild(this.WingTip4L_1);
-            this.Wing2Right.addChild(this.Wing3Right);
-            this.Head.addChild(this.Forehead);
-            this.WingTip3R.addChild(this.WingTip4R);
-            this.Body.addChild(this.LegRight);
-            this.Body.addChild(this.Neck);
-            this.LegLeft.addChild(this.FootLeft);
-            this.Neck.addChild(this.Head);
-            this.WingTip2R.addChild(this.WingTip3R);
-            this.Wing3Right.addChild(this.WingTip1R);
-            this.Body.addChild(this.Wing1Right);
-            this.Body.addChild(this.LegLeft);
-            this.TailBase.addChild(this.Tail);
-            this.Head.addChild(this.CereLeft);
-            this.WingTip4R.addChild(this.WingTip4R_1);
-            this.saveBase();
+        public Flying(ModelPart root) {
+            this.Body = root.getChild("Body");
+            this.WingTip2L = this.WingTip1L.getChild("WingTip2L");
+            this.TailFeatherCenter = this.TailBase.getChild("TailFeatherCenter");
+            this.BeakLeft = this.Head.getChild("BeakLeft");
+            this.FootRight = this.LegRight.getChild("FootRight");
+            this.WingTip1L = this.Wing3Left.getChild("WingTip1L");
+            this.TailFeatherR1 = this.Tail.getChild("TailFeatherR1");
+            this.TailFeatherL2_1 = this.TailFeatherR1.getChild("TailFeatherL2_1");
+            this.TailFeatherL1 = this.Tail.getChild("TailFeatherL1");
+            this.WingTip3L = this.WingTip2L.getChild("WingTip3L");
+            this.Wing2Right = this.Wing1Right.getChild("Wing2Right");
+            this.TailFeatherL2 = this.TailFeatherL1.getChild("TailFeatherL2");
+            this.CereRight = this.Head.getChild("CereRight");
+            this.Wing2Left = this.Wing1Left.getChild("Wing2Left");
+            this.WingTip2R = this.WingTip1R.getChild("WingTip2R");
+            this.WingTip4L = this.WingTip3L.getChild("WingTip4L");
+            this.BeakRight = this.BeakLeft.getChild("BeakRight");
+            this.Wing1Left = this.Body.getChild("Wing1Left");
+            this.TailBase = this.Body.getChild("TailBase");
+            this.Wing3Left = this.Wing2Left.getChild("Wing3Left");
+            this.WingTip4L_1 = this.WingTip4L.getChild("WingTip4L_1");
+            this.Wing3Right = this.Wing2Right.getChild("Wing3Right");
+            this.Forehead = this.Head.getChild("Forehead");
+            this.WingTip4R = this.WingTip3R.getChild("WingTip4R");
+            this.LegRight = this.Body.getChild("LegRight");
+            this.Neck = this.Body.getChild("Neck");
+            this.FootLeft = this.LegLeft.getChild("FootLeft");
+            this.Head = this.Neck.getChild("Head");
+            this.WingTip3R = this.WingTip2R.getChild("WingTip3R");
+            this.WingTip1R = this.Wing3Right.getChild("WingTip1R");
+            this.Wing1Right = this.Body.getChild("Wing1Right");
+            this.LegLeft = this.Body.getChild("LegLeft");
+            this.Tail = this.TailBase.getChild("Tail");
+            this.CereLeft = this.Head.getChild("CereLeft");
+            this.WingTip4R_1 = this.WingTip4R.getChild("WingTip4R_1");
+        }
+
+        public static LayerDefinition createBodyLayer() {
+            MeshDefinition meshDefinition = new MeshDefinition();
+            PartDefinition partDefinition = meshDefinition.getRoot();
+
+            PartDefinition Body = partDefinition.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(0, 0).addBox(-1.5F, -2.0F, -1.5F, 3.0F, 4.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 21.9F, 0.0F, 1.5025538891260521F, 0.0F, 0.0F));
+            PartDefinition Wing1Left = Body.addOrReplaceChild("Wing1Left", CubeListBuilder.create().texOffs(14, 20).addBox(0.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(1.0F, -2.0F, 0.6F, 0.0F, 0.0F, -0.04555309164612875F));
+
+            PartDefinition TailBase = Body.addOrReplaceChild("TailBase", CubeListBuilder.create().texOffs(12, 0).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 2.6F, 0.0F, 0.04555309164612875F, 0.0F, 0.0F));
+            PartDefinition TailFeatherCenter = TailBase.addOrReplaceChild("TailFeatherCenter", CubeListBuilder.create().texOffs(12, 7).addBox(-0.5F, -2.0F, -0.4F, 1.0F, 8.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 1.7F, -0.2F, 0.0911061832922575F, 0.0F, 0.0F));
+
+            PartDefinition Tail = TailBase.addOrReplaceChild("Tail", CubeListBuilder.create().texOffs(12, 4).addBox(-1.0F, -0.2F, -0.5F, 2.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 1.0F, 0.3F, 0.04555309164612875F, 0.0F, 0.0F));
+
+            PartDefinition LegRight = Body.addOrReplaceChild("LegRight", CubeListBuilder.create().texOffs(8, 13).mirror(true).addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F, 0.0F, -0.1F)), PartPose.offsetAndRotation(-0.9F, 0.9F, -0.6F, -0.0911061832922575F, 0.0F, 0.0F));
+
+            PartDefinition Neck = Body.addOrReplaceChild("Neck", CubeListBuilder.create().texOffs(0, 13).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 3.0F, 2.0F), PartPose.offsetAndRotation(0.0F, -2.6F, 0.1F, -0.18203784630933073F, 0.0F, 0.0F));
+            PartDefinition Head = Neck.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 7).addBox(-1.5F, -1.5F, -1.5F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.01F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, -0.5F, 0.1F, -1.092750655326294F, 0.0F, 0.0F));
+
+            PartDefinition Wing1Right = Body.addOrReplaceChild("Wing1Right", CubeListBuilder.create().texOffs(14, 20).mirror(true).addBox(-2.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(-1.0F, -2.0F, 0.6F, 0.0F, 0.0F, 0.04555309164612875F));
+
+            PartDefinition LegLeft = Body.addOrReplaceChild("LegLeft", CubeListBuilder.create().texOffs(8, 13).addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F, 0.0F, -0.1F)), PartPose.offsetAndRotation(0.9F, 0.9F, -0.6F, -0.0911061832922575F, 0.0F, 0.0F));
+
+            PartDefinition BeakLeft = Head.addOrReplaceChild("BeakLeft", CubeListBuilder.create().texOffs(0, 22).addBox(-0.3F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F), PartPose.offset(0.0F, -0.9F, -2.3F));
+            PartDefinition FootRight = LegRight.addOrReplaceChild("FootRight", CubeListBuilder.create().texOffs(7, 16).mirror(true).addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F, 0.0F, -0.1F)), PartPose.offsetAndRotation(0.0F, 0.5F, -0.7F, 0.8651597048872669F, 0.13665927909957545F, 0.0F));
+            PartDefinition TailFeatherR1 = Tail.addOrReplaceChild("TailFeatherR1", CubeListBuilder.create().texOffs(16, 7).mirror(true).addBox(0.0F, 0.0F, -0.5F, 1.0F, 6.0F, 1.0F), PartPose.offsetAndRotation(-1.2F, -1.1F, -0.5F, 0.0F, 0.0F, 0.031066860186156363F));
+            PartDefinition TailFeatherL2_1 = TailFeatherR1.addOrReplaceChild("TailFeatherL2_1", CubeListBuilder.create().texOffs(16, 7).addBox(0.0F, 0.0F, -0.5F, 1.0F, 5.0F, 1.0F), PartPose.offsetAndRotation(-0.3F, -0.6F, -0.1F, 0.0F, 0.0F, 0.11833332694706204F));
+            PartDefinition TailFeatherL1 = Tail.addOrReplaceChild("TailFeatherL1", CubeListBuilder.create().texOffs(16, 7).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 6.0F, 1.0F), PartPose.offsetAndRotation(1.2F, -1.1F, -0.5F, 0.0F, 0.0F, -0.031066860186156363F));
+            PartDefinition Wing2Right = Wing1Right.addOrReplaceChild("Wing2Right", CubeListBuilder.create().texOffs(20, 20).mirror(true).addBox(-2.0F, -4.0F, -0.5F, 2.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(-2.0F, 4.0F, 0.0F, 0.0F, 0.0F, 0.10471975511965977F));
+            PartDefinition TailFeatherL2 = TailFeatherL1.addOrReplaceChild("TailFeatherL2", CubeListBuilder.create().texOffs(16, 7).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 5.0F, 1.0F), PartPose.offsetAndRotation(0.3F, -0.6F, -0.1F, 0.0F, 0.0F, -0.13578661946700535F));
+            PartDefinition CereRight = Head.addOrReplaceChild("CereRight", CubeListBuilder.create().texOffs(0, 25).mirror(true).addBox(-0.5F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(-0.5F, -1.2F, -2.5F, 0.0F, 0.1502728426045993F, 0.0F));
+            PartDefinition Wing2Left = Wing1Left.addOrReplaceChild("Wing2Left", CubeListBuilder.create().texOffs(20, 20).addBox(0.0F, -4.0F, -0.5F, 2.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(2.0F, 4.0F, 0.0F, 0.0F, 0.0F, -0.10471975511965977F));
+            PartDefinition BeakRight = BeakLeft.addOrReplaceChild("BeakRight", CubeListBuilder.create().texOffs(0, 22).mirror(true).addBox(-0.7F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F), PartPose.offset(0.0F, 0.0F, 0.0F));
+            PartDefinition Wing3Left = Wing2Left.addOrReplaceChild("Wing3Left", CubeListBuilder.create().texOffs(26, 20).addBox(0.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(2.0F, -4.0F, 0.0F, 0.0F, 0.0F, 0.13962634015954636F));
+            PartDefinition WingTip1L = Wing3Left.addOrReplaceChild("WingTip1L", CubeListBuilder.create().texOffs(10, 20).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(2.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.24434609527920614F));
+            PartDefinition Wing3Right = Wing2Right.addOrReplaceChild("Wing3Right", CubeListBuilder.create().texOffs(26, 20).mirror(true).addBox(-2.0F, 0.0F, -0.5F, 2.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(-2.0F, -4.0F, 0.0F, 0.0F, 0.0F, -0.13962634015954636F));
+            PartDefinition Forehead = Head.addOrReplaceChild("Forehead", CubeListBuilder.create().texOffs(0, 18).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 1.0F, 3.0F), PartPose.offset(0.0F, -1.9F, -2.0F));
+            PartDefinition FootLeft = LegLeft.addOrReplaceChild("FootLeft", CubeListBuilder.create().texOffs(7, 16).addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F, 0.0F, -0.1F)), PartPose.offsetAndRotation(0.0F, 0.5F, -0.7F, 0.9105382388075086F, -0.13665927909957545F, 0.0F));
+            PartDefinition WingTip1R = Wing3Right.addOrReplaceChild("WingTip1R", CubeListBuilder.create().texOffs(10, 20).addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(-2.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.24434609527920614F));
+            PartDefinition WingTip2L = WingTip1L.addOrReplaceChild("WingTip2L", CubeListBuilder.create().texOffs(10, 20).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.24434609527920614F));
+            PartDefinition WingTip3L = WingTip2L.addOrReplaceChild("WingTip3L", CubeListBuilder.create().texOffs(10, 20).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.24434609527920614F));
+            PartDefinition CereLeft = Head.addOrReplaceChild("CereLeft", CubeListBuilder.create().texOffs(0, 25).addBox(-0.5F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(0.5F, -1.2F, -2.5F, 0.0F, -0.1502728426045993F, 0.0F));
+            PartDefinition WingTip2R = WingTip1R.addOrReplaceChild("WingTip2R", CubeListBuilder.create().texOffs(10, 20).mirror(true).addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.24434609527920614F));
+            PartDefinition WingTip3R = WingTip2R.addOrReplaceChild("WingTip3R", CubeListBuilder.create().texOffs(10, 20).mirror(true).addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.24434609527920614F));
+            PartDefinition WingTip4R = WingTip3R.addOrReplaceChild("WingTip4R", CubeListBuilder.create().texOffs(10, 20).mirror(true).addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.24434609527920614F));
+            PartDefinition WingTip4L = WingTip3L.addOrReplaceChild("WingTip4L", CubeListBuilder.create().texOffs(10, 20).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.24434609527920614F));
+            PartDefinition WingTip4L_1 = WingTip4L.addOrReplaceChild("WingTip4L_1", CubeListBuilder.create().texOffs(10, 20).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.24434609527920614F));
+            PartDefinition WingTip4R_1 = WingTip4R.addOrReplaceChild("WingTip4R_1", CubeListBuilder.create().texOffs(10, 20).mirror(true).addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.24434609527920614F));
+
+            return LayerDefinition.create(meshDefinition, 32, 32);
         }
 
         @Override
@@ -254,161 +152,99 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
 
         @Override
         public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            this.loadBase();
         }
 
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            this.loadBase();
             float speed = 1.4f;
             float degree = 1.2f;
-            this.Body.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F + 1.548F;
-            this.Body.y = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.5F) * 0.5F + 20.5F;
-            this.Neck.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F - 0.364F;
-            this.Head.xRot = MathHelper.cos(3.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.1F - 0.86F;
-            this.TailBase.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.5F;
+            this.Body.xRot = Mth.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F + 1.548F;
+            this.Body.y = Mth.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.5F) * 0.5F + 20.5F;
+            this.Neck.xRot = Mth.cos(5.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.3F) * 0.1F - 0.364F;
+            this.Head.xRot = Mth.cos(3.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.1F - 0.86F;
+            this.TailBase.xRot = Mth.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 0.2F) * 0.5F;
 
-            this.Wing1Left.yRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 4F) * 0.5F - 0.364F;
-            this.Wing1Left.x = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -3F) * 0.5F + 0.1F;
-            this.Wing2Left.zRot = MathHelper.cos(1.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 2F) * 0.5F - 0.364F;
-            this.Wing1Right.yRot = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -4F) * 0.5F + 0.364F;
-            this.Wing1Right.x = MathHelper.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 3F) * 0.5F - 0.1F;
-            this.Wing2Right.zRot = MathHelper.cos(1.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -2F) * 0.5F + 0.364F;
+            this.Wing1Left.yRot = Mth.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 4F) * 0.5F - 0.364F;
+            this.Wing1Left.x = Mth.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -3F) * 0.5F + 0.1F;
+            this.Wing2Left.zRot = Mth.cos(1.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 2F) * 0.5F - 0.364F;
+            this.Wing1Right.yRot = Mth.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -4F) * 0.5F + 0.364F;
+            this.Wing1Right.x = Mth.cos(2.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * 3F) * 0.5F - 0.1F;
+            this.Wing2Right.zRot = Mth.cos(1.0F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -2F) * 0.5F + 0.364F;
         }
     }
 
     public static class Adult extends BudgerigarModel {
-        public ZawaModelRenderer WingFoldedLeft;
-        public ZawaModelRenderer WingFoldedRight;
-        public ZawaModelRenderer WingFoldedLeft1;
-        public ZawaModelRenderer WingFoldedRight1;
+        public ModelPart WingFoldedLeft;
+        public ModelPart WingFoldedRight;
+        public ModelPart WingFoldedLeft1;
+        public ModelPart WingFoldedRight1;
 
-        public Adult() {
-            this.texWidth = 32;
-            this.texHeight = 32;
-            this.Neck = new ZawaModelRenderer(this, 0, 13);
-            this.Neck.setPos(0.0F, -2.6F, 0.1F);
-            this.Neck.addBox(-1.0F, -1.0F, -1.0F, 2.0F, 3.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Neck, -0.18203784630933073F, 0.0F, 0.0F);
-            this.CereRight = new ZawaModelRenderer(this, 0, 25);
-            this.CereRight.mirror = true;
-            this.CereRight.setPos(-0.5F, -1.2F, -2.5F);
-            this.CereRight.addBox(-0.5F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(CereRight, 0.0F, 0.1502728426045993F, 0.0F);
-            this.Forehead = new ZawaModelRenderer(this, 0, 18);
-            this.Forehead.setPos(0.0F, -1.9F, -2.0F);
-            this.Forehead.addBox(-1.0F, 0.0F, 0.0F, 2.0F, 1.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.Head = new ZawaModelRenderer(this, 0, 7);
-            this.Head.setPos(0.0F, -0.7F, 0.5F);
-            this.Head.addBox(-1.5F, -1.5F, -1.5F, 3.0F, 3.0F, 3.0F, 0.01F, 0.0F, 0.0F);
-            this.setRotateAngle(Head, -0.591841146688116F, 0.0F, 0.0F);
-            this.TailFeatherCenter = new ZawaModelRenderer(this, 12, 7);
-            this.TailFeatherCenter.setPos(0.0F, 1.7F, -0.2F);
-            this.TailFeatherCenter.addBox(-0.5F, -2.0F, -0.4F, 1.0F, 8.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherCenter, 0.0911061832922575F, 0.0F, 0.0F);
-            this.WingFoldedRight1 = new ZawaModelRenderer(this, 0, 27);
-            this.WingFoldedRight1.mirror = true;
-            this.WingFoldedRight1.setPos(0.0F, 3.0F, -1.5F);
-            this.WingFoldedRight1.addBox(-0.4F, 0.0F, 0.0F, 1.0F, 3.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingFoldedRight1, 0.7740534966278743F, 0.0F, 0.0F);
-            this.TailFeatherL2_1 = new ZawaModelRenderer(this, 16, 7);
-            this.TailFeatherL2_1.setPos(-0.3F, -0.6F, -0.1F);
-            this.TailFeatherL2_1.addBox(0.0F, 0.0F, -0.5F, 1.0F, 5.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherL2_1, 0.0F, 0.0F, -0.0038397243335815787F);
-            this.FootRight = new ZawaModelRenderer(this, 7, 16);
-            this.FootRight.mirror = true;
-            this.FootRight.setPos(0.0F, 0.5F, -0.7F);
-            this.FootRight.addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(FootRight, 0.0F, 0.13665927909957545F, 0.0F);
-            this.LegLeft = new ZawaModelRenderer(this, 8, 13);
-            this.LegLeft.setPos(1.1F, 0.9F, -1.0F);
-            this.LegLeft.addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(LegLeft, -0.8196066007575706F, 0.13665927909957545F, -0.18203784630933073F);
-            this.WingFoldedRight = new ZawaModelRenderer(this, 4, 22);
-            this.WingFoldedRight.mirror = true;
-            this.WingFoldedRight.setPos(-1.2F, -1.4F, 0.0F);
-            this.WingFoldedRight.addBox(-0.5F, 0.0F, -1.5F, 1.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingFoldedRight, 0.27314402127920984F, 0.0F, 0.0911061832922575F);
-            this.TailFeatherL1 = new ZawaModelRenderer(this, 16, 7);
-            this.TailFeatherL1.setPos(1.2F, -1.1F, -0.5F);
-            this.TailFeatherL1.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 6.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherL1, 0.04555309164612875F, 0.0F, 0.05619960241356012F);
-            this.BeakLeft = new ZawaModelRenderer(this, 0, 22);
-            this.BeakLeft.setPos(0.0F, -0.9F, -2.3F);
-            this.BeakLeft.addBox(-0.3F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.FootLeft = new ZawaModelRenderer(this, 7, 16);
-            this.FootLeft.setPos(0.0F, 0.5F, -0.7F);
-            this.FootLeft.addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(FootLeft, 0.0F, -0.13665927909957545F, 0.0F);
-            this.WingFoldedLeft = new ZawaModelRenderer(this, 4, 22);
-            this.WingFoldedLeft.setPos(1.2F, -1.4F, 0.0F);
-            this.WingFoldedLeft.addBox(-0.5F, 0.0F, -1.5F, 1.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingFoldedLeft, 0.27314402127920984F, 0.0F, -0.0911061832922575F);
-            this.BeakRight = new ZawaModelRenderer(this, 0, 22);
-            this.BeakRight.mirror = true;
-            this.BeakRight.setPos(0.0F, 0.0F, 0.0F);
-            this.BeakRight.addBox(-0.7F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.WingFoldedLeft1 = new ZawaModelRenderer(this, 0, 27);
-            this.WingFoldedLeft1.setPos(0.0F, 3.0F, -1.5F);
-            this.WingFoldedLeft1.addBox(-0.6F, 0.0F, 0.0F, 1.0F, 3.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(WingFoldedLeft1, 0.7740534966278743F, 0.0F, 0.0F);
-            this.Tail = new ZawaModelRenderer(this, 12, 4);
-            this.Tail.setPos(0.0F, 1.0F, 0.3F);
-            this.Tail.addBox(-1.0F, -0.2F, -0.5F, 2.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Tail, 0.04555309164612875F, 0.0F, 0.0F);
-            this.Body = new ZawaModelRenderer(this, 0, 0);
-            this.Body.setPos(0.0F, 21.3F, 0.0F);
-            this.Body.addBox(-1.5F, -2.0F, -1.5F, 3.0F, 4.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Body, 0.8560839847874131F, 0.0F, 0.0F);
-            this.LegRight = new ZawaModelRenderer(this, 8, 13);
-            this.LegRight.mirror = true;
-            this.LegRight.setPos(-1.1F, 0.9F, -1.0F);
-            this.LegRight.addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(LegRight, -0.8196066007575706F, -0.13665927909957545F, 0.18203784630933073F);
-            this.TailFeatherL2 = new ZawaModelRenderer(this, 16, 7);
-            this.TailFeatherL2.setPos(0.3F, -0.6F, -0.1F);
-            this.TailFeatherL2.addBox(-1.0F, 0.0F, -0.5F, 1.0F, 5.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherL2, 0.0F, 0.0F, 0.0038397243335815787F);
-            this.TailBase = new ZawaModelRenderer(this, 12, 0);
-            this.TailBase.setPos(0.0F, 2.0F, 0.4F);
-            this.TailBase.addBox(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailBase, 0.45535640450848164F, 0.0F, 0.0F);
-            this.CereLeft = new ZawaModelRenderer(this, 0, 25);
-            this.CereLeft.setPos(0.5F, -1.2F, -2.5F);
-            this.CereLeft.addBox(-0.5F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(CereLeft, 0.0F, -0.1502728426045993F, 0.0F);
-            this.TailFeatherR1 = new ZawaModelRenderer(this, 16, 7);
-            this.TailFeatherR1.mirror = true;
-            this.TailFeatherR1.setPos(-1.2F, -1.1F, -0.5F);
-            this.TailFeatherR1.addBox(0.0F, 0.0F, -0.5F, 1.0F, 6.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(TailFeatherR1, 0.04555309164612875F, 0.0F, -0.05619960241356012F);
-            this.Body.addChild(this.Neck);
-            this.Head.addChild(this.CereRight);
-            this.Head.addChild(this.Forehead);
-            this.Neck.addChild(this.Head);
-            this.TailBase.addChild(this.TailFeatherCenter);
-            this.WingFoldedRight.addChild(this.WingFoldedRight1);
-            this.TailFeatherR1.addChild(this.TailFeatherL2_1);
-            this.LegRight.addChild(this.FootRight);
-            this.Body.addChild(this.LegLeft);
-            this.Body.addChild(this.WingFoldedRight);
-            this.Tail.addChild(this.TailFeatherL1);
-            this.Head.addChild(this.BeakLeft);
-            this.LegLeft.addChild(this.FootLeft);
-            this.Body.addChild(this.WingFoldedLeft);
-            this.BeakLeft.addChild(this.BeakRight);
-            this.WingFoldedLeft.addChild(this.WingFoldedLeft1);
-            this.TailBase.addChild(this.Tail);
-            this.Body.addChild(this.LegRight);
-            this.TailFeatherL1.addChild(this.TailFeatherL2);
-            this.Body.addChild(this.TailBase);
-            this.Head.addChild(this.CereLeft);
-            this.Tail.addChild(this.TailFeatherR1);
-            this.saveBase();
+        public Adult(ModelPart root) {
+            this.Body = root.getChild("Body");
+            this.Neck = this.Body.getChild("Neck");
+            this.CereRight = this.Head.getChild("CereRight");
+            this.Forehead = this.Head.getChild("Forehead");
+            this.Head = this.Neck.getChild("Head");
+            this.TailFeatherCenter = this.TailBase.getChild("TailFeatherCenter");
+            this.WingFoldedRight1 = this.WingFoldedRight.getChild("WingFoldedRight1");
+            this.TailFeatherL2_1 = this.TailFeatherR1.getChild("TailFeatherL2_1");
+            this.FootRight = this.LegRight.getChild("FootRight");
+            this.LegLeft = this.Body.getChild("LegLeft");
+            this.WingFoldedRight = this.Body.getChild("WingFoldedRight");
+            this.TailFeatherL1 = this.Tail.getChild("TailFeatherL1");
+            this.BeakLeft = this.Head.getChild("BeakLeft");
+            this.FootLeft = this.LegLeft.getChild("FootLeft");
+            this.WingFoldedLeft = this.Body.getChild("WingFoldedLeft");
+            this.BeakRight = this.BeakLeft.getChild("BeakRight");
+            this.WingFoldedLeft1 = this.WingFoldedLeft.getChild("WingFoldedLeft1");
+            this.Tail = this.TailBase.getChild("Tail");
+            this.LegRight = this.Body.getChild("LegRight");
+            this.TailFeatherL2 = this.TailFeatherL1.getChild("TailFeatherL2");
+            this.TailBase = this.Body.getChild("TailBase");
+            this.CereLeft = this.Head.getChild("CereLeft");
+            this.TailFeatherR1 = this.Tail.getChild("TailFeatherR1");
+        }
+
+        public static LayerDefinition createBodyLayer() {
+            MeshDefinition meshDefinition = new MeshDefinition();
+            PartDefinition partDefinition = meshDefinition.getRoot();
+
+            PartDefinition Body = partDefinition.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(0, 0).addBox(-1.5F, -2.0F, -1.5F, 3.0F, 4.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 21.3F, 0.0F, 0.8560839847874131F, 0.0F, 0.0F));
+            PartDefinition Neck = Body.addOrReplaceChild("Neck", CubeListBuilder.create().texOffs(0, 13).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 3.0F, 2.0F), PartPose.offsetAndRotation(0.0F, -2.6F, 0.1F, -0.18203784630933073F, 0.0F, 0.0F));
+            PartDefinition Head = Neck.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 7).addBox(-1.5F, -1.5F, -1.5F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.01F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, -0.7F, 0.5F, -0.591841146688116F, 0.0F, 0.0F));
+
+            PartDefinition LegLeft = Body.addOrReplaceChild("LegLeft", CubeListBuilder.create().texOffs(8, 13).addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(1.1F, 0.9F, -1.0F, -0.8196066007575706F, 0.13665927909957545F, -0.18203784630933073F));
+
+            PartDefinition WingFoldedRight = Body.addOrReplaceChild("WingFoldedRight", CubeListBuilder.create().texOffs(4, 22).mirror(true).addBox(-0.5F, 0.0F, -1.5F, 1.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(-1.2F, -1.4F, 0.0F, 0.27314402127920984F, 0.0F, 0.0911061832922575F));
+
+            PartDefinition WingFoldedLeft = Body.addOrReplaceChild("WingFoldedLeft", CubeListBuilder.create().texOffs(4, 22).addBox(-0.5F, 0.0F, -1.5F, 1.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(1.2F, -1.4F, 0.0F, 0.27314402127920984F, 0.0F, -0.0911061832922575F));
+
+            PartDefinition LegRight = Body.addOrReplaceChild("LegRight", CubeListBuilder.create().texOffs(8, 13).mirror(true).addBox(-0.5F, -0.9F, -1.0F, 1.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(-1.1F, 0.9F, -1.0F, -0.8196066007575706F, -0.13665927909957545F, 0.18203784630933073F));
+
+            PartDefinition TailBase = Body.addOrReplaceChild("TailBase", CubeListBuilder.create().texOffs(12, 0).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 2.0F, 0.4F, 0.45535640450848164F, 0.0F, 0.0F));
+            PartDefinition TailFeatherCenter = TailBase.addOrReplaceChild("TailFeatherCenter", CubeListBuilder.create().texOffs(12, 7).addBox(-0.5F, -2.0F, -0.4F, 1.0F, 8.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 1.7F, -0.2F, 0.0911061832922575F, 0.0F, 0.0F));
+
+            PartDefinition Tail = TailBase.addOrReplaceChild("Tail", CubeListBuilder.create().texOffs(12, 4).addBox(-1.0F, -0.2F, -0.5F, 2.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 1.0F, 0.3F, 0.04555309164612875F, 0.0F, 0.0F));
+
+            PartDefinition CereRight = Head.addOrReplaceChild("CereRight", CubeListBuilder.create().texOffs(0, 25).mirror(true).addBox(-0.5F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(-0.5F, -1.2F, -2.5F, 0.0F, 0.1502728426045993F, 0.0F));
+            PartDefinition Forehead = Head.addOrReplaceChild("Forehead", CubeListBuilder.create().texOffs(0, 18).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 1.0F, 3.0F), PartPose.offset(0.0F, -1.9F, -2.0F));
+            PartDefinition WingFoldedRight1 = WingFoldedRight.addOrReplaceChild("WingFoldedRight1", CubeListBuilder.create().texOffs(0, 27).mirror(true).addBox(-0.4F, 0.0F, 0.0F, 1.0F, 3.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 3.0F, -1.5F, 0.7740534966278743F, 0.0F, 0.0F));
+            PartDefinition FootRight = LegRight.addOrReplaceChild("FootRight", CubeListBuilder.create().texOffs(7, 16).mirror(true).addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 0.5F, -0.7F, 0.0F, 0.13665927909957545F, 0.0F));
+            PartDefinition TailFeatherL1 = Tail.addOrReplaceChild("TailFeatherL1", CubeListBuilder.create().texOffs(16, 7).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 6.0F, 1.0F), PartPose.offsetAndRotation(1.2F, -1.1F, -0.5F, 0.04555309164612875F, 0.0F, 0.05619960241356012F));
+            PartDefinition BeakLeft = Head.addOrReplaceChild("BeakLeft", CubeListBuilder.create().texOffs(0, 22).addBox(-0.3F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F), PartPose.offset(0.0F, -0.9F, -2.3F));
+            PartDefinition FootLeft = LegLeft.addOrReplaceChild("FootLeft", CubeListBuilder.create().texOffs(7, 16).addBox(-0.5F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 0.5F, -0.7F, 0.0F, -0.13665927909957545F, 0.0F));
+            PartDefinition BeakRight = BeakLeft.addOrReplaceChild("BeakRight", CubeListBuilder.create().texOffs(0, 22).mirror(true).addBox(-0.7F, 0.0F, 0.0F, 1.0F, 2.0F, 1.0F), PartPose.offset(0.0F, 0.0F, 0.0F));
+            PartDefinition WingFoldedLeft1 = WingFoldedLeft.addOrReplaceChild("WingFoldedLeft1", CubeListBuilder.create().texOffs(0, 27).addBox(-0.6F, 0.0F, 0.0F, 1.0F, 3.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 3.0F, -1.5F, 0.7740534966278743F, 0.0F, 0.0F));
+            PartDefinition TailFeatherL2 = TailFeatherL1.addOrReplaceChild("TailFeatherL2", CubeListBuilder.create().texOffs(16, 7).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 5.0F, 1.0F), PartPose.offsetAndRotation(0.3F, -0.6F, -0.1F, 0.0F, 0.0F, 0.0038397243335815787F));
+            PartDefinition CereLeft = Head.addOrReplaceChild("CereLeft", CubeListBuilder.create().texOffs(0, 25).addBox(-0.5F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(0.5F, -1.2F, -2.5F, 0.0F, -0.1502728426045993F, 0.0F));
+            PartDefinition TailFeatherR1 = Tail.addOrReplaceChild("TailFeatherR1", CubeListBuilder.create().texOffs(16, 7).mirror(true).addBox(0.0F, 0.0F, -0.5F, 1.0F, 6.0F, 1.0F), PartPose.offsetAndRotation(-1.2F, -1.1F, -0.5F, 0.04555309164612875F, 0.0F, -0.05619960241356012F));
+            PartDefinition TailFeatherL2_1 = TailFeatherR1.addOrReplaceChild("TailFeatherL2_1", CubeListBuilder.create().texOffs(16, 7).addBox(0.0F, 0.0F, -0.5F, 1.0F, 5.0F, 1.0F), PartPose.offsetAndRotation(-0.3F, -0.6F, -0.1F, 0.0F, 0.0F, -0.0038397243335815787F));
+
+            return LayerDefinition.create(meshDefinition, 32, 32);
         }
 
         @Override
-        public void renderToBuffer(PoseStack poseStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
             if (this.young) {
                 poseStack.pushPose();
                 poseStack.scale(0.5F, 0.5F, 0.5F);
@@ -430,28 +266,26 @@ public abstract class BudgerigarModel extends ZawaBaseModel<BudgerigarEntity> {
 
         @Override
         public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            this.loadBase();
             float speed = 1.0f;
             float degree = 1.0f;
-            this.Neck.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.4F) * 0.5F - 0.182F;
-            this.Head.xRot = MathHelper.cos(limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.4F) * 0.5F - 0.591F;
+            this.Neck.xRot = Mth.cos(2.0F + limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.4F) * 0.5F - 0.182F;
+            this.Head.xRot = Mth.cos(limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.4F) * 0.5F - 0.591F;
         }
 
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-            this.loadBase();
             float speed = 1.0f;
             float degree = 1.0f;
-            this.Body.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * -0.1F) * 0.5F + 0.856F;
-            this.Body.y = MathHelper.cos(3.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * 0.1F) * 0.5F + 21.3F;
-            this.Body.yRot = MathHelper.cos(4.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 0.25F) * 0.5F;
-            this.Neck.xRot = MathHelper.cos(1.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * 0.2F) * 0.5F - 0.182F;
-            this.Head.xRot = MathHelper.cos(2.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * -0.2F) * 0.5F - 0.591F;
+            this.Body.xRot = Mth.cos(2.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * -0.1F) * 0.5F + 0.856F;
+            this.Body.y = Mth.cos(3.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * 0.1F) * 0.5F + 21.3F;
+            this.Body.yRot = Mth.cos(4.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 0.25F) * 0.5F;
+            this.Neck.xRot = Mth.cos(1.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * 0.2F) * 0.5F - 0.182F;
+            this.Head.xRot = Mth.cos(2.0F + limbSwing * speed * 0.7F) * limbSwingAmount * (degree * -0.2F) * 0.5F - 0.591F;
 
-            this.LegLeft.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * -2.3F) * 0.5F - 0.819F;
-            this.FootLeft.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 2.3F) * 0.5F;
-            this.LegRight.xRot = MathHelper.cos(5.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 2.3F) * 0.5F - 0.819F;
-            this.FootRight.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * -2.3F) * 0.5F;
+            this.LegLeft.xRot = Mth.cos(5.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * -2.3F) * 0.5F - 0.819F;
+            this.FootLeft.xRot = Mth.cos(6.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 2.3F) * 0.5F;
+            this.LegRight.xRot = Mth.cos(5.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * 2.3F) * 0.5F - 0.819F;
+            this.FootRight.xRot = Mth.cos(6.0F + limbSwing * speed * 0.35F) * limbSwingAmount * (degree * -2.3F) * 0.5F;
 
         }
     }
