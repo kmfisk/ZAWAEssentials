@@ -74,13 +74,13 @@ public class KakarikiEntity extends ZawaFlyingEntity implements SpeciesVariantsE
 
     @Override
     public int getVariantByBiome(LevelAccessor level) {
-        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
-        if (ZawaSpawnCategory.COASTAL_TAIGA.getBiomes().contains(biome))
-            return 0;
-        if (ZawaSpawnCategory.COLD_GRASSLAND.getBiomes().contains(biome))
-            return 1;
-        if (ZawaSpawnCategory.COASTAL_TUNDRA.getBiomes().contains(biome))
-            return 2;
+//        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
+//        if (ZawaSpawnCategory.COASTAL_TAIGA.getBiomes().contains(biome))
+//            return 0;
+//        if (ZawaSpawnCategory.COLD_GRASSLAND.getBiomes().contains(biome))
+//            return 1;
+//        if (ZawaSpawnCategory.COASTAL_TUNDRA.getBiomes().contains(biome))
+//            return 2;
 
         return random.nextInt(getWildVariants());
     }

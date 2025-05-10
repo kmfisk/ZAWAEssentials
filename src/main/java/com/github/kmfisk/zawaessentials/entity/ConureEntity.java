@@ -76,19 +76,19 @@ public class ConureEntity extends ZawaFlyingEntity implements SpeciesVariantsEnt
 
     @Override
     public int getVariantByBiome(LevelAccessor level) {
-        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
-        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
-            return 0;
-        if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
-            return 1;
-        if (ZawaSpawnCategory.TEMPERATE_FOREST.getBiomes().contains(biome))
-            return 2;
-        if (ZawaSpawnCategory.TEMPERATE_ALPINE.getBiomes().contains(biome))
-            return 3;
-        if (ZawaSpawnCategory.DEEP_RAINFOREST.getBiomes().contains(biome))
-            return 4;
-        if (ZawaSpawnCategory.DRY_FOREST.getBiomes().contains(biome))
-            return 5;
+//        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
+//        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
+//            return 0;
+//        if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
+//            return 1;
+//        if (ZawaSpawnCategory.TEMPERATE_FOREST.getBiomes().contains(biome))
+//            return 2;
+//        if (ZawaSpawnCategory.TEMPERATE_ALPINE.getBiomes().contains(biome))
+//            return 3;
+//        if (ZawaSpawnCategory.DEEP_RAINFOREST.getBiomes().contains(biome))
+//            return 4;
+//        if (ZawaSpawnCategory.DRY_FOREST.getBiomes().contains(biome))
+//            return 5;
 
         return random.nextInt(getWildVariants());
     }

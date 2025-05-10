@@ -1,0 +1,44 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:and",
+    "values": [
+      "#is_overworld",
+      "#minecraft:is_jungle",
+      "#forge:is_rare",
+      {"type": "forge:not", "value": "#minecraft:is_forest"}
+    ]
+  },
+  "spawners": [
+    {
+      "type": "modid:conure",
+      "weight": 8,
+      "minCount": 2,
+      "maxCount": 3
+    },
+    {
+      "type": "modid:moho",
+      "weight": 5,
+      "minCount": 0,
+      "maxCount": 1
+    },
+    {
+      "type": "modid:poicephalus_parrot",
+      "weight": 8,
+      "minCount": 2,
+      "maxCount": 3
+    },
+    {
+      "type": "modid:ringneck_parrot",
+      "weight": 10,
+      "minCount": 3,
+      "maxCount": 4
+    },
+    {
+      "type": "modid:rosella",
+      "weight": 8,
+      "minCount": 2,
+      "maxCount": 3
+    }
+  ]
+}

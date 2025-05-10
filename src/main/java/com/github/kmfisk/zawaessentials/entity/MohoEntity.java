@@ -75,15 +75,15 @@ public class MohoEntity extends ZawaFlyingEntity implements SpeciesVariantsEntit
 
     @Override
     public int getVariantByBiome(LevelAccessor level) {
-        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
-        if (ZawaSpawnCategory.COASTAL_TAIGA.getBiomes().contains(biome))
-            return 0;
-        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
-            return 1;
-        if (ZawaSpawnCategory.TEMPERATE_ALPINE.getBiomes().contains(biome))
-            return 2;
-        if (ZawaSpawnCategory.DEEP_RAINFOREST.getBiomes().contains(biome))
-            return 3;
+//        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
+//        if (ZawaSpawnCategory.COASTAL_TAIGA.getBiomes().contains(biome))
+//            return 0;
+//        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
+//            return 1;
+//        if (ZawaSpawnCategory.TEMPERATE_ALPINE.getBiomes().contains(biome))
+//            return 2;
+//        if (ZawaSpawnCategory.DEEP_RAINFOREST.getBiomes().contains(biome))
+//            return 3;
 
         return random.nextInt(getWildVariants());
     }

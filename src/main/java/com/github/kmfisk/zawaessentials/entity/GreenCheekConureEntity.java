@@ -75,17 +75,17 @@ public class GreenCheekConureEntity extends ZawaFlyingEntity implements SpeciesV
 
     @Override
     public int getVariantByBiome(LevelAccessor level) {
-        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
-        if (ZawaSpawnCategory.WET_FOREST.getBiomes().contains(biome))
-            return random.nextBoolean() ? 0 : 6;
-        if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
-            return 1;
-        if (ZawaSpawnCategory.DRY_RAINFOREST.getBiomes().contains(biome))
-            return random.nextBoolean() ? 2 : 4;
-        if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
-            return 3;
-        if (ZawaSpawnCategory.DEEP_RAINFOREST.getBiomes().contains(biome))
-            return 5;
+//        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
+//        if (ZawaSpawnCategory.WET_FOREST.getBiomes().contains(biome))
+//            return random.nextBoolean() ? 0 : 6;
+//        if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
+//            return 1;
+//        if (ZawaSpawnCategory.DRY_RAINFOREST.getBiomes().contains(biome))
+//            return random.nextBoolean() ? 2 : 4;
+//        if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
+//            return 3;
+//        if (ZawaSpawnCategory.DEEP_RAINFOREST.getBiomes().contains(biome))
+//            return 5;
 
         return random.nextInt(getWildVariants());
     }

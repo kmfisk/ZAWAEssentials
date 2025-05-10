@@ -72,13 +72,13 @@ public class RingneckParrotEntity extends ZawaFlyingEntity implements SpeciesVar
 
     @Override
     public int getVariantByBiome(LevelAccessor level) {
-        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
-        if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
-            return 0;
-        if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
-            return 1;
-        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
-            return random.nextBoolean() ? 2 : 3;
+//        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
+//        if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
+//            return 0;
+//        if (ZawaSpawnCategory.WET_RAINFOREST.getBiomes().contains(biome))
+//            return 1;
+//        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
+//            return random.nextBoolean() ? 2 : 3;
 
         return random.nextInt(getWildVariants());
     }

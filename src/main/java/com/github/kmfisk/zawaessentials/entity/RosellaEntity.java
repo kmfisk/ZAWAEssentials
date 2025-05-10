@@ -75,13 +75,13 @@ public class RosellaEntity extends ZawaFlyingEntity implements SpeciesVariantsEn
 
     @Override
     public int getVariantByBiome(LevelAccessor level) {
-        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
-        if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
-            return random.nextBoolean() ? 0 : 3;
-        if (ZawaSpawnCategory.DRY_FOREST.getBiomes().contains(biome))
-            return 1;
-        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
-            return 2;
+//        String biome = level.getBiome(this.blockPosition()).value().getRegistryName().toString();
+//        if (ZawaSpawnCategory.DRY_GRASSLAND.getBiomes().contains(biome))
+//            return random.nextBoolean() ? 0 : 3;
+//        if (ZawaSpawnCategory.DRY_FOREST.getBiomes().contains(biome))
+//            return 1;
+//        if (ZawaSpawnCategory.TROPICAL_ALPINE.getBiomes().contains(biome))
+//            return 2;
 
         return random.nextInt(getWildVariants());
     }
