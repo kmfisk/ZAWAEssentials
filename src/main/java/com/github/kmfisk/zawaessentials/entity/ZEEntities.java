@@ -14,7 +14,7 @@ import org.zawamod.zawa.world.entity.ZawaEntityRegistry;
 import org.zawamod.zawa.world.entity.animal.ZawaBaseEntity;
 
 public class ZEEntities {
-    public static final ZawaEntityRegistry REGISTRY = new ZawaEntityRegistry(ZawaEssentials.MOD_ID, Zawa.ENTITIES_GROUP);
+    public static final ZawaEntityRegistry REGISTRY = new ZawaEntityRegistry(ZawaEssentials.MOD_ID);
 
     public static final RegistryObject<EntityType<AustralianRingneckParrotEntity>> AUSTRALIAN_RINGNECK_PARROT =
             REGISTRY.builder(AustralianRingneckParrotEntity::new, MobCategory.CREATURE)
