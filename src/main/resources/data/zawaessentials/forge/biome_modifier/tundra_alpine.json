@@ -23,13 +23,13 @@
   },
   "spawners": [
     {
-      "type": "modid:chinchilla",
+      "type": "zawaessentials:chinchilla",
       "weight": 5,
       "minCount": 1,
       "maxCount": 1
     },
     {
-      "type": "modid:kea",
+      "type": "zawaessentials:kea",
       "weight": 2,
       "minCount": 1,
       "maxCount": 1

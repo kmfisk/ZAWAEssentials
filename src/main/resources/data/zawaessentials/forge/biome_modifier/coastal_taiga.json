@@ -26,13 +26,13 @@
   },
   "spawners": [
     {
-      "type": "modid:kakariki",
+      "type": "zawaessentials:kakariki",
       "weight": 8,
       "minCount": 1,
       "maxCount": 1
     },
     {
-      "type": "modid:moho",
+      "type": "zawaessentials:moho",
       "weight": 5,
       "minCount": 0,
       "maxCount": 1

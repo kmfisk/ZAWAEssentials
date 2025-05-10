@@ -11,31 +11,31 @@
   },
   "spawners": [
     {
-      "type": "modid:conure",
+      "type": "zawaessentials:conure",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3
     },
     {
-      "type": "modid:moho",
+      "type": "zawaessentials:moho",
       "weight": 5,
       "minCount": 0,
       "maxCount": 1
     },
     {
-      "type": "modid:poicephalus_parrot",
+      "type": "zawaessentials:poicephalus_parrot",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3
     },
     {
-      "type": "modid:ringneck_parrot",
+      "type": "zawaessentials:ringneck_parrot",
       "weight": 10,
       "minCount": 3,
       "maxCount": 4
     },
     {
-      "type": "modid:rosella",
+      "type": "zawaessentials:rosella",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3

@@ -30,7 +30,7 @@
   },
   "spawners": [
     {
-      "type": "modid:conure",
+      "type": "zawaessentials:conure",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3

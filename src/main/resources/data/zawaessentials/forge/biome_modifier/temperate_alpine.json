@@ -13,13 +13,13 @@
   },
   "spawners": [
     {
-      "type": "modid:conure",
+      "type": "zawaessentials:conure",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3
     },
     {
-      "type": "modid:moho",
+      "type": "zawaessentials:moho",
       "weight": 5,
       "minCount": 0,
       "maxCount": 1

@@ -12,7 +12,7 @@
   },
   "spawners": [
     {
-      "type": "modid:kakariki",
+      "type": "zawaessentials:kakariki",
       "weight": 8,
       "minCount": 1,
       "maxCount": 1

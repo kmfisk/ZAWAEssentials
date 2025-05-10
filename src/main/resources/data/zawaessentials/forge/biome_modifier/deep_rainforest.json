@@ -16,37 +16,37 @@
       "maxCount": 1
     },
     {
-      "type": "modid:congo_gray_parrot",
+      "type": "zawaessentials:congo_gray_parrot",
       "weight": 5,
       "minCount": 1,
       "maxCount": 1
     },
     {
-      "type": "modid:conure",
+      "type": "zawaessentials:conure",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3
     },
     {
-      "type": "modid:eclectus",
+      "type": "zawaessentials:eclectus",
       "weight": 5,
       "minCount": 1,
       "maxCount": 1
     },
     {
-      "type": "modid:green_cheek_conure",
+      "type": "zawaessentials:green_cheek_conure",
       "weight": 8,
       "minCount": 1,
       "maxCount": 2
     },
     {
-      "type": "modid:hawk_headed_parrot",
+      "type": "zawaessentials:hawk_headed_parrot",
       "weight": 5,
       "minCount": 0,
       "maxCount": 1
     },
     {
-      "type": "modid:moho",
+      "type": "zawaessentials:moho",
       "weight": 5,
       "minCount": 0,
       "maxCount": 1

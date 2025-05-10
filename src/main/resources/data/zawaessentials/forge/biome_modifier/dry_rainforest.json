@@ -31,13 +31,13 @@
       "maxCount": 2
     },
     {
-      "type": "modid:green_cheek_conure",
+      "type": "zawaessentials:green_cheek_conure",
       "weight": 8,
       "minCount": 1,
       "maxCount": 2
     },
     {
-      "type": "modid:quaker_parakeet",
+      "type": "zawaessentials:quaker_parakeet",
       "weight": 10,
       "minCount": 2,
       "maxCount": 4

@@ -22,25 +22,25 @@
   },
   "spawners": [
     {
-      "type": "modid:cockatiel",
+      "type": "zawaessentials:cockatiel",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3
     },
     {
-      "type": "modid:conure",
+      "type": "zawaessentials:conure",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3
     },
     {
-      "type": "modid:poicephalus_parrot",
+      "type": "zawaessentials:poicephalus_parrot",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3
     },
     {
-      "type": "modid:rosella",
+      "type": "zawaessentials:rosella",
       "weight": 8,
       "minCount": 2,
       "maxCount": 3
