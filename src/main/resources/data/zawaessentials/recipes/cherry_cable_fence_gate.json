@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "zawaessentialsgroup",
+  "pattern": [
+    "IFI"
+  ],
+  "key": {
+    "I": [
+      { "item": "minecraft:cherry_log" }
+    ],
+    "F": [
+      { "item": "zawaessentials:cherry_cable_fence" }
+    ]
+  },
+  "result": {
+    "item": "zawaessentials:cherry_cable_fence_gate",
+    "count": 1
+  }
+}
+

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "zawaessentialsgroup",
+  "pattern": [
+    "IFI"
+  ],
+  "key": {
+    "I": [
+      { "item": "minecraft:bamboo_log" }
+    ],
+    "F": [
+      { "item": "zawaessentials:bamboo_cable_fence" }
+    ]
+  },
+  "result": {
+    "item": "zawaessentials:bamboo_cable_fence_gate",
+    "count": 1
+  }
+}
+

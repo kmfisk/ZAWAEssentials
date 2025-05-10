@@ -42,7 +42,7 @@ public class ZawaEssentials {
             ZEItems.ITEMS_REGISTRAR.getEntries().forEach(item -> event.accept(item.get()));
         }
         if (event.getTabKey() == Zawa.DECORATIONS_GROUP.getKey()) {
-//            ZEBlocks.REGISTRAR.getEntries().forEach();
+            ZEItems.DECORATIONS_REGISTRAR.getEntries().forEach(item -> event.accept(item.get()));
         }
         if (event.getTabKey() == Zawa.ENTITIES_GROUP.getKey()) {
             ZEEntities.REGISTRY.itemRegistrar.getEntries().forEach(item -> event.accept(item.get()));

@@ -1,0 +1,9 @@
+{
+	"parent": "zawaessentials:block/hanging_perch",
+	"textures": {
+		"0": "block/cherry_log",
+		"2": "zawa:block/rope",
+		"3": "block/cherry_log_top",
+		"4": "block/pink_concrete"
+	}
+}

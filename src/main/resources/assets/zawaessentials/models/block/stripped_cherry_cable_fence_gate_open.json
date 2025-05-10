@@ -1,0 +1,9 @@
+{
+  "parent": "zawaessentials:block/wooden_cable_fence_gate_open",
+  "textures": {
+    "3": "block/stripped_cherry_log",
+    "4": "block/smooth_stone",
+    "5": "block/stripped_cherry_log_top"
+  }
+}
+

@@ -1,0 +1,9 @@
+{
+  "parent": "zawaessentials:block/wooden_cable_fence_side",
+  "textures": {
+    "3": "block/mangrove_log",
+    "4": "block/smooth_stone",
+    "5": "block/stripped_mangrove_log_top"
+  }
+}
+

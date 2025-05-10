@@ -1,0 +1,9 @@
+{
+  "parent": "zawaessentials:block/wooden_cable_fence_side",
+  "textures": {
+    "3": "block/bamboo_block",
+    "4": "block/smooth_stone",
+    "5": "block/stripped_bamboo_block_top"
+  }
+}
+

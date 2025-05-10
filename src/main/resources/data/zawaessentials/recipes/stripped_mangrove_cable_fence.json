@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "zawaessentialsgroup",
+  "pattern": [
+    "L L",
+    "NRN",
+    "L L"
+  ],
+  "key": {
+    "L": [
+      { "item": "minecraft:stripped_mangrove_log" }
+    ],
+    "N": [
+      { "item": "minecraft:iron_nugget" }
+    ],
+    "R": [
+      { "item": "zawa:rope" }
+    ]
+  },
+  "result": {
+    "item": "zawaessentials:stripped_mangrove_cable_fence",
+    "count": 8
+  }
+}
+

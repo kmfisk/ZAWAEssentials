@@ -42,13 +42,13 @@
     {
       "type": "zawaessentials:hawk_headed_parrot",
       "weight": 5,
-      "minCount": 0,
+      "minCount": 1,
       "maxCount": 1
     },
     {
       "type": "zawaessentials:moho",
       "weight": 5,
-      "minCount": 0,
+      "minCount": 1,
       "maxCount": 1
     }
   ]

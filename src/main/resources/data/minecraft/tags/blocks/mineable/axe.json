@@ -9,6 +9,9 @@
     "zawaessentials:spruce_cable_fence",
     "zawaessentials:crimson_cable_fence",
     "zawaessentials:warped_cable_fence",
+    "zawaessentials:cherry_cable_fence",
+    "zawaessentials:mangrove_cable_fence",
+    "zawaessentials:bamboo_cable_fence",
     "zawaessentials:acacia_cable_fence_gate",
     "zawaessentials:birch_cable_fence_gate",
     "zawaessentials:dark_oak_cable_fence_gate",
@@ -17,6 +20,9 @@
     "zawaessentials:spruce_cable_fence_gate",
     "zawaessentials:crimson_cable_fence_gate",
     "zawaessentials:warped_cable_fence_gate",
+    "zawaessentials:cherry_cable_fence_gate",
+    "zawaessentials:mangrove_cable_fence_gate",
+    "zawaessentials:bamboo_cable_fence_gate",
     "zawaessentials:stripped_acacia_cable_fence",
     "zawaessentials:stripped_birch_cable_fence",
     "zawaessentials:stripped_dark_oak_cable_fence",
@@ -25,6 +31,9 @@
     "zawaessentials:stripped_spruce_cable_fence",
     "zawaessentials:stripped_crimson_cable_fence",
     "zawaessentials:stripped_warped_cable_fence",
+    "zawaessentials:stripped_cherry_cable_fence",
+    "zawaessentials:stripped_mangrove_cable_fence",
+    "zawaessentials:stripped_bamboo_cable_fence",
     "zawaessentials:stripped_acacia_cable_fence_gate",
     "zawaessentials:stripped_birch_cable_fence_gate",
     "zawaessentials:stripped_dark_oak_cable_fence_gate",
@@ -32,6 +41,9 @@
     "zawaessentials:stripped_oak_cable_fence_gate",
     "zawaessentials:stripped_spruce_cable_fence_gate",
     "zawaessentials:stripped_crimson_cable_fence_gate",
-    "zawaessentials:stripped_warped_cable_fence_gate"
+    "zawaessentials:stripped_warped_cable_fence_gate",
+    "zawaessentials:stripped_cherry_cable_fence_gate",
+    "zawaessentials:stripped_mangrove_cable_fence_gate",
+    "zawaessentials:stripped_bamboo_cable_fence_gate"
   ]
 }
