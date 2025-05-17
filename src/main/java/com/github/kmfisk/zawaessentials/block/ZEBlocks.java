@@ -31,31 +31,31 @@ import static com.github.kmfisk.zawaessentials.ZawaEssentials.PLUSHIES_LIST;
 
 public class ZEBlocks {
     public static final DeferredRegister<Block> REGISTRAR = DeferredRegister.create(ForgeRegistries.BLOCKS, ZawaEssentials.MOD_ID);
-//    public static final String[] WOOD_TYPES_LIST = new String[]{"acacia", "birch", "dark_oak", "jungle", "oak", "spruce", "crimson", "warped"};
+    public static final String[] WOOD_TYPES_LIST = new String[]{"acacia", "bamboo", "birch", "cherry", "dark_oak", "jungle", "mangrove", "oak", "spruce", "crimson", "warped"};
 
     public static final RegistryObject<Block> CUP_FEEDER = registerWithItem("cup_feeder", () -> new ZawaEnrichmentBlock(Block.box(2.0, 1.0, 2.0, 14.0, 16.0, 14.0), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion()));
     public static final RegistryObject<Block> BELL_TOY = registerWithItem("bell_toy", () -> new ZawaEnrichmentBlock(Block.box(2.0, 1.0, 2.0, 14.0, 16.0, 14.0), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion()));
     public static final Map<String, RegistryObject<Block>> HANGING_PERCHES = Util.make(new HashMap<>(), map -> {
-        for (WoodType woodType : WoodType.values().toList())
-            map.put(woodType.name(), registerWithItem(woodType.name() + "_hanging_perch", () -> new HangingPerchBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
+        for (String woodType : WOOD_TYPES_LIST)
+            map.put(woodType, registerWithItem(woodType + "_hanging_perch", () -> new HangingPerchBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(0.5F).sound(SoundType.WOOD).noOcclusion())));
     });
     public static final RegistryObject<Block> LARGE_BIRD_TOY = registerWithItem("large_bird_toy", () -> new ZawaEnrichmentBlock(Block.box(2.0, 1.0, 2.0, 14.0, 16.0, 14.0), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noOcclusion()));
 
     public static final Map<String, RegistryObject<Block>> CABLE_FENCES = Util.make(new HashMap<>(), map -> {
-        for (WoodType woodType : WoodType.values().toList())
-            map.put(woodType.name(), registerWithItem(woodType.name() + "_cable_fence", () -> new ZawaFenceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(2.0F, 3.0F).sound(SoundType.STONE))));
+        for (String woodType : WOOD_TYPES_LIST)
+            map.put(woodType, registerWithItem(woodType + "_cable_fence", () -> new ZawaFenceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(2.0F, 3.0F).sound(SoundType.STONE))));
     });
     public static final Map<String, RegistryObject<Block>> CABLE_FENCE_GATES = Util.make(new HashMap<>(), map -> {
-        for (WoodType woodType : WoodType.values().toList())
-            map.put(woodType.name(), registerWithItem(woodType.name() + "_cable_fence_gate", () -> new ZawaFenceGateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(2.0F, 3.0F).sound(SoundType.STONE), woodType)));
+        for (String woodType : WOOD_TYPES_LIST)
+            map.put(woodType, registerWithItem(woodType + "_cable_fence_gate", () -> new ZawaFenceGateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(2.0F, 3.0F).sound(SoundType.STONE), WoodType.OAK)));
     });
     public static final Map<String, RegistryObject<Block>> STRIPPED_CABLE_FENCES = Util.make(new HashMap<>(), map -> {
-        for (WoodType woodType : WoodType.values().toList())
-            map.put(woodType.name(), registerWithItem("stripped_" + woodType.name() + "_cable_fence", () -> new ZawaFenceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(2.0F, 3.0F).sound(SoundType.STONE))));
+        for (String woodType : WOOD_TYPES_LIST)
+            map.put(woodType, registerWithItem("stripped_" + woodType + "_cable_fence", () -> new ZawaFenceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(2.0F, 3.0F).sound(SoundType.STONE))));
     });
     public static final Map<String, RegistryObject<Block>> STRIPPED_CABLE_FENCE_GATES = Util.make(new HashMap<>(), map -> {
-        for (WoodType woodType : WoodType.values().toList())
-            map.put(woodType.name(), registerWithItem("stripped_" + woodType.name() + "_cable_fence_gate", () -> new ZawaFenceGateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(2.0F, 3.0F).sound(SoundType.STONE), woodType)));
+        for (String woodType : WOOD_TYPES_LIST)
+            map.put(woodType, registerWithItem("stripped_" + woodType + "_cable_fence_gate", () -> new ZawaFenceGateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(2.0F, 3.0F).sound(SoundType.STONE), WoodType.OAK)));
     });
 
     public static final Map<String, RegistryObject<Block>> BAG_RACKS = Util.make(new HashMap<>(), map -> {
