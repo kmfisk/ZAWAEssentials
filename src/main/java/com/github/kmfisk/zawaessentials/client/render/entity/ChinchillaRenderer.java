@@ -10,7 +10,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class ChinchillaRenderer extends ZawaMobRenderer<ChinchillaEntity, ChinchillaModel<ChinchillaEntity>> {
     public ChinchillaRenderer(EntityRendererProvider.Context context) {
-        super(context, new ChinchillaModel.Adult<>(context.bakeLayer(ZEModelLayers.CHINCHILLA_ADULT)), new ChinchillaModel.Child<>(context.bakeLayer(ZEModelLayers.CHINCHILLA_CHILD)), 0.6F);
+        super(context, new ChinchillaModel.Adult<>(context.bakeLayer(ZEModelLayers.CHINCHILLA_ADULT)), new ChinchillaModel.Child<>(context.bakeLayer(ZEModelLayers.CHINCHILLA_CHILD)), 0.3F);
     }
 
     @Override

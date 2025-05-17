@@ -10,7 +10,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class ManedWolfRenderer extends ZawaMobRenderer<ManedWolfEntity, ManedWolfModel<ManedWolfEntity>> {
     public ManedWolfRenderer(EntityRendererProvider.Context context) {
-        super(context, new ManedWolfModel.Adult<>(context.bakeLayer(ZEModelLayers.MANED_WOLF_ADULT)), new ManedWolfModel.Child<>(context.bakeLayer(ZEModelLayers.MANED_WOLF_CHILD)), 1.0F);
+        super(context, new ManedWolfModel.Adult<>(context.bakeLayer(ZEModelLayers.MANED_WOLF_ADULT)), new ManedWolfModel.Child<>(context.bakeLayer(ZEModelLayers.MANED_WOLF_CHILD)), 0.5F);
     }
 
     @Override

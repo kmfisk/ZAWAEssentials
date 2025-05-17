@@ -9,7 +9,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class KeaRenderer extends ZawaMobRenderer<KeaEntity, KeaModel> {
     public KeaRenderer(EntityRendererProvider.Context context) {
-        super(context, new KeaModel.Adult(context.bakeLayer(ZEModelLayers.KEA_ADULT)), new KeaModel.Flying(context.bakeLayer(ZEModelLayers.KEA_FLYING)), new KeaModel.Child(context.bakeLayer(ZEModelLayers.KEA_CHILD)), 0.6F);
+        super(context, new KeaModel.Adult(context.bakeLayer(ZEModelLayers.KEA_ADULT)), new KeaModel.Flying(context.bakeLayer(ZEModelLayers.KEA_FLYING)), new KeaModel.Child(context.bakeLayer(ZEModelLayers.KEA_CHILD)), 0.3F);
     }
 
     @Override
