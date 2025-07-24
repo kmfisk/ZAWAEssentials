@@ -21,7 +21,7 @@ import org.zawamod.zawa.world.item.ZawaItems;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class ZELoot extends VanillaEntityLoot {
+public class ZEEntityLoot extends VanillaEntityLoot {
     @Override
     public void generate() {
         add(ZEEntities.AUSTRALIAN_RINGNECK_PARROT.get(), createCookedItemTable(ZawaItems.SMALL_MEAT.get(), 1));
