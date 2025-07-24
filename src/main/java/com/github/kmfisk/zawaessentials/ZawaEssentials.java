@@ -71,8 +71,8 @@ public class ZawaEssentials {
 //        ZETagsProviders.ZEBlockTagsProvider blockTagsProvider = new ZETagsProviders.ZEBlockTagsProvider(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
 //        dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
 //        dataGenerator.addProvider(event.includeServer(), new ZETagsProviders.ZEItemTagsProvider(packOutput, event.getLookupProvider(), blockTagsProvider, event.getExistingFileHelper()));
-//        dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-//                List.of(new LootTableProvider.SubProviderEntry(ZELoot::new, LootContextParamSets.ENTITY))));
+        dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
+                List.of(new LootTableProvider.SubProviderEntry(ZELoot::new, LootContextParamSets.ENTITY))));
         dataGenerator.addProvider(event.includeServer(), new ZERecipeProvider(packOutput));
     }
 
