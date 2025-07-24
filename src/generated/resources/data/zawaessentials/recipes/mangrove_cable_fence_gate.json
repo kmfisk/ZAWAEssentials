@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "zawaessentials",
+  "key": {
+    "F": {
+      "item": "zawaessentials:mangrove_cable_fence"
+    },
+    "I": {
+      "item": "minecraft:mangrove_log"
+    }
+  },
+  "pattern": [
+    "IFI"
+  ],
+  "result": {
+    "item": "zawaessentials:mangrove_cable_fence_gate"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "zawaessentials",
+  "key": {
+    "F": {
+      "item": "zawaessentials:stripped_cherry_cable_fence"
+    },
+    "I": {
+      "item": "minecraft:stripped_cherry_log"
+    }
+  },
+  "pattern": [
+    "IFI"
+  ],
+  "result": {
+    "item": "zawaessentials:stripped_cherry_cable_fence_gate"
+  },
+  "show_notification": false
+}

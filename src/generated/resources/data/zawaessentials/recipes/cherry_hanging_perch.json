@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "zawaessentials",
+  "key": {
+    "D": {
+      "tag": "forge:dyes/pink"
+    },
+    "L": {
+      "item": "minecraft:cherry_log"
+    },
+    "R": {
+      "item": "zawa:rope"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "R R",
+    "LSL",
+    "D D"
+  ],
+  "result": {
+    "item": "zawaessentials:cherry_hanging_perch"
+  },
+  "show_notification": false
+}

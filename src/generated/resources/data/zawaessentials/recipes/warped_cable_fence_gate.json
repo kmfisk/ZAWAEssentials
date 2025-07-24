@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "zawaessentials",
+  "key": {
+    "F": {
+      "item": "zawaessentials:warped_cable_fence"
+    },
+    "I": {
+      "item": "minecraft:warped_stem"
+    }
+  },
+  "pattern": [
+    "IFI"
+  ],
+  "result": {
+    "item": "zawaessentials:warped_cable_fence_gate"
+  },
+  "show_notification": false
+}

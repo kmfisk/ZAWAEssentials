@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "zawaessentials",
+  "key": {
+    "B": {
+      "item": "minecraft:bamboo"
+    },
+    "L": {
+      "tag": "forge:dyes/light_blue"
+    },
+    "N": {
+      "item": "minecraft:gold_nugget"
+    },
+    "R": {
+      "item": "zawa:rope"
+    },
+    "Y": {
+      "tag": "forge:dyes/yellow"
+    }
+  },
+  "pattern": [
+    "YRB",
+    "BRL",
+    " N "
+  ],
+  "result": {
+    "item": "zawaessentials:bell_toy"
+  },
+  "show_notification": false
+}

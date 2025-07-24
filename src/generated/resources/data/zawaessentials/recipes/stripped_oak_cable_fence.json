@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "zawaessentials",
+  "key": {
+    "L": {
+      "item": "minecraft:stripped_oak_log"
+    },
+    "N": {
+      "item": "minecraft:iron_nugget"
+    },
+    "R": {
+      "item": "zawa:rope"
+    }
+  },
+  "pattern": [
+    "L L",
+    "NRN",
+    "L L"
+  ],
+  "result": {
+    "count": 8,
+    "item": "zawaessentials:stripped_oak_cable_fence"
+  },
+  "show_notification": false
+}
