@@ -89,7 +89,7 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation fg.deobf("curse.maven:zawa-evolved-581942:${project.zawa_file}")
+    implementation fg.deobf("curse.maven:zawa-evolved-581942:${zawa_file}")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

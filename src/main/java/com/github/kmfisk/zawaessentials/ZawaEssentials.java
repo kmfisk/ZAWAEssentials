@@ -66,7 +66,6 @@ public class ZawaEssentials {
     }
 
     private void gatherData(final GatherDataEvent event) {
-        System.out.println("Generating zawa Data!");
         DataGenerator dataGenerator = event.getGenerator();
         PackOutput packOutput = dataGenerator.getPackOutput();
         ZETagsProviders.ZEBlockTagsProvider blockTagsProvider = new ZETagsProviders.ZEBlockTagsProvider(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
