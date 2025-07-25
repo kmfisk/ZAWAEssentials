@@ -264,6 +264,107 @@ public abstract class GreaterPrairieChickenModel extends ZawaBaseModel<GreaterPr
                 this.TailBase.xRot = Mth.cos(3F + limbSwing * speed * 0.6F) * limbSwingAmount * (degree * -0.1F) * 0.5F - 0.27F;
             }
         }
+
+        public static class Displaying extends Adult {
+            public Displaying(ModelPart root) {
+                super(root);
+                this.Tail3Left.setPos(0.0F, 0.0F, -0.2F);
+                this.setRotateAngle(Tail3Left, -0.045553093477052F, 0.136659280431156F, 0.0F);
+                this.Leg2Left.setPos(0.0F, 2.0F, 0.5F);
+                this.setRotateAngle(Leg2Left, -0.5918411493512771F, 0.0F, 0.0F);
+                this.Wing2Left_1.setPos(0.0F, 0.0F, 3.0F);
+                this.setRotateAngle(Wing2Left_1, 0.0F, 0.7285004297824331F, 0.0F);
+                this.Leg1Right.setPos(-2.2F, 1.3F, -0.3F);
+                this.setRotateAngle(Leg1Right, 0.22759093446006054F, 0.0F, 0.0F);
+                this.Toe2R.setPos(0.3F, 0.0F, 0.0F);
+                this.setRotateAngle(Toe2R, 0.091106186954104F, -0.4553564018453205F, 0.0F);
+                this.Toe4R.setPos(0.0F, 0.0F, -0.5F);
+                this.setRotateAngle(Toe4R, -0.22759093446006054F, 0.0F, 0.0F);
+                this.BeakTop.setPos(0.0F, -0.5F, -1.8F);
+                this.setRotateAngle(BeakTop, 0.27314402793711257F, 0.0F, 0.0F);
+                this.Wing1Right.setPos(-3.0F, 0.0F, -2.75F);
+                this.setRotateAngle(Wing1Right, 0.0F, -0.5462880558742251F, 0.0F);
+                this.Toe4L.setPos(0.0F, 0.0F, -0.5F);
+                this.setRotateAngle(Toe4L, -0.22759093446006054F, 0.0F, 0.0F);
+                this.Toe3L.setPos(-0.3F, 0.0F, 0.0F);
+                this.setRotateAngle(Toe3L, 0.091106186954104F, 0.4553564018453205F, 0.0F);
+                this.Leg1Left.setPos(2.2F, 1.3F, -0.3F);
+                this.setRotateAngle(Leg1Left, 0.22759093446006054F, 0.0F, 0.0F);
+                this.BalloonTuft3_1.setPos(0.0F, 3.0F, 0.0F);
+                this.setRotateAngle(BalloonTuft3_1, 0.4553564018453205F, 0.0F, 0.0F);
+                this.BeakBottom.setPos(0.0F, 1.6F, 0.0F);
+                this.setRotateAngle(BeakBottom, -0.36425021489121656F, 0.0F, 0.0F);
+                this.Tail2Right.setPos(-0.3F, 0.0F, -0.2F);
+                this.setRotateAngle(Tail2Right, -0.045553093477052F, -0.136659280431156F, 0.0F);
+                this.BalloonL.setPos(0.2F, -2.3F, -0.8F);
+                this.setRotateAngle(BalloonL, -0.36425021489121656F, 0.0F, 0.0F);
+                this.Wing2Left.setPos(0.0F, 0.0F, 3.0F);
+                this.setRotateAngle(Wing2Left, 0.0F, -0.7285004297824331F, 0.0F);
+                this.BalloonTuft2.setPos(0.0F, 3.0F, 0.0F);
+                this.setRotateAngle(BalloonTuft2, 1.1383037381507017F, 0.0F, 0.0F);
+                this.EarTuftRight1.setPos(-1.3F, -1.4F, 0.5F);
+                this.setRotateAngle(EarTuftRight1, 0.045553093477052F, 0.091106186954104F, 0.18203784098300857F);
+                this.Neck1.setPos(0.0F, -4.0F, 0.0F);
+                this.setRotateAngle(Neck1, -0.5009094953223726F, 0.0F, 0.0F);
+                this.EarTuftRight2.setPos(0.0F, 0.0F, 0.0F);
+                this.setRotateAngle(EarTuftRight2, 0.091106186954104F, -0.045553093477052F, -0.136659280431156F);
+                this.EarTuftRight3.setPos(0.5F, 0.7F, -0.1F);
+                this.setRotateAngle(EarTuftRight3, -0.22759093446006054F, 0.045553093477052F, -0.045553093477052F);
+                this.BalloonR.setPos(-0.3F, 0.0F, 0.0F);
+                this.Chest.setPos(0.0F, 3.0F, -3.0F);
+                this.setRotateAngle(Chest, 0.8651597102135892F, 0.0F, 0.0F);
+                this.EarTuftLeft3.setPos(-0.5F, 0.7F, -0.1F);
+                this.setRotateAngle(EarTuftLeft3, -0.22759093446006054F, -0.045553093477052F, 0.045553093477052F);
+                this.Toe3R.setPos(-0.3F, 0.0F, 0.0F);
+                this.setRotateAngle(Toe3R, 0.091106186954104F, 0.4553564018453205F, 0.0F);
+                this.Tail4Left.setPos(0.0F, 0.0F, -0.2F);
+                this.setRotateAngle(Tail4Left, -0.045553093477052F, 0.136659280431156F, 0.0F);
+                this.Head.setPos(0.0F, -2.8F, 1.0F);
+                this.setRotateAngle(Head, 0.136659280431156F, 0.0F, 0.0F);
+                this.EarTuftLeft1.setPos(1.3F, -1.4F, 0.5F);
+                this.setRotateAngle(EarTuftLeft1, 0.045553093477052F, -0.091106186954104F, -0.18203784098300857F);
+                this.Leg2Right.setPos(0.0F, 2.0F, 0.5F);
+                this.setRotateAngle(Leg2Right, -0.5918411493512771F, 0.0F, 0.0F);
+                this.Tail2.setPos(0.0F, 0.0F, 0.0F);
+                this.setRotateAngle(Tail2, 0.31869712141416456F, 0.0F, 0.0F);
+                this.Body.setPos(0.0F, 18.6F, 0.0F);
+                this.setRotateAngle(Body, 0.045553093477052F, 0.0F, 0.0F);
+                this.Tail2Left.setPos(0.3F, 0.0F, -0.2F);
+                this.setRotateAngle(Tail2Left, -0.045553093477052F, 0.136659280431156F, 0.0F);
+                this.Tail1Left.setPos(-0.5F, 0.0F, -0.2F);
+                this.setRotateAngle(Tail1Left, -0.045553093477052F, 0.136659280431156F, 0.0F);
+                this.Neck2.setPos(0.0F, -2.0F, 0.3F);
+                this.setRotateAngle(Neck2, -0.27314402793711257F, 0.0F, 0.0F);
+                this.NeckBackL.setPos(0.3F, -3.0F, 0.3F);
+                this.setRotateAngle(NeckBackL, 0.27314402793711257F, 0.0F, 0.0F);
+                this.NeckBackR.setPos(-0.3F, -3.0F, 0.3F);
+                this.setRotateAngle(NeckBackR, 0.27314402793711257F, 0.0F, 0.0F);
+                this.BalloonTuft3.setPos(0.0F, 1.0F, 0.0F);
+                this.setRotateAngle(BalloonTuft3, 0.31869712141416456F, 0.0F, 0.0F);
+                this.Toe1R.setPos(0.0F, 2.0F, 0.0F);
+                this.setRotateAngle(Toe1R, 0.36425021489121656F, 0.0F, 0.0F);
+                this.Tail3Right.setPos(0.0F, 0.0F, -0.2F);
+                this.setRotateAngle(Tail3Right, -0.045553093477052F, -0.136659280431156F, 0.0F);
+                this.Toe1L.setPos(0.0F, 2.0F, 0.0F);
+                this.setRotateAngle(Toe1L, 0.36425021489121656F, 0.0F, 0.0F);
+                this.TailCenter.setPos(0.0F, 0.0F, 2.8F);
+                this.setRotateAngle(TailCenter, 0.9560913642424937F, 0.0F, 0.0F);
+                this.TailBase.setPos(0.0F, -3.0F, 2.3F);
+                this.setRotateAngle(TailBase, 0.40980330836826856F, 0.0F, 0.0F);
+                this.EarTuftLeft2.setPos(0.0F, 0.0F, 0.0F);
+                this.setRotateAngle(EarTuftLeft2, 0.091106186954104F, 0.045553093477052F, 0.136659280431156F);
+                this.Tail1Right.setPos(0.5F, 0.0F, -0.2F);
+                this.setRotateAngle(Tail1Right, -0.045553093477052F, -0.136659280431156F, 0.0F);
+                this.Tail4Right.setPos(0.0F, 0.0F, -0.2F);
+                this.setRotateAngle(Tail4Right, -0.045553093477052F, -0.136659280431156F, 0.0F);
+                this.Toe2L.setPos(0.3F, 0.0F, 0.0F);
+                this.setRotateAngle(Toe2L, 0.091106186954104F, -0.4553564018453205F, 0.0F);
+                this.Wing1Left.setPos(3.0F, 0.0F, -2.75F);
+                this.setRotateAngle(Wing1Left, 0.0F, 0.5462880558742251F, 0.0F);
+                this.BalloonTuft1.setPos(-0.2F, 1.1F, 0.0F);
+                this.setRotateAngle(BalloonTuft1, -0.136659280431156F, 0.0F, 0.0F);
+            }
+        }
     }
 
     public static class Child extends GreaterPrairieChickenModel {

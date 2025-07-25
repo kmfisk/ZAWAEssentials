@@ -42,6 +42,7 @@ public class ZEModelLayers {
     public static final ModelLayerLocation ECLECTUS_FLYING = register("eclectus", "flying", HawkHeadedParrotModel.Flying::createBodyLayer);
     public static final ModelLayerLocation ECLECTUS_CHILD = register("eclectus", "child", HawkHeadedParrotModel.Child::createBodyLayer);
     public static final ModelLayerLocation GREATER_PRAIRIE_CHICKEN_ADULT = register("greater_prairie_chicken", "adult", GreaterPrairieChickenModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation GREATER_PRAIRIE_CHICKEN_DISPLAYING = register("greater_prairie_chicken", "displaying", GreaterPrairieChickenModel.Adult::createBodyLayer);
     public static final ModelLayerLocation GREATER_PRAIRIE_CHICKEN_CHILD = register("greater_prairie_chicken", "child", GreaterPrairieChickenModel.Child::createBodyLayer);
     public static final ModelLayerLocation GREEN_CHEEK_CONURE_ADULT = register("green_cheek_conure", "adult", ParrotBaseModel.Adult::createBodyLayer);
     public static final ModelLayerLocation GREEN_CHEEK_CONURE_FLYING = register("green_cheek_conure", "flying", ParrotBaseModel.Flying::createBodyLayer);
