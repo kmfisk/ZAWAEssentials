@@ -5,6 +5,7 @@ import com.github.kmfisk.zawaessentials.client.model.ZEModelLayers;
 import com.github.kmfisk.zawaessentials.data.ZEBlockLoot;
 import com.github.kmfisk.zawaessentials.data.ZEEntityLoot;
 import com.github.kmfisk.zawaessentials.data.ZERecipeProvider;
+import com.github.kmfisk.zawaessentials.data.ZETagsProviders;
 import com.github.kmfisk.zawaessentials.entity.ZEEntities;
 import com.github.kmfisk.zawaessentials.item.ZEItems;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -68,9 +69,9 @@ public class ZawaEssentials {
         System.out.println("Generating zawa Data!");
         DataGenerator dataGenerator = event.getGenerator();
         PackOutput packOutput = dataGenerator.getPackOutput();
-//        ZETagsProviders.ZEBlockTagsProvider blockTagsProvider = new ZETagsProviders.ZEBlockTagsProvider(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
-//        dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
-//        dataGenerator.addProvider(event.includeServer(), new ZETagsProviders.ZEItemTagsProvider(packOutput, event.getLookupProvider(), blockTagsProvider, event.getExistingFileHelper()));
+        ZETagsProviders.ZEBlockTagsProvider blockTagsProvider = new ZETagsProviders.ZEBlockTagsProvider(packOutput, event.getLookupProvider(), event.getExistingFileHelper());
+        dataGenerator.addProvider(event.includeServer(), blockTagsProvider);
+        dataGenerator.addProvider(event.includeServer(), new ZETagsProviders.ZEEntityTypeTagsProvider(packOutput, event.getLookupProvider(), event.getExistingFileHelper()));
         dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(
                 new LootTableProvider.SubProviderEntry(ZEBlockLoot::new, LootContextParamSets.BLOCK),
                 new LootTableProvider.SubProviderEntry(ZEEntityLoot::new, LootContextParamSets.ENTITY))));
