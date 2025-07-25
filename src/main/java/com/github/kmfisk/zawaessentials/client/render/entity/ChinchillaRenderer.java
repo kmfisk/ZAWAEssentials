@@ -4,13 +4,26 @@ import com.github.kmfisk.zawaessentials.client.model.ChinchillaModel;
 import com.github.kmfisk.zawaessentials.client.model.ZEModelLayers;
 import com.github.kmfisk.zawaessentials.entity.ChinchillaEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class ChinchillaRenderer extends ZawaMobRenderer<ChinchillaEntity, ChinchillaModel<ChinchillaEntity>> {
+    private final ChinchillaModel<ChinchillaEntity> baseAdultModel;
+    private final ChinchillaModel<ChinchillaEntity> sittingAdultModel;
+
     public ChinchillaRenderer(EntityRendererProvider.Context context) {
         super(context, new ChinchillaModel.Adult<>(context.bakeLayer(ZEModelLayers.CHINCHILLA_ADULT)), new ChinchillaModel.Child<>(context.bakeLayer(ZEModelLayers.CHINCHILLA_CHILD)), 0.3F);
+        this.baseAdultModel = adultModel;
+        this.sittingAdultModel = new ChinchillaModel.Adult.Sitting<>(context.bakeLayer(ZEModelLayers.CHINCHILLA_SITTING));
+    }
+
+    @Override
+    public void render(ChinchillaEntity entity, float entityYaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int packedLight) {
+        if (!entity.isBaby())
+            adultModel = entity.getSitAmount(partialTicks) > 0.0F ? sittingAdultModel : baseAdultModel;
+        super.render(entity, entityYaw, partialTicks, matrixStack, buffer, packedLight);
     }
 
     @Override

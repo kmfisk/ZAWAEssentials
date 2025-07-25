@@ -7,8 +7,8 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.Entity;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
 
 public abstract class ChinchillaModel<E extends Entity> extends ZawaBaseModel<E> {
@@ -201,6 +201,74 @@ public abstract class ChinchillaModel<E extends Entity> extends ZawaBaseModel<E>
                 this.LegRight.xRot = Mth.cos(7.0F + limbSwing * speed * 0.25F) * limbSwingAmount * (degree * 1F) * 0.5F + 0.409F;
                 this.FootRight.xRot = Mth.cos(3.0F + limbSwing * speed * 0.25F) * limbSwingAmount * (degree * 2F) * 0.5F - 0.364F;
 
+            }
+        }
+
+        public static class Sitting<T extends Entity> extends Adult<T> {
+            public Sitting(ModelPart root) {
+                super(root);
+                this.HandLeft.setPos(-0.05F, 1.5F, -1.2F);
+                this.setRotateAngle(HandLeft, 2.1399482065228916F, -0.2275909337942703F, -0.8196066007575706F);
+                this.ArmRight.setPos(-0.1F, 3.0F, 1.0F);
+                this.setRotateAngle(ArmRight, -0.18203784630933073F, 0.0F, -0.5462880425584197F);
+                this.EarLeft.setPos(2.4F, -1.3F, -0.7F);
+                this.setRotateAngle(EarLeft, -0.7285004590772052F, -0.5462880425584197F, 0.956091342937205F);
+                this.FootRight.setPos(0.1F, 1.7F, 1.9F);
+                this.setRotateAngle(FootRight, -0.2275909337942703F, 0.0F, 0.0F);
+                this.EarRight.setPos(-2.4F, -1.3F, -0.7F);
+                this.setRotateAngle(EarRight, -0.7285004590772052F, 0.5462880425584197F, -0.956091342937205F);
+                this.LegRight.setPos(0.0F, 4.0F, -0.1F);
+                this.setRotateAngle(LegRight, 1.3658947098950176F, 0.0F, 0.0F);
+                this.FootLeft.setPos(-0.1F, 1.7F, 1.9F);
+                this.setRotateAngle(FootLeft, -0.2275909337942703F, 0.0F, 0.0F);
+                this.Neck.setPos(0.0F, 3.5F, -4.2F);
+                this.Snout.setPos(0.0F, -0.6F, -3.0F);
+                this.setRotateAngle(Snout, 0.18203784630933073F, 0.0F, 0.0F);
+                this.LegLeft.setPos(0.0F, 4.0F, -0.1F);
+                this.setRotateAngle(LegLeft, 1.3658947098950176F, 0.0F, 0.0F);
+                this.Mouth.setPos(0.0F, 1.7F, 0.3F);
+                this.setRotateAngle(Mouth, -0.500909508638178F, 0.0F, 0.0F);
+                this.Tail1.setPos(0.0F, 1.4F, 2.0F);
+                this.setRotateAngle(Tail1, 1.3658947098950176F, 0.0F, 0.0F);
+                this.ArmBaseRight.setPos(-2.4F, 3.2F, -3.0F);
+                this.setRotateAngle(ArmBaseRight, 0.4098033003787853F, 0.0F, 0.0F);
+                this.ArmLeft.setPos(-0.1F, 3.0F, 1.0F);
+                this.setRotateAngle(ArmLeft, -0.18203784630933073F, 0.0F, 0.5462880425584197F);
+                this.Tail3.setPos(0.0F, 0.0F, 3.0F);
+                this.setRotateAngle(Tail3, 0.9105382388075086F, 0.0F, 0.0F);
+                this.ArmBaseLeft.setPos(2.4F, 3.2F, -3.0F);
+                this.setRotateAngle(ArmBaseLeft, 0.4098033003787853F, 0.0F, 0.0F);
+                this.Tail2.setPos(0.0F, 1.5F, 2.0F);
+                this.setRotateAngle(Tail2, 0.4098033003787853F, 0.0F, 0.0F);
+                this.ThighLeft.setPos(2.7F, -1.6F, 1.7F);
+                this.setRotateAngle(ThighLeft, 0.3642502295386026F, 0.0F, 0.0F);
+                this.ThighRight.setPos(-2.7F, -1.6F, 1.7F);
+                this.setRotateAngle(ThighRight, 0.3642502295386026F, 0.0F, 0.0F);
+                this.TopSnout.setPos(0.0F, 0.28F, -1.6F);
+                this.setRotateAngle(TopSnout, 0.8196066007575706F, 0.0F, 0.0F);
+                this.Body.setPos(0.0F, 18.9F, 0.0F);
+                this.setRotateAngle(Body, -1.5025538891260521F, 0.0F, 0.0F);
+                this.HandRight.setPos(0.05F, 1.5F, -1.2F);
+                this.setRotateAngle(HandRight, 2.1399482065228916F, 0.2275909337942703F, 0.8196066007575706F);
+                this.Chest.setPos(0.0F, -2.8F, -2.5F);
+                this.setRotateAngle(Chest, 0.18203784630933073F, 0.0F, 0.0F);
+                this.Head.setPos(0.0F, -0.5F, -0.9F);
+                this.setRotateAngle(Head, 1.092750655326294F, 0.0F, 0.0F);
+                this.Back.setPos(0.0F, -2.6F, 2.5F);
+                this.setRotateAngle(Back, -0.0911061832922575F, 0.0F, 0.0F);
+            }
+
+            @Override
+            public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+                limbSwing = (float) entity.tickCount;
+                limbSwingAmount = 0.3F;
+                float speed = 1.0f;
+                float degree = 1.0f;
+                this.Neck.xRot = Mth.cos(2.0F + limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.2F) * 0.5F - 0.546F;
+                this.Head.xRot = Mth.cos(limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.2F) * 0.5F + 1.5F;
+                this.Tail1.xRot = Mth.cos(1.0F + limbSwing * speed * 0.07F) * limbSwingAmount * (degree * 0.5F) * 0.5F + 1.365F;
+                this.Tail2.xRot = Mth.cos(2.0F + limbSwing * speed * 0.07F) * limbSwingAmount * (degree * -0.5F) * 0.5F + 0.409F;
+                this.Tail1.yRot = Mth.cos(4.0F + limbSwing * speed * 0.07F) * limbSwingAmount * (degree * -0.5F) * 0.5F;
             }
         }
     }

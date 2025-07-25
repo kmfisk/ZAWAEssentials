@@ -28,6 +28,7 @@ public class ZEModelLayers {
     public static final ModelLayerLocation CAIQUE_FLYING = register("caique", "flying", HawkHeadedParrotModel.Flying::createBodyLayer);
     public static final ModelLayerLocation CAIQUE_CHILD = register("caique", "child", HawkHeadedParrotModel.Child::createBodyLayer);
     public static final ModelLayerLocation CHINCHILLA_ADULT = register("chinchilla", "adult", ChinchillaModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation CHINCHILLA_SITTING = register("chinchilla", "sitting", ChinchillaModel.Adult::createBodyLayer);
     public static final ModelLayerLocation CHINCHILLA_CHILD = register("chinchilla", "child", ChinchillaModel.Child::createBodyLayer);
     public static final ModelLayerLocation COCKATIEL_ADULT = register("cockatiel", "adult", CockatielModel.Adult::createBodyLayer);
     public static final ModelLayerLocation COCKATIEL_FLYING = register("cockatiel", "flying", CockatielModel.Flying::createBodyLayer);
